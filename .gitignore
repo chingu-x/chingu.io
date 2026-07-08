@@ -13,3 +13,6 @@ __unconfig*
 todos.json
 
 .idea/
+
+*storybook.log
+storybook-static

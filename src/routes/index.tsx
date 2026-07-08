@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Button } from '@/components/ui/button'
+import {ActionButton} from "#/components/shared/action-button.tsx";
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -9,9 +9,8 @@ function Home() {
       <h1 className="text-4xl font-bold">Welcome to TanStack Start</h1>
       <p className="mt-4 text-lg">
         Edit <code>src/routes/index.tsx</code> to get started.
-
       </p>
-        <Button>Shadcn test 123</Button>
+        <ActionButton text="See how a voyage works" />
     </div>
   )
 }
