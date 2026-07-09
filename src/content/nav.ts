@@ -6,7 +6,7 @@ export const navItems: NavItem[] = [
         href: "#",
         menuContent: {
             title: "Choose your Path",
-            submenu: [
+            subMenu: [
                 {
                     title: "For Developers",
                     text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production."
@@ -34,7 +34,7 @@ export const navItems: NavItem[] = [
         href: "#",
         menuContent: {
             title: "Choose your Path",
-            submenu: [
+            subMenu: [
                 {
                     title: "For Developers",
                     text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production."
@@ -62,7 +62,7 @@ export const navItems: NavItem[] = [
         href: "#",
         menuContent: {
             title: "Choose your Path",
-            submenu: [
+            subMenu: [
                 {
                     title: "For Developers",
                     text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production."

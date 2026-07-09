@@ -1,9 +1,26 @@
 import type {MenuContent as MenuContentType} from "#/types/nav.ts";
+import { Card } from "@/components/ui/card";
+import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
 
 export function MenuContent({
     menuContent
 }:{
     menuContent: MenuContentType
 }) {
-    return <div>{menuContent.title}</div>
+    return <Card className="grid grid-cols-[1.08fr_0.92fr] max-w-[calc(var(--max-content-width)*0.8)] p-5 ring-0">
+        <div>
+            <NavH1 text={menuContent.title} />
+            {menuContent.subMenu.map((subMenu) => (
+                <div key={subMenu.title} className="p-4">
+                    <h2 className="font-bold">{subMenu.title}</h2>
+                    <p>{subMenu.text}</p>
+                </div>
+            ))}
+        </div>
+        <Card className="p-4 bg-primary-content/30 ring-primary/30">
+            <NavH1 text={menuContent.card.title} />
+            <p>{`"${menuContent.card.text}"`}</p>
+            <hr className="border-t-2 border-primary-content"/>
+        </Card>
+    </Card>
 }

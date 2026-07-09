@@ -48,6 +48,8 @@ body {
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-focus: var(--primary-focus);
+  --color-primary-content: var(--primary-content);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -64,16 +66,19 @@ body {
   --color-nav-background: var(--nav-background);
   --color-nav-text: var(--nav-text);
   --color-nav-item-bg-hover: var(--nav-background);
+  --max-content-width: 1440px;
 }
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: #16171A;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: #16171A;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: #16171A;
   --primary: #217A56;
+  --primary-focus: #285C44;
+  --primary-content: #C4DED2;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);

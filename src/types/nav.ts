@@ -1,6 +1,6 @@
 export type MenuContent = {
     title: string
-    submenu: {
+    subMenu: {
         title: string
         text: string
         href?: string
