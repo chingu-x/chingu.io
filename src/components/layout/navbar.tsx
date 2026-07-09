@@ -1,7 +1,15 @@
 import {ActionButton} from "#/components/shared/action-button.tsx";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import {cva} from "class-variance-authority";
-import {type NavItem, navItems} from "#/content/nav.ts";
+import {navItems} from "#/content/nav.ts";
+import type {NavItem} from "#/types/nav.ts";
+import {MenuContent} from "#/components/layout/menu-content.tsx";
+
+const navigationMenuStyle = cva(`
+    flex py-4 px-8 items-center justify-between 
+    bg-(--color-nav-background) 
+    text-(--color-nav-text)
+`)
 
 const navigationMenuTriggerStyle = cva(`
     hover:bg-(--color-nav-item-bg-hover)
@@ -18,15 +26,19 @@ const navigationMenuTriggerStyle = cva(`
 )
 
 export function Navbar() {
-    return <div className="flex py-3 px-6 items-center bg-(--color-nav-background) text-(--color-nav-text)">
-        <img src="/images/chingu-logo.svg" alt="logo" className="h-10 w-10"/>
-        <span className="text-white font-extrabold text-2xl ml-2">Chingu</span>
+    return <div className={navigationMenuStyle()}>
+        <div className="flex items-center">
+            <img src="/images/chingu-logo.svg" alt="logo" className="h-10 w-10"/>
+            <span className="text-white font-extrabold text-2xl ml-2">Chingu</span>
+        </div>
         <NavigationMenu>
             <NavigationMenuList>
                 {navItems.map((item: NavItem) => (
                     <NavigationMenuItem key={item.label}>
                         <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>{item.label}</NavigationMenuTrigger>
-                        <NavigationMenuContent>{item.menu.card.text}</NavigationMenuContent>
+                        <NavigationMenuContent>
+                            <MenuContent menuContent={item.menuContent} />
+                        </NavigationMenuContent>
                     </NavigationMenuItem>
                 ))}
             </NavigationMenuList>

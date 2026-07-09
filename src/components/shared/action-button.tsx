@@ -8,7 +8,7 @@ export function ActionButton({
   text: string
 }) {
   return <Button
-      className="p-6 text-md rounded-full gap-2"
+      className="px-6 py-5 rounded-full gap-2"
   >
       <div>{text}</div>
       <div><IconArrowRight
