@@ -1,6 +1,7 @@
 import type {MenuContent as MenuContentType} from "#/types/nav.ts";
 import { Card } from "@/components/ui/card";
 import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 
 export function MenuContent({
     menuContent
@@ -21,6 +22,18 @@ export function MenuContent({
             <NavH1 text={menuContent.card.title} />
             <p>{`"${menuContent.card.text}"`}</p>
             <hr className="border-t-2 border-primary-content"/>
+            <div className="flex items-center gap-2" >
+                <Avatar size="lg">
+                    <AvatarImage alt={menuContent.card.initials}/>
+                    <AvatarFallback className="bg-primary text-foreground font-bold text-xs">
+                        {menuContent.card.initials}
+                    </AvatarFallback>
+                </Avatar>
+                <div>
+                    <span className="font-extrabold mr-2">{menuContent.card.name}</span>
+                    <span className="uppercase text-foreground/60 font-bold text-2xs">{menuContent.card.role}</span>
+                </div>
+            </div>
         </Card>
     </Card>
 }
