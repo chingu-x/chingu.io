@@ -69,6 +69,7 @@ body {
   --max-content-width: 1440px;
   --text-2xs: 0.6rem;
   --text-3xs: 0.5rem;
+  --text-reg: 1rem;
 }
 
 :root {

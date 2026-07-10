@@ -24,6 +24,8 @@ const navigationMenuTriggerStyle = cva(`
     
     focus:bg-(--color-nav-item-bg-hover)
     cursor-pointer
+    text-[0.9rem]
+    font-bold
 `
 )
 
