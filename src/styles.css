@@ -66,6 +66,7 @@ body {
   --color-nav-background: var(--nav-background);
   --color-nav-text: var(--nav-text);
   --color-nav-item-bg-hover: var(--nav-background);
+  --color-footer-background: var(--footer-background);
   --max-content-width: 1440px;
   --text-2xs: 0.6rem;
   --text-3xs: 0.5rem;
@@ -109,6 +110,7 @@ body {
   --sidebar-ring: oklch(0.708 0 0);
   --nav-background: #16171A;
   --nav-text: #FFFFFF;
+  --footer-background: #0A241C;
 }
 
 .dark {
