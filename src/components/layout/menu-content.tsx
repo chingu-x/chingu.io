@@ -12,8 +12,8 @@ export function MenuContent({
         <div>
             <NavH1 text={menuContent.title} />
             {menuContent.subMenu.map((subMenu) => (
-                <div key={subMenu.title} className="p-4">
-                    <h2 className="font-bold">{subMenu.title}</h2>
+                <div key={subMenu.title} className="p-4 rounded-lg cursor-pointer hover:bg-primary-content/30">
+                    <h2 className="font-bold text-reg mb-1">{subMenu.title}</h2>
                     <p>{subMenu.text}</p>
                 </div>
             ))}

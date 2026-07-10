@@ -36,7 +36,7 @@ export const navItems: NavItem[] = [
         label: "Build with a team",
         href: "#",
         menuContent: {
-            title: "Choose your Path",
+            title: "Build with others",
             subMenu: [
                 {
                     title: "Standard Voyage",
