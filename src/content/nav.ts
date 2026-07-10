@@ -9,15 +9,18 @@ export const navItems: NavItem[] = [
             subMenu: [
                 {
                     title: "For Developers",
-                    text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production."
+                    text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production.",
+                    href: "#"
                 },
                 {
                     title: "For Designers",
-                    text: "UX or UI designer. Create a case study that proves cross-functional collaboration."
+                    text: "UX or UI designer. Create a case study that proves cross-functional collaboration.",
+                    href: "#"
                 },
                 {
                     title: "For Agile Leaders",
-                    text: "Scrum Master or Product Owner. Facilitate real sprints with a real team."
+                    text: "Scrum Master or Product Owner. Facilitate real sprints with a real team.",
+                    href: "#"
                 }
             ],
             card: {
@@ -36,24 +39,27 @@ export const navItems: NavItem[] = [
             title: "Choose your Path",
             subMenu: [
                 {
-                    title: "For Developers",
-                    text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production."
+                    title: "Standard Voyage",
+                    text: "7-week foundational team sprint.",
+                    href: "#"
                 },
                 {
-                    title: "For Designers",
-                    text: "UX or UI designer. Create a case study that proves cross-functional collaboration."
+                    title: "Voyage XP",
+                    text: "10-week advanced track with mentorship.",
+                    href: "#"
                 },
                 {
-                    title: "For Agile Leaders",
-                    text: "Scrum Master or Product Owner. Facilitate real sprints with a real team."
+                    title: "Pair Programming",
+                    text: "On-demand coding sessions with peers.",
+                    href: "#"
                 }
             ],
             card: {
                 title: "Community Voice",
-                text: "This experience was a powerful simulation of a real-world, cross-functional environment, focused on building a market-ready SaaS product.",
-                initials: 'KS',
-                name: "Koby Sysouvanh",
-                role: "voyage alum"
+                text: "The best kind of learning happens when you build with others.",
+                initials: 'ON',
+                name: "Onyekachi Nwakaihe",
+                role: "Voyage alum"
             }
         }
     },
@@ -61,27 +67,35 @@ export const navItems: NavItem[] = [
         label: "The Chingu community",
         href: "#",
         menuContent: {
-            title: "Choose your Path",
+            title: "Grow your network",
             subMenu: [
                 {
-                    title: "For Developers",
-                    text: "Backend, full stack, or app developer. Ship code with a team. Master Git. Build for production."
+                    title: "About Chingu",
+                    text: "Our story, mission, and values.",
+                    href: "#"
                 },
                 {
-                    title: "For Designers",
-                    text: "UX or UI designer. Create a case study that proves cross-functional collaboration."
+                    title: "Why it's free",
+                    text: "Chingu is a volunteer-run community.",
+                    href: "#"
                 },
                 {
-                    title: "For Agile Leaders",
-                    text: "Scrum Master or Product Owner. Facilitate real sprints with a real team."
+                    title: "Who runs Chingu?",
+                    text: "Community leadership and contributors.",
+                    href: "#"
+                },
+                {
+                    title: "Community Programs",
+                    text: "Weekly training, book club, topic channels, and office hours.",
+                    href: "#"
                 }
             ],
             card: {
                 title: "Community Voice",
-                text: "This experience was a powerful simulation of a real-world, cross-functional environment, focused on building a market-ready SaaS product.",
-                initials: 'KS',
-                name: "Koby Sysouvanh",
-                role: "voyage alum"
+                text: "Thank you, Chingu, for creating a space where strangers become a team and ideas become working software.",
+                initials: 'ID',
+                name: "Isaac Datch",
+                role: "Software developer"
             }
         }
     }

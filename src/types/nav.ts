@@ -3,7 +3,7 @@ export type MenuContent = {
     subMenu: {
         title: string
         text: string
-        href?: string
+        href: string
     }[]
     card: {
         title: string
