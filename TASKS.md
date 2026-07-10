@@ -1,0 +1,9 @@
+# TODO 
+## Navigation Menu
+
+### Desktop 
+- [ ] mute / disable background when the navigation menu is open
+- [ ] position opened menu panel in the middle of the screen
+
+### Mobile 
+- [ ] Navigation Menu for smaller screens
