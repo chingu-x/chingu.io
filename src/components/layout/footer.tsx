@@ -10,14 +10,16 @@ const footerStyles = cva(`
 
 const footerStylesInner = cva(`
     grid
-    grid-cols-[2fr_1fr_1fr_1fr]
+    md:grid-cols-[1fr_1fr]
+    lg:grid-cols-[2fr_1fr_1fr_1fr]
     gap-8           
 `)
 
 const footerStylesBottom = cva(`
     text-2xs font-bold uppercase 
     text-background/50 
-    flex justify-between 
+    flex flex-col gap-4
+    md:flex-row md:justify-between 
     mt-12
 `)
 
@@ -26,8 +28,11 @@ export function Footer(){
         <footer className={footerStyles()}>
             <div className="max-w-(--max-content-width) mx-auto p-8">
                 <div className={footerStylesInner()}>
-                    <div>
-                        Chingu
+                    <div className="flex flex-col gap-4">
+                        <div className="flex items-center">
+                            <img src="/images/chingu-logo.svg" alt="logo" className="h-7 w-7"/>
+                            <span className="text-white/80 font-bold ml-2">Chingu</span>
+                        </div>
                         <div>Build real products with a cross-functional remote team.</div>
                     </div>
                     {footerSections.map((section) => {
@@ -51,12 +56,12 @@ export function Footer(){
                     })}
                 </div>
                 <div className={footerStylesBottom()}>
-                <span>
-                    {`© chingu · free · volunteer-run · worldwide since 2016`}
-                </span>
                     <span>
-                    {`// build_real_products`}
-                </span>
+                        {`© chingu · free · volunteer-run · worldwide since 2016`}
+                    </span>
+                        <span>
+                        {`// build_real_products`}
+                    </span>
                 </div>
             </div>
         </footer>
