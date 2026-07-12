@@ -33,7 +33,7 @@ const navigationMenuTriggerStyle = cva(`
 export function DesktopNav() {
     return <div className="hidden lg:block bg-(--color-nav-background)">
         <div className={navigationMenuStyle()}>
-            <NavLogo />
+            <NavLogo/>
             <NavigationMenu>
                 <NavigationMenuList>
                     {navItems.map((item: NavItem) => (
