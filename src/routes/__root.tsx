@@ -3,8 +3,8 @@ import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import appCss from '../styles.css?url'
-import {Navbar} from "#/components/layout/navbar.tsx";
 import {Footer} from "#/components/layout/footer.tsx";
+import {Nav} from "#/components/layout/nav.tsx";
 
 
 
@@ -41,7 +41,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <div className="flex flex-col min-h-screen">
-          <Navbar />
+          <Nav />
           <main className="flex-1">
             {children}
           </main>

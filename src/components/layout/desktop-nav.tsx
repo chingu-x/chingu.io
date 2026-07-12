@@ -4,9 +4,10 @@ import {cva} from "class-variance-authority";
 import {navItems} from "#/content/nav.ts";
 import type {NavItem} from "#/types/nav.ts";
 import {MenuContent} from "#/components/layout/menu-content.tsx";
+import {NavLogo} from "#/components/layout/nav-logo.tsx";
 
 const navigationMenuStyle = cva(`
-    flex py-4 px-8 items-center justify-between
+    flex px-8 items-center justify-between
     max-w-(--max-content-width)
     mx-auto
     bg-(--color-nav-background)
@@ -29,13 +30,10 @@ const navigationMenuTriggerStyle = cva(`
 `
 )
 
-export function Navbar() {
-    return <div className="bg-(--color-nav-background)">
+export function DesktopNav() {
+    return <div className="hidden lg:block bg-(--color-nav-background)">
         <div className={navigationMenuStyle()}>
-            <div className="flex items-center">
-                <img src="/images/chingu-logo.svg" alt="logo" className="h-10 w-10"/>
-                <span className="text-white font-extrabold text-2xl ml-2">Chingu</span>
-            </div>
+            <NavLogo />
             <NavigationMenu>
                 <NavigationMenuList>
                     {navItems.map((item: NavItem) => (
