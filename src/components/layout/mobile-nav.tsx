@@ -1,7 +1,11 @@
+import {cva} from "class-variance-authority";
+import {MenuIcon} from "lucide-react";
+import {navItems} from "#/content/nav.ts";
 import {NavLogo} from "#/components/layout/nav-logo.tsx";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
-import {MenuIcon} from "lucide-react";
-import {cva} from "class-variance-authority";
+import { Accordion , AccordionItem, AccordionTrigger, AccordionContent} from "@/components/ui/accordion";
+import type {NavItem} from "#/types/nav.ts";
+
 
 const menuIconStyles = cva(`
     w-8 h-8 p-1 
@@ -13,6 +17,8 @@ const menuIconStyles = cva(`
 
 const sheetContentStyles = cva(`
     h-screen min-h-full
+    pl-4
+    
     [&>button]:w-8
     [&>button]:h-8
     [&>button>svg]:stroke-[4.5]
@@ -27,8 +33,8 @@ const sheetContentStyles = cva(`
 `)
 
 export function MobileNav() {
-    return <div className="lg:hidden flex justify-between bg-(--color-nav-background) px-8">
-        <NavLogo />
+    return <div className="lg:hidden flex justify-between bg-(--color-nav-background) text-background px-8">
+        <NavLogo/>
         <Sheet>
             <SheetTrigger>
                 <MenuIcon className={menuIconStyles()}/>
@@ -37,7 +43,20 @@ export function MobileNav() {
                 side="top"
                 className={sheetContentStyles()}
             >
-                abc
+                <NavLogo />
+                <Accordion>
+                    {navItems.map((item: NavItem)=>{
+                        return <AccordionItem key={item.label}>
+                                <AccordionTrigger>{item.label}</AccordionTrigger>
+                                <AccordionContent>
+                                    {item.menuContent.subMenu.map((subItem) =>
+                                        <AccordionItem key={subItem.title}>
+                                            <AccordionTrigger>{subItem.title}</AccordionTrigger>
+                                        </AccordionItem>)}
+                                </AccordionContent>
+                            </AccordionItem>
+                    })}
+                </Accordion>
             </SheetContent>
         </Sheet>
     </div>
