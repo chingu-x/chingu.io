@@ -1,10 +1,12 @@
 import {cva} from "class-variance-authority";
 import {MenuIcon} from "lucide-react";
-import {navItems} from "#/content/nav.ts";
 import {NavLogo} from "#/components/layout/nav-logo.tsx";
-import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
-import { Accordion , AccordionItem, AccordionTrigger, AccordionContent} from "@/components/ui/accordion";
+import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
+import {navItems} from "#/content/nav.ts";
 import type {NavItem} from "#/types/nav.ts";
+import { Accordion , AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import {Link} from "@tanstack/react-router";
 
 
 const menuIconStyles = cva(`
@@ -17,7 +19,8 @@ const menuIconStyles = cva(`
 
 const sheetContentStyles = cva(`
     h-screen min-h-full
-    pl-4
+    px-4
+    bg-background
     
     [&>button]:w-8
     [&>button]:h-8
@@ -32,6 +35,27 @@ const sheetContentStyles = cva(`
     [&>button]:hover:text-(--color-nav-text)
 `)
 
+const accordionTriggerStyles = cva(`
+    font-bold
+    text-reg
+    bg-background
+    hover:no-underline
+    cursor-pointer
+`)
+
+const accordionContentStyles = cva(`
+    bg-background
+    font-bold
+    text-reg
+    flex flex-col
+    [&_.accordion-link]:p-3
+    [&_.accordion-link:first-of-type]:mt-2
+    [&_.accordion-link]:hover:bg-primary-content/30
+    [&_.accordion-link]:rounded
+    [&_.accordion-link]:cursor-pointer
+    [&_.accordion-link_a]:no-underline
+`)
+
 export function MobileNav() {
     return <div className="lg:hidden flex justify-between bg-(--color-nav-background) text-background px-8">
         <NavLogo/>
@@ -44,15 +68,30 @@ export function MobileNav() {
                 className={sheetContentStyles()}
             >
                 <NavLogo />
-                <Accordion>
+                <Accordion className="border-x-0 rounded-none bg-background">
                     {navItems.map((item: NavItem)=>{
-                        return <AccordionItem key={item.label}>
-                                <AccordionTrigger>{item.label}</AccordionTrigger>
-                                <AccordionContent>
-                                    {item.menuContent.subMenu.map((subItem) =>
-                                        <AccordionItem key={subItem.title}>
-                                            <AccordionTrigger>{subItem.title}</AccordionTrigger>
-                                        </AccordionItem>)}
+                        return <AccordionItem
+                            className="data-open:bg-background"
+                            key={item.label}
+                        >
+                                <AccordionTrigger
+                                    className={accordionTriggerStyles()}
+                                >{item.label}
+                                </AccordionTrigger>
+                                <AccordionContent
+                                    className={accordionContentStyles()}
+                                >
+                                    <NavH1 text={item.menuContent.title}/>
+                                    {item.menuContent.subMenu.map((subMenu) =>
+                                        <div
+                                            className="accordion-link"
+                                            key={subMenu.title}
+                                        >
+                                            <Link to={subMenu.href}>
+                                                {subMenu.title}
+                                            </Link>
+                                        </div>
+                                    )}
                                 </AccordionContent>
                             </AccordionItem>
                     })}
