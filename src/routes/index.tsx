@@ -1,11 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
+import {homeTypography as t} from "#/components/shared/styles/home/typography.ts";
+import {GhostButton} from "#/components/shared/ghost-button.tsx";
+import {ActionButton} from "#/components/shared/action-button.tsx";
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
-    <div className="p-8">
-      <h1 className="text-4xl font-bold">Build real products</h1>
-    </div>
+    <section id="hero">
+      <div className={t.h1()}>Build real products with a remote team.</div>
+        <ActionButton text="See how a voyage works" />
+        <GhostButton text="Join the community"/>
+    </section>
   )
 }
