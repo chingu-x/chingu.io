@@ -4,7 +4,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import appCss from '../styles.css?url'
 import {Footer} from "#/components/layout/footer.tsx";
-import {Nav} from "#/components/layout/nav.tsx";
+import {Nav} from "#/components/layout/nav/nav.tsx";
 
 
 

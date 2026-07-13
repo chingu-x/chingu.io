@@ -1,9 +1,9 @@
 import {ActionButton} from "#/components/shared/action-button.tsx";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "#/components/ui/navigation-menu.tsx";
 import {navItems} from "#/content/nav.ts";
 import type {NavItem} from "#/types/nav.ts";
-import {MenuContent} from "#/components/layout/menu-content.tsx";
-import {NavLogo} from "#/components/layout/nav-logo.tsx";
+import {MenuContent} from "#/components/layout/nav/menu-content.tsx";
+import {NavLogo} from "#/components/layout/nav/nav-logo.tsx";
 
 const navigationMenuStyle = `
     flex px-8 items-center justify-between
