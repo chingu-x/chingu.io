@@ -96,6 +96,18 @@ If you genuinely need something new, open a discussion first. Every new dependen
 
 ---
 
+## Workflow
+
+1. **Branch from `main`.**
+   ```
+   git checkout main && git pull
+   git checkout -b feat/your-feature
+   ```
+2. **Open a pull request** against `main` when your work is ready for review.
+3. **Rebase merge only.** PRs are merged with rebase to maintain a linear history. Do not use merge commits or squash merge.
+
+---
+
 ## Before Opening a PR
 
 - [ ] `pnpm check` passes (lint + format)
