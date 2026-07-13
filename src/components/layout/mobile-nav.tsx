@@ -1,4 +1,3 @@
-import {cva} from "class-variance-authority";
 import {MenuIcon} from "lucide-react";
 import {NavLogo} from "#/components/layout/nav-logo.tsx";
 import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
@@ -9,19 +8,19 @@ import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {Link} from "@tanstack/react-router";
 
 
-const menuIconStyles = cva(`
-    w-8 h-8 p-1 
-    cursor-pointer 
+const menuIconStyles = `
+    w-8 h-8 p-1
+    cursor-pointer
     border border-white/20 rounded
-    hover:bg-white/10 
+    hover:bg-white/10
     text-(--color-nav-text)
-`)
+`
 
-const sheetContentStyles = cva(`
+const sheetContentStyles = `
     h-screen min-h-full
     px-4
     bg-background
-    
+
     [&>button]:w-8
     [&>button]:h-8
     [&>button>svg]:stroke-[4.5]
@@ -33,17 +32,17 @@ const sheetContentStyles = cva(`
     [&>button]:rounded
     [&>button]:hover:bg-(--color-nav-background)
     [&>button]:hover:text-(--color-nav-text)
-`)
+`
 
-const accordionTriggerStyles = cva(`
+const accordionTriggerStyles = `
     font-bold
     text-reg
     bg-background
     hover:no-underline
     cursor-pointer
-`)
+`
 
-const accordionContentStyles = cva(`
+const accordionContentStyles = `
     bg-background
     font-bold
     text-reg
@@ -54,18 +53,18 @@ const accordionContentStyles = cva(`
     [&_.accordion-link]:rounded
     [&_.accordion-link]:cursor-pointer
     [&_.accordion-link_a]:no-underline
-`)
+`
 
 export function MobileNav() {
     return <div className="lg:hidden flex justify-between bg-(--color-nav-background) text-background px-8">
         <NavLogo/>
         <Sheet>
             <SheetTrigger>
-                <MenuIcon className={menuIconStyles()}/>
+                <MenuIcon className={menuIconStyles}/>
             </SheetTrigger>
             <SheetContent
                 side="top"
-                className={sheetContentStyles()}
+                className={sheetContentStyles}
             >
                 <NavLogo />
                 <Accordion className="border-x-0 rounded-none bg-background">
@@ -75,11 +74,11 @@ export function MobileNav() {
                             key={item.label}
                         >
                                 <AccordionTrigger
-                                    className={accordionTriggerStyles()}
+                                    className={accordionTriggerStyles}
                                 >{item.label}
                                 </AccordionTrigger>
                                 <AccordionContent
-                                    className={accordionContentStyles()}
+                                    className={accordionContentStyles}
                                 >
                                     <NavH1 text={item.menuContent.title}/>
                                     {item.menuContent.subMenu.map((subMenu) =>
