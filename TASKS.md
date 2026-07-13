@@ -7,4 +7,4 @@
 - [ ] slight transparency
 
 ### Mobile 
-- [ ] Navigation Menu for smaller screens
+- [x] Navigation Menu for smaller screens
