@@ -1,7 +1,7 @@
 import type {MenuContent as MenuContentType} from "#/types/nav.ts";
-import { Card } from "@/components/ui/card";
+import { Card } from "#/components/ui/card.tsx";
 import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {Avatar, AvatarFallback, AvatarImage} from "#/components/ui/avatar.tsx";
 
 export function MenuContent({
     menuContent

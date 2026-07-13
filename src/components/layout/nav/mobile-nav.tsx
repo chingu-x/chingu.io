@@ -1,10 +1,10 @@
 import {MenuIcon} from "lucide-react";
-import {NavLogo} from "#/components/layout/nav-logo.tsx";
+import {NavLogo} from "#/components/layout/nav/nav-logo.tsx";
 import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
 import {navItems} from "#/content/nav.ts";
 import type {NavItem} from "#/types/nav.ts";
-import { Accordion , AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import { Accordion , AccordionContent, AccordionItem, AccordionTrigger } from "#/components/ui/accordion.tsx";
+import {Sheet, SheetContent, SheetTrigger} from "#/components/ui/sheet.tsx";
 import {Link} from "@tanstack/react-router";
 
 
