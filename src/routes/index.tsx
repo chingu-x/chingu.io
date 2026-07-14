@@ -3,6 +3,7 @@ import {homeTypography as t} from "#/components/shared/styles/home/typography.ts
 import {GhostButton} from "#/components/shared/ghost-button.tsx";
 import {ActionButton} from "#/components/shared/action-button.tsx";
 import {pageContainerStyles} from "#/components/layout";
+import {AnimatedChat} from "#/components/home/animated-chat.tsx";
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -36,9 +37,7 @@ function Home() {
                 <ActionButton text="See how a voyage works" />
                 <GhostButton text="Join the community"/>
             </div>
-            <div>
-                {/*TODO: Placeholder for the chat image*/}
-            </div>
+            <AnimatedChat />
         </section>
           <section id="stats">
               <p className="text-neutral text-2xs uppercase font-bold">
