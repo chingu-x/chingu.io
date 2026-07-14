@@ -6,7 +6,7 @@ import {MenuContent} from "#/components/layout/nav/menu-content.tsx";
 import {NavLogo} from "#/components/layout/nav/nav-logo.tsx";
 
 const navigationMenuStyle = `
-    flex px-8 items-center justify-between
+    flex px-content-margin items-center justify-between
     max-w-(--max-content-width)
     mx-auto
     bg-(--color-nav-background)

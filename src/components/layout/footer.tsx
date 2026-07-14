@@ -25,7 +25,7 @@ const footerStylesBottom = `
 export function Footer(){
     return (
         <footer className={footerStyles}>
-            <div className="max-w-(--max-content-width) mx-auto p-8">
+            <div className="max-w-(--max-content-width) mx-auto p-content-margin">
                 <div className={footerStylesInner}>
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center">

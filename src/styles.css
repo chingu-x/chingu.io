@@ -59,6 +59,9 @@ body {
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-line-soft: var(--line-soft);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -71,6 +74,7 @@ body {
   --color-nav-item-bg-hover: var(--nav-background);
   --color-footer-background: var(--footer-background);
   --max-content-width: 1440px;
+  --spacing-content-margin: 2rem;
   --text-2xs: 0.6rem;
   --text-3xs: 0.5rem;
   --text-reg: 1rem;
@@ -97,6 +101,9 @@ body {
   --neutral: #6b7280;
   --neutral-focus: #4b5563;
   --neutral-content: #6b7280;
+  --line: rgba(22, 23, 26, 0.1);
+  --line-strong: rgba(22, 23, 26, 0.16);
+  --line-soft: #f5f5f5;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);

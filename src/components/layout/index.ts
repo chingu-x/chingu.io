@@ -1,5 +1,5 @@
 export const pageContainerStyles = `
-  container mx-auto
-  px-8
-  flex flex-col items-center
+  w-full
+  px-content-margin
+  flex flex-col justify-center
 `

@@ -1,11 +1,11 @@
+import {Link} from "@tanstack/react-router";
 import {MenuIcon} from "lucide-react";
 import {NavLogo} from "#/components/layout/nav/nav-logo.tsx";
 import {NavH1} from "#/components/shared/styles/nav/h1.tsx";
-import {navItems} from "#/content/nav.ts";
-import type {NavItem} from "#/types/nav.ts";
 import { Accordion , AccordionContent, AccordionItem, AccordionTrigger } from "#/components/ui/accordion.tsx";
 import {Sheet, SheetContent, SheetTrigger} from "#/components/ui/sheet.tsx";
-import {Link} from "@tanstack/react-router";
+import {navItems} from "#/content/nav.ts";
+import type {NavItem} from "#/types/nav.ts";
 
 
 const menuIconStyles = `
@@ -18,7 +18,7 @@ const menuIconStyles = `
 
 const sheetContentStyles = `
     h-screen min-h-full
-    px-4
+    px-content-margin
     bg-background
 
     [&>button]:w-8
@@ -56,7 +56,7 @@ const accordionContentStyles = `
 `
 
 export function MobileNav() {
-    return <div className="lg:hidden flex justify-between bg-(--color-nav-background) text-background px-8">
+    return <div className="lg:hidden flex justify-between bg-(--color-nav-background) text-background px-content-margin">
         <NavLogo/>
         <Sheet>
             <SheetTrigger>
