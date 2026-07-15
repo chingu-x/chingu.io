@@ -1,4 +1,4 @@
-import {IconArrowRight} from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 
 const actionButtonStyles = `
@@ -12,19 +12,15 @@ const actionButtonStyles = `
   ease-[var(--ease)]
   transition-shadow hover:shadow-[0_0_36px_-10px_var(--color-primary)]
   hover:gap-3 hover:pr-5
-`
+`;
 
-export function ActionButton({
-    text
-}: {
-  text: string
-}) {
-  return <Button
-      className={actionButtonStyles}
-  >
-      <div>{text}</div>
-      <div><IconArrowRight
-        stroke={3}
-      /></div>
-  </Button>;
+export function ActionButton({ text }: { text: string }) {
+	return (
+		<Button className={actionButtonStyles}>
+			<div>{text}</div>
+			<div>
+				<IconArrowRight stroke={3} />
+			</div>
+		</Button>
+	);
 }

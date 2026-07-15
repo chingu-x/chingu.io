@@ -1,9 +1,15 @@
-import {ActionButton} from "#/components/shared/action-button.tsx";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "#/components/ui/navigation-menu.tsx";
-import {navItems} from "#/content/nav.ts";
-import type {NavItem} from "#/types/nav.ts";
-import {MenuContent} from "#/components/layout/nav/menu-content.tsx";
-import {NavLogo} from "#/components/layout/nav/nav-logo.tsx";
+import { MenuContent } from "#/components/layout/nav/menu-content.tsx";
+import { NavLogo } from "#/components/layout/nav/nav-logo.tsx";
+import { ActionButton } from "#/components/shared/action-button.tsx";
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+} from "#/components/ui/navigation-menu.tsx";
+import { navItems } from "#/content/nav.ts";
+import type { NavItem } from "#/types/nav.ts";
 
 const navigationMenuStyle = `
     flex px-content-margin items-center justify-between
@@ -11,7 +17,7 @@ const navigationMenuStyle = `
     mx-auto
     bg-(--color-nav-background)
     text-(--color-nav-text)
-`
+`;
 
 const navigationMenuTriggerStyle = `
     hover:bg-(--color-nav-item-bg-hover)
@@ -26,26 +32,29 @@ const navigationMenuTriggerStyle = `
     cursor-pointer
     text-[0.9rem]
     font-bold
-`
+`;
 
 export function DesktopNav() {
-    return <div className="hidden lg:block bg-(--color-nav-background)">
-        <div className={navigationMenuStyle}>
-            <NavLogo/>
-            <NavigationMenu>
-                <NavigationMenuList>
-                    {navItems.map((item: NavItem) => (
-                        <NavigationMenuItem key={item.label}>
-                            <NavigationMenuTrigger className={navigationMenuTriggerStyle}>{item.label}</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <MenuContent menuContent={item.menuContent} />
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    ))}
-                </NavigationMenuList>
-            </NavigationMenu>
-            <ActionButton text="Join the next voyage" />
-        </div>
-    </div>
-
+	return (
+		<div className="hidden lg:block bg-(--color-nav-background)">
+			<div className={navigationMenuStyle}>
+				<NavLogo />
+				<NavigationMenu>
+					<NavigationMenuList>
+						{navItems.map((item: NavItem) => (
+							<NavigationMenuItem key={item.label}>
+								<NavigationMenuTrigger className={navigationMenuTriggerStyle}>
+									{item.label}
+								</NavigationMenuTrigger>
+								<NavigationMenuContent>
+									<MenuContent menuContent={item.menuContent} />
+								</NavigationMenuContent>
+							</NavigationMenuItem>
+						))}
+					</NavigationMenuList>
+				</NavigationMenu>
+				<ActionButton text="Join the next voyage" />
+			</div>
+		</div>
+	);
 }

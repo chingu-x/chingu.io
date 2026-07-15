@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/tanstack-react';
-import { Footer } from './footer.tsx';
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
+import { Footer } from "./footer.tsx";
 
 const meta: Meta<typeof Footer> = {
-  component: Footer,
+	component: Footer,
 };
 
 type Story = StoryObj<typeof Footer>;

@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/tanstack-react';
-import { NavLogo } from './nav-logo.tsx';
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
+import { NavLogo } from "./nav-logo.tsx";
 
 const meta: Meta<typeof NavLogo> = {
-  component: NavLogo,
+	component: NavLogo,
 };
 
 type Story = StoryObj<typeof NavLogo>;
