@@ -42,13 +42,3 @@ export const homeStats = {
     `
 }
 
-// overwrites parent container padding
-export const homeTestimonialStyles = `
-    flex flex-col 
-    gap-4 
-    mt-8 mb-4 
-    w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]
-    pl-content-margin
-    bg-background-100 
-    
-`
