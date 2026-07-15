@@ -1,4 +1,4 @@
-import {Link} from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 
 const ghostButtonStyles = `
@@ -10,31 +10,19 @@ const ghostButtonStyles = `
     hover:border-foreground
     hover:text-primary
     hover:bg-background
-`
+`;
 
-export function GhostButton({
-    text,
-    href
-}: {
-    text: string,
-    href?: string
-}) {
-    if (href) {
-        return (
-            <Link
-                to={href}
-                className={ghostButtonStyles}
-            >
-                {text}
-            </Link>
-        )
-    }
-    return (
-        <Button
-            variant="ghost"
-            className={ghostButtonStyles}
-        >
-            {text}
-        </Button>
-    )
+export function GhostButton({ text, href }: { text: string; href?: string }) {
+	if (href) {
+		return (
+			<Link to={href} className={ghostButtonStyles}>
+				{text}
+			</Link>
+		);
+	}
+	return (
+		<Button variant="ghost" className={ghostButtonStyles}>
+			{text}
+		</Button>
+	);
 }

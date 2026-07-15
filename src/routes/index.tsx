@@ -65,24 +65,24 @@ function Home() {
 				</div>
 			</section>
 			<ContentSection
-                id="team-roles"
-                badgeText="Grow Together"
-                badgeVariant="default"
-                headingText="Build with a global, cross-functional team."
-                ledeText="Voyagers are grouped by tier, so whether you’re applying what you’ve learned or you have years of experience, there’s a team that will support and grow with you."
-            >
-                <HomeRoleCards />
-            </ContentSection>
+				id="team-roles"
+				badgeText="Grow Together"
+				badgeVariant="default"
+				headingText="Build with a global, cross-functional team."
+				ledeText="Voyagers are grouped by tier, so whether you’re applying what you’ve learned or you have years of experience, there’s a team that will support and grow with you."
+			>
+				<HomeRoleCards />
+			</ContentSection>
 			<ContentSection
-                id="testimonials"
-                variant="dark"
-                badgeText="Voices from the cohort"
-                badgeVariant="dark"
-                headingText="Strangers become teammates."
-                ledeText="Reviews from voyagers across roles, tiers, and continents."
-            >
-                content
-            </ContentSection>
+				id="testimonials"
+				variant="dark"
+				badgeText="Voices from the cohort"
+				badgeVariant="dark"
+				headingText="Strangers become teammates."
+				ledeText="Reviews from voyagers across roles, tiers, and continents."
+			>
+				content
+			</ContentSection>
 		</div>
 	);
 }
