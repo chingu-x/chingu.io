@@ -1,10 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router'
 import {AnimatedChat} from "#/components/home/animated-chat.tsx";
 import {HeadingBadge} from "#/components/home/heading-badge.tsx";
+import {HomeRoleCards} from "#/components/home/role-cards.tsx";
 import {pageContainerStyles} from "#/components/layout";
 import {ActionButton} from "#/components/shared/action-button.tsx";
 import {GhostButton} from "#/components/shared/ghost-button.tsx";
-import {homeTypography as t, homeStats, heroSectionStyles} from "#/components/shared/styles/home.ts";
+import {
+    heroSectionStyles,
+    homeStats,
+    homeTestimonialStyles,
+    homeTypography as t
+} from "#/components/shared/styles/home";
+
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -51,15 +58,18 @@ function Home() {
                   </div>
               </div>
           </section>
-          <section id="team-roles" className="w-full flex flex-col gap-4 mt-8">
+          <section id="team-roles" className="w-full flex flex-col gap-4 mt-8 mb-4">
               <HeadingBadge text="Grow Together" />
               <h2 className={t.h2}>
                   Build with a global, cross-functional team.
               </h2>
-              <p className={t.pIndented}>
+              <p className={t.pSectionLede}>
                   Voyagers are grouped by tier, so whether you’re applying what you’ve learned or you have years of experience, there’s a team that will support and grow with you.
               </p>
-              <HeadingBadge text="Grow Together" variant="dark" />
+              <HomeRoleCards />
+          </section>
+          <section id="testimonials" className={homeTestimonialStyles}>
+              <HeadingBadge text="Voices from the cohort" variant="dark" />
           </section>
       </div>
   )
