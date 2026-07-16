@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AnimatedChat } from "#/components/home/animated-chat.tsx";
 import { ContentSection } from "#/components/home/content-section.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
+import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { pageContainerStyles } from "#/components/layout";
 import { ActionButton } from "#/components/shared/action-button.tsx";
 import { GhostButton } from "#/components/shared/ghost-button.tsx";
@@ -33,7 +34,7 @@ function Home() {
 				</div>
 				<AnimatedChat />
 			</section>
-			<section id="stats">
+			<section id="stats" className="px-content-margin">
 				<p className="text-neutral text-2xs uppercase font-bold text-center">
 					Trusted By Voyagers Around the World
 				</p>
@@ -81,7 +82,7 @@ function Home() {
 				headingText="Strangers become teammates."
 				ledeText="Reviews from voyagers across roles, tiers, and continents."
 			>
-				content
+				<TestimonialsSection />
 			</ContentSection>
 		</div>
 	);
