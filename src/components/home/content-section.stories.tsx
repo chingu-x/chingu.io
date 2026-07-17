@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ContentSection } from "./content-section";
 
 const meta = {
-	title: "Components/ContentSection",
+	title: "Components/Home/ContentSection",
 	component: ContentSection,
 	parameters: {
 		layout: "fullscreen",
