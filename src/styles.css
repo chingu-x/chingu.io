@@ -36,6 +36,12 @@ body {
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-step-1: var(--color-step-1);
+  --color-step-2: var(--color-step-2);
+  --color-step-3: var(--color-step-3);
+  --color-step-4: var(--color-step-4);
+  --color-step-5: var(--color-step-5);
+  --color-step-6: var(--color-step-6);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -82,7 +88,6 @@ body {
   --spacing-content-margin: 2rem;
   --text-2xs: 0.6rem;
   --text-3xs: 0.5rem;
-  --text-reg: 1rem;
 }
 
 :root {
@@ -123,6 +128,12 @@ body {
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
+  --color-step-1: var(--primary);
+  --color-step-2: var(--success);
+  --color-step-3: var(--info);
+  --color-step-4: var(--warning);
+  --color-step-5: var(--error);
+  --color-step-6: var(--primary-focus);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);

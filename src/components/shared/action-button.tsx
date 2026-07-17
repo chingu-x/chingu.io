@@ -2,9 +2,10 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 
 const actionButtonStyles = `
-  px-6 py-5
+  px-6 py-7
   border-0 rounded-full
   font-bold
+  text-base
   gap-2
   cursor-pointer
   transition-[transform,box-shadow,background,color,border-color]
@@ -16,7 +17,7 @@ const actionButtonStyles = `
 
 export function ActionButton({ text }: { text: string }) {
 	return (
-		<Button className={actionButtonStyles}>
+		<Button variant="default" className={actionButtonStyles}>
 			<div>{text}</div>
 			<div>
 				<IconArrowRight stroke={3} />

@@ -17,7 +17,7 @@ export function MenuContent({ menuContent }: { menuContent: MenuContentType }) {
 						key={subMenu.title}
 						className="p-4 rounded-lg cursor-pointer hover:bg-primary-content/30"
 					>
-						<h2 className="font-bold text-reg mb-1">{subMenu.title}</h2>
+						<h2 className="font-bold text-base mb-1">{subMenu.title}</h2>
 						<p>{subMenu.text}</p>
 					</div>
 				))}
