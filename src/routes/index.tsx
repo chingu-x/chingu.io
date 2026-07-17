@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatedChat } from "#/components/home/animated-chat.tsx";
 import { ContentSection } from "#/components/home/content-section.tsx";
+import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
 import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { pageContainerStyles } from "#/components/layout";
@@ -28,14 +29,14 @@ function Home() {
 					Industry-standard tools and processes. Real teams, real products, no
 					paywall.
 				</p>
-				<div className="flex gap-4 justify-center">
+				<div className="flex flex-col items-center gap-4 justify-center md:flex-row">
 					<ActionButton text="See how a voyage works" />
 					<GhostButton text="Join the community" />
 				</div>
 				<AnimatedChat />
 			</section>
 			<section id="stats" className="px-content-margin">
-				<p className="text-neutral text-2xs uppercase font-bold text-center">
+				<p className="text-neutral text-xs uppercase font-bold text-center">
 					Trusted By Voyagers Around the World
 				</p>
 				<div className={homeStats.grid}>
@@ -83,6 +84,15 @@ function Home() {
 				ledeText="Reviews from voyagers across roles, tiers, and continents."
 			>
 				<TestimonialsSection />
+			</ContentSection>
+			<ContentSection
+				id="journey-nodes"
+				badgeText="The seven weeks"
+				badgeVariant="default"
+				headingText="From a project brief to a live product."
+				ledeText="Six connected milestones that turn a cohort brief into portfolio-ready proof of how you build with a team."
+			>
+				<JourneyNodesSection />
 			</ContentSection>
 		</div>
 	);

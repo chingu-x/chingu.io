@@ -1,9 +1,9 @@
 export const homeTypography = {
-	h1: `text-4xl font-bold`,
-	h2: `text-2xl font-bold`,
-	p: `text-neutral-focus text-sm`,
-	pSectionLede: `text-neutral-focus text-sm mx-auto max-w-[600px]`,
-	gradient: `
+    h1: `text-4xl font-bold`,
+    h2: `text-3xl font-bold lg:text-4xl`,
+    p: `text-neutral-focus font-medium`,
+    pSectionLede: `text-neutral-focus font-medium mx-auto max-w-[600px]`,
+    gradient: `
         bg-[linear-gradient(135deg,var(--primary)_0%,var(--primary-focus)_55%,var(--accent-focus)_100%)]
         bg-clip-text
         text-transparent
@@ -18,7 +18,7 @@ export const heroSectionStyles = `
 `;
 
 export const homeStats = {
-	grid: `
+    grid: `
         my-4
         bg-line
         self-stretch grid grid-cols-2
@@ -27,17 +27,17 @@ export const homeStats = {
         rounded-md
         overflow-hidden
     `,
-	cell: `
+    cell: `
         bg-background
         p-4
         text-center
     `,
-	num: `
-        font-bold text-2xl
+    num: `
+        font-bold text-3xl
         [&>span]:text-primary
     `,
-	text: `
-        text-2xs
+    text: `
+        text-xs
         text-neutral
     `,
 };

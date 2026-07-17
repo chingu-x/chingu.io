@@ -6,7 +6,8 @@ const badgeStyles = cva(
 	`
     uppercase
     font-bold
-    p-3
+    p-4
+    text-sm
 `,
 	{
 		variants: {

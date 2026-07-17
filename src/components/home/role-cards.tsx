@@ -19,6 +19,7 @@ const cardLinkStyles = `
     flex items-center 
     cursor-pointer 
     font-bold 
+    text-sm
     gap-1 group-hover:gap-2
     hover:text-primary
 `
@@ -43,10 +44,10 @@ const RoleCard = ({
     return <Card className={cardStyles}>
         <CardHeader>
             <Icon className={cn('h-8 w-8 p-2 mb-2 rounded', cardContent.icon.className)}/>
-            <CardTitle className="font-bold">
+            <CardTitle className="text-xl font-bold">
                 {cardContent.title}
             </CardTitle>
-            <CardDescription className="text-sm text-neutral-focus">
+            <CardDescription className="text-base font-medium text-neutral-focus">
                 {cardContent.description}
             </CardDescription>
         </CardHeader>

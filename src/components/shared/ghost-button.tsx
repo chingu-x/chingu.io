@@ -2,9 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 
 const ghostButtonStyles = `
-    px-6 py-5
+    px-6 py-7
     border-foreground/10 rounded-full
     font-bold
+    text-base
     gap-2
     cursor-pointer
     hover:border-foreground

@@ -40,7 +40,7 @@ const sheetContentStyles = `
 
 const accordionTriggerStyles = `
     font-bold
-    text-reg
+    text-base
     bg-background
     hover:no-underline
     cursor-pointer
@@ -49,7 +49,7 @@ const accordionTriggerStyles = `
 const accordionContentStyles = `
     bg-background
     font-bold
-    text-reg
+    text-base
     flex flex-col
     [&_.accordion-link]:p-3
     [&_.accordion-link:first-of-type]:mt-2
