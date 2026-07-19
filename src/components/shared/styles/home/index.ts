@@ -1,6 +1,7 @@
 export const homeTypography = {
     h1: `text-4xl font-bold`,
     h2: `text-3xl font-bold lg:text-4xl`,
+    h3: `text-2xl font-bold`,
     p: `text-neutral-focus font-medium`,
     pSectionLede: `text-neutral-focus font-medium mx-auto max-w-[600px]`,
     gradient: `
