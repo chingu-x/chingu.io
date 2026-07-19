@@ -50,6 +50,9 @@ body {
   --color-info: var(--info);
   --color-success: var(--success);
   --color-error: var(--error);
+  --color-avatar-1: var(--color-avatar-1);
+  --color-avatar-2: var(--color-avatar-2);
+  --color-avatar-3: var(--color-avatar-3);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -134,6 +137,9 @@ body {
   --color-step-4: var(--warning);
   --color-step-5: var(--error);
   --color-step-6: var(--primary-focus);
+  --color-avatar-1: #fe6aa6;
+  --color-avatar-2: #50dbfe;
+  --color-avatar-3: #d091df;
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);

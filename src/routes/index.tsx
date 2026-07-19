@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AnimatedChat } from "#/components/home/animated-chat.tsx";
 import { ContentSection } from "#/components/home/content-section.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
+import { ProjectsSection } from "#/components/home/projects.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
 import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { pageContainerStyles } from "#/components/layout";
@@ -93,6 +94,14 @@ function Home() {
 				ledeText="Six connected milestones that turn a cohort brief into portfolio-ready proof of how you build with a team."
 			>
 				<JourneyNodesSection />
+			</ContentSection>
+			<ContentSection
+				id="projects"
+				badgeText="What Teams Ship"
+				headingText="Real products by real Voyage teams."
+				ledeText=""
+			>
+				<ProjectsSection />
 			</ContentSection>
 		</div>
 	);

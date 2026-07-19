@@ -26,7 +26,7 @@ export const JourneyNodesSection = () => {
 	);
 };
 
-const JourneyNodeItem = ({ node }: { node: JourneyNode }) => {
+export const JourneyNodeItem = ({ node }: { node: JourneyNode }) => {
 	return (
 		<li aria-label={node.ariaLabel}>
 			<Card className="p-4 flex gap-4 group">

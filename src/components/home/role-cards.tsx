@@ -34,7 +34,7 @@ export const HomeRoleCards = () => {
     )
 }
 
-const RoleCard = ({
+export const RoleCard = ({
     cardContent
 }:{
     cardContent: RoleCardType
