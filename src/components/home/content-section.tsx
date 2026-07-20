@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { HeadingBadge } from "#/components/home/heading-badge.tsx";
-import { homeTypography as t } from "#/components/shared/styles/home";
+import { homeTypography as t } from "#/styles/home";
 
 const baseSectionStyle = `
 	flex flex-col gap-4 
@@ -16,8 +16,12 @@ const defaultSectionStyle = `
 `;
 export const darkSectionStyles = `
     ${baseSectionStyle}
-    px-content-margin
     bg-background-100
+`;
+
+export const gradientSectionStyles = `
+    ${baseSectionStyle}
+    bg-[linear-gradient(180deg,rgba(247,248,250,0.72),rgba(255,255,255,0.9)),repeating-linear-gradient(0deg,rgba(22,23,26,0.04)_0_1px,transparent_1px_34px)]
 `;
 
 export const ContentSection = ({
@@ -30,17 +34,23 @@ export const ContentSection = ({
 	children,
 }: {
 	id: string;
-	variant?: "default" | "dark";
+	variant?: "default" | "dark" | "gradient";
 	badgeText: string;
 	badgeVariant?: "default" | "dark";
 	headingText: string;
 	ledeText: string;
 	children: ReactNode;
 }) => {
+	const variantStyles = {
+		default: defaultSectionStyle,
+		dark: darkSectionStyles,
+		gradient: gradientSectionStyles,
+	};
+
 	return (
 		<section
 			id={id}
-			className={variant === "dark" ? darkSectionStyles : defaultSectionStyle}
+			className={variantStyles[variant]}
 		>
 			<HeadingBadge text={badgeText} variant={badgeVariant} />
 			<h2 className={t.h2}>{headingText}</h2>

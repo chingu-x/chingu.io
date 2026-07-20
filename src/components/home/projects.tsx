@@ -1,6 +1,10 @@
-import {AvatarFallback, AvatarGroup, AvatarImage} from "#/components/ui/avatar.tsx";
+import {
+	AvatarFallback,
+	AvatarGroup,
+	AvatarImage,
+} from "#/components/ui/avatar.tsx";
 import { type Project, projects } from "#/content/home/projects.ts";
-import { homeTypography as t } from "@/components/shared/styles/home/index.ts";
+import { homeTypography as t } from "#/styles/home.ts";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -34,15 +38,13 @@ export const ProjectsSection = () => {
 	);
 };
 
-const bgClasses = [
-	"bg-avatar-1",
-	"bg-avatar-2",
-	"bg-avatar-3",
-];
+const bgClasses = ["bg-avatar-1", "bg-avatar-2", "bg-avatar-3"];
 
 // get random bg classes for avatars with no image
 function getRandonAvatarBg(name: string) {
-	const hash = name.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
+	const hash = name
+		.split("")
+		.reduce((acc, char) => acc + char.charCodeAt(0), 0);
 	return bgClasses[hash % bgClasses.length];
 }
 
@@ -81,7 +83,8 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 										alt={member.name}
 									/>
 									<AvatarFallback
-										className={`text-foreground ${getRandonAvatarBg(member.name)}`}>
+										className={`text-foreground ${getRandonAvatarBg(member.name)}`}
+									>
 										{member.name}
 									</AvatarFallback>
 								</Avatar>
@@ -97,7 +100,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								{link.label} <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">↗</span>
+								{link.label}{" "}
+								<span className="inline-block group-hover:translate-x-1 transition-transform duration-200">
+									↗
+								</span>
 							</a>
 						))}
 					</div>
