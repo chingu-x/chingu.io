@@ -20,6 +20,11 @@ body {
   margin: 0;
 }
 
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Inter Variable', sans-serif;

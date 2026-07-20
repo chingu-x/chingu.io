@@ -1,9 +1,9 @@
+import { Link } from "@tanstack/react-router";
 import { footerSections } from "#/content/footer.ts";
 
 const footerStyles = `
     bg-(--color-footer-background)
     text-background/70
-
     mt-auto
 `;
 
@@ -28,15 +28,19 @@ export function Footer() {
 			<div className="max-w-(--max-content-width) mx-auto p-content-margin">
 				<div className={footerStylesInner}>
 					<div className="flex flex-col gap-4">
-						<div className="flex items-center">
-							<img
-								src="/images/chingu-logo.svg"
-								alt="logo"
-								className="h-7 w-7"
-							/>
-							<span className="text-white/80 font-bold ml-2">Chingu</span>
-						</div>
-						<div>Build real products with a cross-functional remote team.</div>
+						<Link to="/">
+							<div className="flex items-center cursor-pointer">
+								<img
+									src="/images/chingu-logo.svg"
+									alt="logo"
+									className="h-7 w-7"
+								/>
+								<span className="text-white text-xl font-semibold ml-2">
+									Chingu
+								</span>
+							</div>
+						</Link>
+						<div className="max-w-75">Build real products with a cross-functional remote team.</div>
 					</div>
 					{footerSections.map((section) => {
 						return (
@@ -48,7 +52,7 @@ export function Footer() {
 									return (
 										<div
 											key={link.label}
-											className="text-sm my-2 cursor-pointer hover:text-background"
+											className="my-2 text-sm font-medium cursor-pointer hover:text-background"
 										>
 											{link.label}
 										</div>
