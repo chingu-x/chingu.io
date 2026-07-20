@@ -117,6 +117,19 @@ function Home() {
 			</ContentSection>
 			<Separator />
 			<Callout />
+			<ContentSection
+				id="apply"
+				badgeText="Voyage 60 — Applications open"
+				headingText="Ready to build something awesome?"
+				ledeText="A short form and a link to something you’ve built solo. That’s it."
+				className="items-center text-center"
+			>
+				<ActionButton
+					text="Join the next voyage"
+					href="/apply"
+				/>
+				<p className="text-lg font-bold -mt-4 mb-12">Free · Volunteer-run · Worldwide since 2016</p>
+			</ContentSection>
 		</div>
 	);
 }

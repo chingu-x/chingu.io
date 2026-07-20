@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { HeadingBadge } from "#/components/home/heading-badge.tsx";
+import { cn } from "#/lib/utils.ts";
 import { homeTypography as t } from "#/styles/home";
 
 const baseSectionStyle = `
@@ -31,6 +32,7 @@ export const ContentSection = ({
 	badgeVariant = "default",
 	headingText,
 	ledeText,
+	className,
 	children,
 }: {
 	id: string;
@@ -39,6 +41,7 @@ export const ContentSection = ({
 	badgeVariant?: "default" | "dark";
 	headingText?: string;
 	ledeText?: string;
+	className?: string;
 	children: ReactNode;
 }) => {
 	const variantStyles = {
@@ -48,7 +51,7 @@ export const ContentSection = ({
 	};
 
 	return (
-		<section id={id} className={variantStyles[variant]}>
+		<section id={id} className={cn(variantStyles[variant], className)}>
 			{badgeText && <HeadingBadge text={badgeText} variant={badgeVariant} />}
 			{headingText && <h2 className={t.h2}>{headingText}</h2>}
 			{ledeText && <p className={t.pSectionLede}>{ledeText}</p>}
