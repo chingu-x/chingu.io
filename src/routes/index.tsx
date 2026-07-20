@@ -5,6 +5,7 @@ import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
 import { TestimonialsSection } from "#/components/home/testimonials.tsx";
+import { ToolsCloudSection } from "#/components/home/tools.tsx";
 import { pageContainerStyles } from "#/components/layout";
 import { ActionButton } from "#/components/shared/action-button.tsx";
 import { GhostButton } from "#/components/shared/ghost-button.tsx";
@@ -102,6 +103,15 @@ function Home() {
 				ledeText=""
 			>
 				<ProjectsSection />
+			</ContentSection>
+			<ContentSection
+				variant="dark"
+				id="tools"
+				badgeText="Tools of the Trade"
+				headingText="Practice with the stack and rituals product teams actually use."
+				ledeText="From frameworks and databases to Agile delivery methods, Voyagers work in the same tooling vocabulary they’ll meet on real remote teams."
+			>
+				<ToolsCloudSection />
 			</ContentSection>
 		</div>
 	);
