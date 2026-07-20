@@ -28,7 +28,10 @@ export function Footer() {
 			<div className="max-w-(--max-content-width) mx-auto p-content-margin">
 				<div className={footerStylesInner}>
 					<div className="flex flex-col gap-4">
-						<Link to="/">
+						<Link
+							to="/"
+							resetScroll={true}
+						>
 							<div className="flex items-center cursor-pointer">
 								<img
 									src="/images/chingu-logo.svg"
