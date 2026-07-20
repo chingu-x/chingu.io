@@ -98,3 +98,27 @@ export const WithLongContent: Story = {
 		),
 	},
 };
+
+export const Gradient: Story = {
+	args: {
+		id: "gradient-section",
+		variant: "gradient",
+		badgeText: "Highlights",
+		badgeVariant: "default",
+		headingText: "Featured Content",
+		ledeText:
+			"Discover the key features and benefits with our gradient background.",
+		children: (
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+				<div className="p-4 rounded-lg">
+					<h3 className="font-semibold mb-2">Feature One</h3>
+					<p>Description of the first highlighted feature.</p>
+				</div>
+				<div className="p-4 rounded-lg">
+					<h3 className="font-semibold mb-2">Feature Two</h3>
+					<p>Description of the second highlighted feature.</p>
+				</div>
+			</div>
+		),
+	},
+};

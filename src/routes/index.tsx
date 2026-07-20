@@ -13,7 +13,8 @@ import {
 	heroSectionStyles,
 	homeStats,
 	homeTypography as t,
-} from "#/components/shared/styles/home";
+} from "#/styles/home";
+import { Separator } from "@/components/ui/separator";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -105,7 +106,7 @@ function Home() {
 				<ProjectsSection />
 			</ContentSection>
 			<ContentSection
-				variant="dark"
+				variant="gradient"
 				id="tools"
 				badgeText="Tools of the Trade"
 				headingText="Practice with the stack and rituals product teams actually use."
@@ -113,6 +114,7 @@ function Home() {
 			>
 				<ToolsCloudSection />
 			</ContentSection>
+			<Separator/>
 		</div>
 	);
 }

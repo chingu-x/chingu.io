@@ -7,6 +7,7 @@ const toolCardStyles = `
 	flex 
 	flex-col 
 	items-center
+	last:mx-auto
 `;
 
 const imageBoxStyles = `
