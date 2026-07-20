@@ -58,10 +58,15 @@ export const JourneyNodeItem = ({ node }: { node: JourneyNode }) => {
 						<p className="text-sm font-medium text-neutral-focus">
 							{node.description}
 						</p>
-						<Badge className="mt-3 p-3 text-xs font-bold uppercase" style={{
-							backgroundColor: `color-mix(in srgb, var(--color-step-${node.step}) 10%, transparent)`,
-							color: `var(--color-step-${node.step})`
-						}}>{node.skill}</Badge>
+						<Badge
+							className="mt-3 p-3 text-xs font-bold uppercase"
+							style={{
+								backgroundColor: `color-mix(in srgb, var(--color-step-${node.step}) 10%, transparent)`,
+								color: `var(--color-step-${node.step})`,
+							}}
+						>
+							{node.skill}
+						</Badge>
 					</div>
 				</div>
 			</Card>

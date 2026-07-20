@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatedChat } from "#/components/home/animated-chat.tsx";
+import { Callout } from "#/components/home/callout.tsx";
 import { ContentSection } from "#/components/home/content-section.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";
@@ -33,7 +34,7 @@ function Home() {
 					paywall.
 				</p>
 				<div className="flex flex-col items-center gap-4 justify-center md:flex-row">
-					<ActionButton text="See how a voyage works" />
+					<ActionButton text="See how a voyage works" href="#" />
 					<GhostButton text="Join the community" />
 				</div>
 				<AnimatedChat />
@@ -114,7 +115,8 @@ function Home() {
 			>
 				<ToolsCloudSection />
 			</ContentSection>
-			<Separator/>
+			<Separator />
+			<Callout />
 		</div>
 	);
 }

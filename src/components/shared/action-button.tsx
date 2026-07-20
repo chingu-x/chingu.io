@@ -1,7 +1,8 @@
 import { IconArrowRight } from "@tabler/icons-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 
-const actionButtonStyles = `
+const baseButtonStyles = `
   px-6 py-7
   border-0 rounded-full
   font-bold
@@ -9,19 +10,47 @@ const actionButtonStyles = `
   gap-2
   cursor-pointer
   transition-[transform,box-shadow,background,color,border-color]
+  transition-shadow hover:shadow-[0_0_36px_-10px_var(--color-primary)]
   duration-150
   ease-[var(--ease)]
-  transition-shadow hover:shadow-[0_0_36px_-10px_var(--color-primary)]
   hover:gap-3 hover:pr-5
 `;
 
-export function ActionButton({ text }: { text: string }) {
+const darkStyles = `
+  ${baseButtonStyles}
+  text-white  
+`;
+
+const lightStyles = `
+  ${baseButtonStyles}
+  text-foreground
+  bg-background
+  hover:text-background
+`;
+
+export function ActionButton({
+	text,
+	href,
+	variant = "default",
+}: {
+	text: string;
+	href: string;
+	variant?: "dark" | "light" | "default";
+}) {
+	const variantStyles = {
+		light: lightStyles,
+		dark: darkStyles,
+		default: darkStyles,
+	};
+
 	return (
-		<Button variant="default" className={actionButtonStyles}>
-			<div>{text}</div>
-			<div>
-				<IconArrowRight stroke={3} />
-			</div>
-		</Button>
+		<Link to={href}>
+			<Button className={variantStyles[variant]}>
+				<div>{text}</div>
+				<div>
+					<IconArrowRight stroke={3} />
+				</div>
+			</Button>
+		</Link>
 	);
 }

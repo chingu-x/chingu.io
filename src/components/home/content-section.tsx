@@ -8,7 +8,7 @@ const baseSectionStyle = `
 	flex flex-col gap-4 
 	px-content-margin
 	py-10
-`
+`;
 
 const defaultSectionStyle = `
 	${baseSectionStyle}
@@ -35,10 +35,10 @@ export const ContentSection = ({
 }: {
 	id: string;
 	variant?: "default" | "dark" | "gradient";
-	badgeText: string;
+	badgeText?: string;
 	badgeVariant?: "default" | "dark";
-	headingText: string;
-	ledeText: string;
+	headingText?: string;
+	ledeText?: string;
 	children: ReactNode;
 }) => {
 	const variantStyles = {
@@ -48,13 +48,10 @@ export const ContentSection = ({
 	};
 
 	return (
-		<section
-			id={id}
-			className={variantStyles[variant]}
-		>
-			<HeadingBadge text={badgeText} variant={badgeVariant} />
-			<h2 className={t.h2}>{headingText}</h2>
-			<p className={t.pSectionLede}>{ledeText}</p>
+		<section id={id} className={variantStyles[variant]}>
+			{badgeText && <HeadingBadge text={badgeText} variant={badgeVariant} />}
+			{headingText && <h2 className={t.h2}>{headingText}</h2>}
+			{ledeText && <p className={t.pSectionLede}>{ledeText}</p>}
 			{children}
 		</section>
 	);

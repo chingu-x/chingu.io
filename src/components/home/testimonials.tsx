@@ -57,7 +57,11 @@ export const TestimonialsSection = () => {
 	);
 };
 
-export const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
+export const TestimonialCard = ({
+	testimonial,
+}: {
+	testimonial: Testimonial;
+}) => {
 	return (
 		<Card className={cardStyles}>
 			<CardHeader className="p-0">

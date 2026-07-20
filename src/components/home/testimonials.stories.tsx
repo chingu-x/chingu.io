@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TestimonialsSection, TestimonialCard } from "./testimonials";
 import { testimonials } from "#/content/home/testimonials";
+import { TestimonialCard, TestimonialsSection } from "./testimonials";
 
 const meta = {
 	title: "Components/Home/Testimonials",

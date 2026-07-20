@@ -15,7 +15,7 @@ const imageBoxStyles = `
 	border 
 	rounded-lg 
 	shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_8px_18px_rgba(76,81,91,0.1)]
-`
+`;
 
 export const ToolsCloudSection = () => {
 	return (
@@ -32,9 +32,7 @@ export const ToolsCloudSection = () => {
 
 export const ToolToken = ({ tool }: { tool: Tool }) => {
 	return (
-		<Card
-			className={toolCardStyles}
-		>
+		<Card className={toolCardStyles}>
 			<span className={imageBoxStyles}>
 				<img
 					src={`./images/tools/${tool.image}`}
