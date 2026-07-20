@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ToolsCloudSection, ToolToken } from "./tools";
 import { tools } from "#/content/home/tools";
+import { ToolsCloudSection, ToolToken } from "./tools";
 
 const meta = {
 	title: "Components/Home/Tools",

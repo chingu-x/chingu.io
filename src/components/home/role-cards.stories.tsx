@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { HomeRoleCards, RoleCard } from "./role-cards";
 import { roleCards } from "#/content/home/role-cards";
+import { HomeRoleCards, RoleCard } from "./role-cards";
 
 const meta = {
 	title: "Components/Home/RoleCards",

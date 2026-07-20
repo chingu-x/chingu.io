@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ProjectCard, ProjectsSection } from "./projects";
 import { projects } from "#/content/home/projects";
+import { ProjectCard, ProjectsSection } from "./projects";
 
 const meta = {
 	title: "Components/Home/Projects",

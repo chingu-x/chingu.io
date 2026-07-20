@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { JourneyNodesSection, JourneyNodeItem } from "./journey-nodes";
 import { journeyNodes } from "#/content/home/journey-nodes";
+import { JourneyNodeItem, JourneyNodesSection } from "./journey-nodes";
 
 const meta = {
 	title: "Components/Home/JourneyNodes",
