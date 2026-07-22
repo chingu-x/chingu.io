@@ -39,14 +39,28 @@ The dev server runs at `http://localhost:3000`.
 
 ```
 src/
-├── routes/       # File-based routes (TanStack Router)
-├── components/   # Shared UI components
-├── features/     # Feature modules
-├── content/      # Content files
-├── lib/          # Utility functions
-├── stories/      # Storybook stories
-└── types/        # TypeScript type definitions
+├── routes/         # File-based routes (TanStack Router)
+├── components/     # UI components organized by tier:
+│   ├── ui/         # Shadcn components (BaseUI)
+│   ├── shared/     # Composed components (Shared across pages, e.g. ActionButton)
+│   └── layout/     # Full structural components (e.g. Navbar, Footer)
+├── features/       # Feature modules
+├── content/        # Static data (nav items, copy, config)
+├── lib/            # Utility functions and helpers
+├── styles/         # Global styles (CSS custom properties, theme)
+├── stories/        # Storybook stories for component showcase
+└── types/          # TypeScript type definitions
 ```
+
+## Storybook
+
+Storybook is used for component development and documentation. Start the Storybook dev server with:
+
+```bash
+pnpm storybook
+```
+
+Stories are located in `src/stories/` and correspond to components throughout the application. 
 
 ## Environment Variables
 

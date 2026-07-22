@@ -16,12 +16,12 @@ The project is organized around a three-tier component hierarchy:
 
 ```
 src/components/
-├── ui/        # Headless primitives (Base UI wrappers, low-level building blocks)
-├── shared/    # Composed components that combine ui/ primitives (e.g. ActionButton)
-└── layout/    # Full structural components (e.g. Navbar, MenuContent)
+├── ui/        # Base UI primitives (shadcn components, Base UI, low-level building blocks)
+├── shared/    # Composed components (Shared across pages, e.g. ActionButton)
+└── layout/    # Full structural components (e.g. Navbar, Footer)
 ```
 
-**Always build at the correct tier.** A reusable button belongs in `shared/`, not `layout/`. A one-off page section belongs in `layout/`, not `shared/`. Never skip tiers — don't reach into `ui/` from `layout/` when a `shared/` component already does what you need.
+**Always build at the correct tier.** A reusable button belongs in `shared/`, not `layout/`. A layout component like Navbar or Footer belongs in `layout/`. Never skip tiers — don't reach into `ui/` from `layout/` when a `shared/` component already does what you need.
 
 ### Data & Types
 
@@ -46,11 +46,13 @@ This project uses **Tailwind CSS v4** with **CSS custom properties** and **`cva`
 
 ```tsx
 // correct
-className="bg-(--color-nav-background)"
+className="bg-nav-background"
 
 // wrong
 className="bg-slate-900"
 ```
+
+**Design for responsive layouts from the start.** Use Tailwind's responsive prefixes (`sm:`, `md`, `lg:`, etc.) for screen-size-specific styling. Test on both mobile, tablet and desktop layouts during development.
 
 **Use `cva` for any component that has variants or complex class logic.** Define styles at the top of the file, outside the component function.
 
@@ -79,6 +81,7 @@ Before reaching for a new library, check:
 
 - `src/components/ui/` — Base UI primitives already available
 - Tabler Icons and Lucide React for icons
+- Just className strings, e.g. `flex flex-col ...` for simple, static styling
 - `cva` for variant styling
 - `cn` utility for class merging
 
@@ -103,8 +106,15 @@ If you genuinely need something new, open a discussion first. Every new dependen
    git checkout main && git pull
    git checkout -b feat/your-feature
    ```
-2. **Open a pull request** against `main` when your work is ready for review.
-3. **Rebase merge only.** PRs are merged with rebase to maintain a linear history. Do not use merge commits or squash merge.
+
+2. **Test and document components.**
+   - Add a story in `src/stories/` for any new shared or layout component
+   - Test responsive design across mobile, tablet, and desktop breakpoints
+   - Verify the component works in Storybook and in context on the actual page
+
+3. **Open a pull request** against `main` when your work is ready for review.
+
+4. **Rebase merge only.** PRs are merged with rebase to maintain a linear history. Do not use merge commits or squash merge.
 
 ---
 
@@ -116,3 +126,5 @@ If you genuinely need something new, open a discussion first. Every new dependen
 - [ ] New components placed at the correct tier
 - [ ] Colors and theme values use CSS custom properties
 - [ ] No logic duplicated from an existing component
+- [ ] New shared/layout components have a Storybook story
+- [ ] Responsive design tested (mobile and desktop breakpoints)
