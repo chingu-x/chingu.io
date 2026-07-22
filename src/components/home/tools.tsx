@@ -2,12 +2,15 @@ import { type Tool, tools } from "#/content/home/tools.ts";
 import { Card } from "@/components/ui/card";
 
 const toolCardStyles = `
-	basis-[calc(33.333%-1rem)] 
+	basis-[calc(33.333%-1rem)] 	
 	min-w-23.5 
 	flex 
 	flex-col 
 	items-center
-	last:mx-auto
+	
+	md:basis-[calc(20%-1rem)]
+	lg:basis-[calc(16.666%-1rem)]
+	xl:basis-[calc(12.5%-1rem)]
 `;
 
 const imageBoxStyles = `
@@ -20,7 +23,7 @@ const imageBoxStyles = `
 export const ToolsCloudSection = () => {
 	return (
 		<ul
-			className="flex gap-4 flex-wrap justify-between"
+			className="flex gap-4 flex-wrap justify-center"
 			aria-label="Software, web development, and team delivery tools"
 		>
 			{tools.map((tool) => (

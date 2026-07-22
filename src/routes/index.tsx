@@ -7,35 +7,70 @@ import { ProjectsSection } from "#/components/home/projects.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
 import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { ToolsCloudSection } from "#/components/home/tools.tsx";
-import { pageContainerStyles } from "#/components/layout";
 import { ActionButton } from "#/components/shared/action-button.tsx";
 import { GhostButton } from "#/components/shared/ghost-button.tsx";
-import {
-	heroSectionStyles,
-	homeStats,
-	homeTypography as t,
-} from "#/styles/home";
+import { pageContainerStyles } from "#/styles/containers.ts";
+import { homeTypography as t } from "#/styles/home";
 import { Separator } from "@/components/ui/separator";
 
 export const Route = createFileRoute("/")({ component: Home });
+
+const heroSectionStyles = `
+  flex flex-col gap-10
+  text-center
+  py-20
+  px-6
+  lg:grid lg:grid-cols-2 lg:text-left
+  lg:py-30
+  lg:px-15
+  lg:items-center
+`;
+
+export const homeStats = {
+	grid: `
+        my-4
+        bg-line
+        self-stretch grid grid-cols-2
+        lg: grid-cols-4
+        gap-px
+        border border-line
+        rounded-md
+        overflow-hidden
+    `,
+	cell: `
+        bg-background
+        p-4
+        text-center
+    `,
+	num: `
+        font-bold text-3xl
+        [&>span]:text-primary
+    `,
+	text: `
+        text-xs
+        text-neutral
+    `,
+};
 
 function Home() {
 	return (
 		<div className={pageContainerStyles}>
 			<section id="hero" className={heroSectionStyles}>
-				<div className={t.h1}>
-					{`Build real products`} <br />
-					{`with a `}
-					<span className={t.gradient}>remote team</span>.
-				</div>
-				<p className={t.p}>
-					Seven-week sprints for designers, developers, and agile leaders.
-					Industry-standard tools and processes. Real teams, real products, no
-					paywall.
-				</p>
-				<div className="flex flex-col items-center gap-4 justify-center md:flex-row">
-					<ActionButton text="See how a voyage works" href="#" />
-					<GhostButton text="Join the community" />
+				<div className="flex flex-col gap-10 lg:justify-start">
+					<div className={t.h1}>
+						{`Build real products`} <br />
+						{`with a `}
+						<span className={t.gradient}>remote team</span>.
+					</div>
+					<p className={t.p}>
+						Seven-week sprints for designers, developers, and agile leaders.
+						Industry-standard tools and processes. Real teams, real products, no
+						paywall.
+					</p>
+					<div className="flex flex-col items-center gap-4 justify-center md:flex-row lg:justify-start">
+						<ActionButton text="See how a voyage works" href="#" />
+						<GhostButton text="Join the community" />
+					</div>
 				</div>
 				<AnimatedChat />
 			</section>
@@ -124,11 +159,10 @@ function Home() {
 				ledeText="A short form and a link to something you’ve built solo. That’s it."
 				className="items-center text-center"
 			>
-				<ActionButton
-					text="Join the next voyage"
-					href="/apply"
-				/>
-				<p className="text-lg font-bold -mt-4 mb-12">Free · Volunteer-run · Worldwide since 2016</p>
+				<ActionButton text="Join the next voyage" href="/apply" />
+				<p className="text-lg font-bold -mt-4 mb-12">
+					Free · Volunteer-run · Worldwide since 2016
+				</p>
 			</ContentSection>
 		</div>
 	);
