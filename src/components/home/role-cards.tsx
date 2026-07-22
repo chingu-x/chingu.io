@@ -35,7 +35,7 @@ const cardLinkStyles = `
 
 export const HomeRoleCards = () => {
 	return (
-		<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+		<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 			{roleCards.map((roleCard) => (
 				<RoleCard key={roleCard.title} cardContent={roleCard} />
 			))}

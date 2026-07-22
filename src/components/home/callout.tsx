@@ -9,19 +9,21 @@ const calloutCardStyles = `
 	bg-foreground 
 	bg-[radial-gradient(circle,rgba(64,147,109,0.45),transparent_65%)]
 	text-background
+	lg:grid lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-8
+	lg:px-10
 `;
 
 export const Callout = () => {
 	return (
 		<ContentSection id="callout">
 			<Card className={calloutCardStyles}>
-				<div className="px-6 py-4 flex flex-col gap-4">
+				<div className="px-6 py-4">
 					<HeadingBadge
 						text="No paywall, no investors"
 						className="text-[#d8ebe2] bg-[rgba(57,71,65,0.52)]"
 					/>
-					<h2 className={t.h2}>Volunteer-run and community-funded.</h2>
-					<p className={cn(t.pSectionLede, "text-line-soft/70 pb-2")}>
+					<h2 className={cn(t.leftAlign.h2, "py-5 text-left!")}>Volunteer-run and community-funded.</h2>
+					<p className={cn(t.leftAlign.pSectionLede, "text-line-soft/70 pb-10 text-left!")}>
 						We sustain ourselves on the time of members and industry pros who
 						want to keep growing and giving back.
 					</p>

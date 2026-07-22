@@ -1,5 +1,6 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import { Link } from "@tanstack/react-router";
+import { cn } from "#/lib/utils.ts";
 import { Button } from "@/components/ui/button";
 
 const baseButtonStyles = `
@@ -9,6 +10,7 @@ const baseButtonStyles = `
   text-base
   gap-2
   cursor-pointer
+  shadow-[0_8px_20px_rgba(76,81,91,0.1),inset_0_1px_0_rgba(245,245,245,0.18)]
   transition-[transform,box-shadow,background,color,border-color]
   transition-shadow hover:shadow-[0_0_36px_-10px_var(--color-primary)]
   duration-150
@@ -32,10 +34,12 @@ export function ActionButton({
 	text,
 	href,
 	variant = "default",
+	className,
 }: {
 	text: string;
 	href: string;
 	variant?: "dark" | "light" | "default";
+	className?: string;
 }) {
 	const variantStyles = {
 		light: lightStyles,
@@ -45,7 +49,7 @@ export function ActionButton({
 
 	return (
 		<Link to={href}>
-			<Button className={variantStyles[variant]}>
+			<Button className={cn(variantStyles[variant], className)}>
 				<div>{text}</div>
 				<div>
 					<IconArrowRight stroke={3} />

@@ -92,7 +92,6 @@ body {
   --color-nav-text: var(--nav-text);
   --color-nav-item-bg-hover: var(--nav-background);
   --color-footer-background: var(--footer-background);
-  --max-content-width: 1440px;
   --spacing-content-margin: 2rem;
   --text-2xs: 0.6rem;
   --text-3xs: 0.5rem;
@@ -157,6 +156,7 @@ body {
   --nav-background: #16171A;
   --nav-text: #FFFFFF;
   --footer-background: #0A241C;
+  --max-content-width: 1200px;
 }
 
 @layer base {

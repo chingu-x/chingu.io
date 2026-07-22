@@ -53,7 +53,11 @@ export function DesktopNav() {
 						))}
 					</NavigationMenuList>
 				</NavigationMenu>
-				<ActionButton text="Join the next voyage" />
+				<ActionButton
+					className="py-5 text-sm"
+					text="Join the next voyage"
+					href="#"
+				/>
 			</div>
 		</div>
 	);
