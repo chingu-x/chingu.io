@@ -17,7 +17,7 @@ export const rolesTypography = {
         text-4xl
         font-bold
         text-balance
-        text-center
+        md:text-center
         md:max-w-[960px]
     `,
     h3: `
