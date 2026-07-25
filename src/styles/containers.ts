@@ -4,3 +4,8 @@ export const pageContainerStyles = `
   max-w-(--max-content-width)
   mx-auto
 `;
+
+export const pageContainerStylesWithPadding = `
+  ${pageContainerStyles}
+  px-content-margin
+`;

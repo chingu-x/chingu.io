@@ -17,7 +17,7 @@ const defaultSectionStyle = `
 `;
 export const darkSectionStyles = `
     ${baseSectionStyle}
-    bg-background-100
+    bg-foreground-100
 `;
 
 export const gradientSectionStyles = `

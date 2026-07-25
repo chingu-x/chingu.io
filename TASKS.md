@@ -8,6 +8,7 @@
 
 ### Mobile 
 - [x] Navigation Menu for smaller screens
+- [ ] Close the navigation menu after navigating to a new page
 
 
 ## Index Page
@@ -15,3 +16,5 @@
 - [ ] Add a background image to the hero section
 - [ ] Journey node on larger screens
 - [ ] Tools hover and "uneven display" on larger screens
+
+## Roles Page
