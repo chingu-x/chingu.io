@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { RolesHeroSection } from "./hero-section";
 
 const meta = {
-	title: "Components/Roles/HeroSection",
+	title: "Components/Shared/HeroSection",
 	component: RolesHeroSection,
 	parameters: {
 		layout: "fullscreen",

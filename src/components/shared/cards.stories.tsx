@@ -3,7 +3,7 @@ import { developerTypes } from "#/content/roles/developer-types.ts";
 import { Cards } from "./cards";
 
 const meta = {
-	title: "Components/Roles/Cards",
+	title: "Components/Shared/Cards",
 	component: Cards,
 	parameters: {
 		layout: "padded",

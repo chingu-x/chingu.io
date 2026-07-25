@@ -4,7 +4,7 @@ import { developerTypes } from "#/content/roles/developer-types.ts";
 import { RolesContentSection } from "./content-section";
 
 const meta = {
-	title: "Components/Roles/ContentSection",
+	title: "Components/Shared/Layout/ContentSection",
 	component: RolesContentSection,
 	parameters: {
 		layout: "fullscreen",
