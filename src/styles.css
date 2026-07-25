@@ -77,7 +77,7 @@ body {
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
-  --color-background-100: var(--background-100);
+  --color-foreground-100: var(--foreground-100);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-line-soft: var(--line-soft);
@@ -99,8 +99,8 @@ body {
 
 :root {
   --background: oklch(1 0 0);
-  --background-100: #f7f8fa;
   --foreground: #16171A;
+  --foreground-100: #f7f8fa;
   --card: oklch(1 0 0);
   --card-foreground: #16171A;
   --popover: oklch(1 0 0);

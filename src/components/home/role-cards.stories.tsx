@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { roleCards } from "#/content/home/role-cards";
 import { HomeRoleCards, RoleCard } from "./role-cards";
 

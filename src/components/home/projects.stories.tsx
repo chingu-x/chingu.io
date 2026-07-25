@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { projects } from "#/content/home/projects";
 import { ProjectCard, ProjectsSection } from "./projects";
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { testimonials } from "#/content/home/testimonials";
 import { TestimonialCard, TestimonialsSection } from "./testimonials";
 
