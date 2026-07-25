@@ -1,6 +1,6 @@
-import { MenuContent } from "#/components/layout/nav/menu-content.tsx";
-import { NavLogo } from "#/components/layout/nav/nav-logo.tsx";
-import { ActionButton } from "#/components/shared/action-button.tsx";
+import { MenuContent } from "#/components/shared/layout/nav/menu-content.tsx";
+import { NavLogo } from "#/components/shared/layout/nav/nav-logo.tsx";
+import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
 import {
 	NavigationMenu,
 	NavigationMenuContent,

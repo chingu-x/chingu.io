@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { MenuIcon } from "lucide-react";
-import { NavLogo } from "#/components/layout/nav/nav-logo.tsx";
+import { NavLogo } from "#/components/shared/layout/nav/nav-logo.tsx";
 import { NavH1 } from "#/components/shared/styles/nav/h1.tsx";
 import {
 	Accordion,

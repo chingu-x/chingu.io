@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Cards } from "#/components/roles/cards.tsx";
-import { RolesContentSection } from "#/components/roles/content-section.tsx";
-import { RolesHeroSection } from "#/components/roles/hero-section.tsx";
+import { Cards } from "#/components/shared/cards.tsx";
+import { RolesContentSection } from "#/components/shared/layout/content-section.tsx";
+import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
 import { developerTypes } from "#/content/developer-types.ts";
 import { pageContainerStylesWithPadding } from "#/styles/containers.ts";
 

@@ -1,5 +1,5 @@
-import { DesktopNav } from "#/components/layout/nav/desktop-nav.tsx";
-import { MobileNav } from "#/components/layout/nav/mobile-nav.tsx";
+import { DesktopNav } from "#/components/shared/layout/nav/desktop-nav.tsx";
+import { MobileNav } from "#/components/shared/layout/nav/mobile-nav.tsx";
 
 export function Nav() {
 	return (
