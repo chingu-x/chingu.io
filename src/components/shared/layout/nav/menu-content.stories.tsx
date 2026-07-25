@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { MenuContent } from "./menu-content.tsx";
 
 const meta: Meta<typeof MenuContent> = {
+	title: "Components/Shared/Layout/Nav/MenuContent",
 	component: MenuContent,
 	args: {
 		menuContent: {

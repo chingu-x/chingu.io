@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { ActionButton } from "./action-button.tsx";
 
 const meta: Meta<typeof ActionButton> = {
+	title: "Components/Shared/Buttons/ActionButton",
 	component: ActionButton,
 	args: {
 		text: "Join the next voyage",

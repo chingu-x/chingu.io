@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { NavLogo } from "./nav-logo.tsx";
 
 const meta: Meta<typeof NavLogo> = {
+	title: "Components/Shared/Layout/Nav/NavLogo",
 	component: NavLogo,
 };
 

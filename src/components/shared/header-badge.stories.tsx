@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { RolesHeaderBadge } from "./header-badge";
 
 const meta = {
-	title: "Components/Roles/HeaderBadge",
+	title: "Components/Shared/HeaderBadge",
 	component: RolesHeaderBadge,
 	parameters: {
 		layout: "centered",
