@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
-import { developerTypes } from "#/content/developer-types.ts";
 import { Cards } from "#/components/shared/cards.tsx";
+import { developerTypes } from "#/content/roles/developer-types.ts";
 import { RolesContentSection } from "./content-section";
 
 const meta = {

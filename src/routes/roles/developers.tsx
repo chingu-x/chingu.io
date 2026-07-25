@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Cards } from "#/components/shared/cards.tsx";
-import { RolesContentSection } from "#/components/shared/layout/content-section.tsx";
+import { Checklist } from "#/components/shared/checklist.tsx";
 import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
-import { developerTypes } from "#/content/developer-types.ts";
-import { pageContainerStylesWithPadding } from "#/styles/containers.ts";
+import { RolesContentSection } from "#/components/shared/layout/content-section.tsx";
+import { TagCloud } from "#/components/shared/tag-cloud.tsx";
+import { developerSkills } from "#/content/roles/developer-skills.ts";
+import { developerTypes } from "#/content/roles/developer-types.ts";
+import { developerWordcloud } from "#/content/roles/developer-wordcloud.ts";
+import { pageContainerStyles } from "#/styles/containers.ts";
 
 export const Route = createFileRoute("/roles/developers")({
 	component: RouteComponent,
@@ -11,7 +15,7 @@ export const Route = createFileRoute("/roles/developers")({
 
 function RouteComponent() {
 	return (
-		<div className={pageContainerStylesWithPadding}>
+		<div className={pageContainerStyles}>
 			<RolesHeroSection
 				badgeText="For Developers"
 				heading="Ship code with a team. Master Git. Build for production."
@@ -24,7 +28,22 @@ function RouteComponent() {
 			>
 				<Cards items={developerTypes} />
 			</RolesContentSection>
+			<RolesContentSection
+				id="developer-skills-checklist"
+				headerBadgeText="What you’ll actually learn"
+				headingText="The things tutorials skip."
+				variant="dark"
+			>
+				<Checklist items={developerSkills} />
+			</RolesContentSection>
+			<RolesContentSection
+				id="tech-stacks"
+				headerBadgeText="Common stacks"
+				headingText="Real teams, real tools."
+				lede="Teams self-select tech stacks. You’ll see Voyages running on every combination below — and if you want exposure to something new, you can team up around it."
+			>
+				<TagCloud tags={developerWordcloud} />
+			</RolesContentSection>
 		</div>
-
-	)
+	);
 }

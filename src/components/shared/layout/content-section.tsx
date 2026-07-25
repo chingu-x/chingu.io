@@ -5,10 +5,11 @@ import {rolesTypography} from "#/styles/roles.ts";
 
 const baseStyles = `
     flex flex-col
-    items-center
+    md:items-center
     gap-4
     pt-16
     pb-10
+    px-content-margin
 `
 
 interface RolesContentSectionProps {
@@ -16,6 +17,7 @@ interface RolesContentSectionProps {
 	variant?: "default" | "dark";
 	headerBadgeText: string;
 	headingText: string;
+	lede?: string;
 	className?: string;
 	children: ReactNode;
 }
@@ -25,12 +27,13 @@ export function RolesContentSection({
 	variant = "default",
 	headerBadgeText,
 	headingText,
+	lede,
 	className,
 	children,
 }: RolesContentSectionProps) {
 	const variantClasses = {
 		default: baseStyles,
-		dark: "",
+		dark: `${baseStyles} bg-primary-foreground/78 border-y-1 border-line`,
 	};
 
 	return (
@@ -40,6 +43,7 @@ export function RolesContentSection({
 		>
 			<RolesHeaderBadge text={headerBadgeText} />
 			<h2 className={rolesTypography.h2}>{headingText}</h2>
+			{lede && <p className={rolesTypography.lede}>{lede}</p>}
 			{children}
 		</section>
 	);
