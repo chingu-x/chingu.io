@@ -1,6 +1,6 @@
-import { RolesHeaderBadge } from "#/components/roles/header-badge.tsx";
-import { ActionButton } from "#/components/shared/action-button.tsx";
-import { SecondaryActionButton } from "#/components/shared/secondary-action-button.tsx";
+import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
+import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
+import { SecondaryActionButton } from "#/components/shared/buttons/secondary-action-button.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
 
 const HeroSectionStyles = `

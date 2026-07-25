@@ -1,6 +1,6 @@
 import { ContentSection } from "#/components/home/content-section.tsx";
 import { HeadingBadge } from "#/components/home/heading-badge.tsx";
-import { ActionButton } from "#/components/shared/action-button.tsx";
+import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
 import { cn } from "#/lib/utils.ts";
 import { homeTypography as t } from "#/styles/home.ts";
 import { Card } from "@/components/ui/card";

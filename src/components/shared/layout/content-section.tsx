@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { RolesHeaderBadge } from "#/components/roles/header-badge.tsx";
+import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { cn } from "#/lib/utils.ts";
 import {rolesTypography} from "#/styles/roles.ts";
 

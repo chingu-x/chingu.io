@@ -9,6 +9,7 @@ const cardStyles = `
 	border-line
 	relative
 	overflow-hidden
+	shadow-md
 	hover:bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,var(--primary)_12%,transparent)_0%,transparent_60%)]
 	transition-all
 	hover:-translate-y-1
