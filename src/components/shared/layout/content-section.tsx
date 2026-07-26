@@ -15,8 +15,8 @@ const baseStyles = `
 interface RolesContentSectionProps {
 	id: string;
 	variant?: "default" | "dark";
-	headerBadgeText: string;
-	headingText: string;
+	headerBadgeText?: string;
+	headingText?: string;
 	lede?: string;
 	className?: string;
 	children: ReactNode;
@@ -41,8 +41,8 @@ export function RolesContentSection({
 			id={id}
 			className={cn(variantClasses[variant], className)}
 		>
-			<RolesHeaderBadge text={headerBadgeText} />
-			<h2 className={rolesTypography.h2}>{headingText}</h2>
+			{headerBadgeText && <RolesHeaderBadge text={headerBadgeText} />}
+			{headingText && <h2 className={rolesTypography.h2}>{headingText}</h2>}
 			{lede && <p className={rolesTypography.lede}>{lede}</p>}
 			{children}
 		</section>

@@ -4,7 +4,9 @@ import { Checklist } from "#/components/shared/checklist.tsx";
 import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
 import { RolesContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TagCloud } from "#/components/shared/tag-cloud.tsx";
+import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
 import { developerSkills } from "#/content/roles/developer-skills.ts";
+import { developerTestimonial } from "#/content/roles/developer-testimonial.ts";
 import { developerTypes } from "#/content/roles/developer-types.ts";
 import { developerWordcloud } from "#/content/roles/developer-wordcloud.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
@@ -43,6 +45,9 @@ function RouteComponent() {
 				lede="Teams self-select tech stacks. You’ll see Voyages running on every combination below — and if you want exposure to something new, you can team up around it."
 			>
 				<TagCloud tags={developerWordcloud} />
+			</RolesContentSection>
+			<RolesContentSection id="developer-testimonial">
+  				<TestimonialCard testimonial={developerTestimonial} />
 			</RolesContentSection>
 		</div>
 	);
