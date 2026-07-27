@@ -1,6 +1,5 @@
-import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
-import { SecondaryActionButton } from "#/components/shared/buttons/secondary-action-button.tsx";
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
+import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
 
 const HeroSectionStyles = `
@@ -33,13 +32,12 @@ export function RolesHeroSection({
 			/>
 			<h1 className={rolesTypography.h1}>{heading}</h1>
 			<p className={rolesTypography.lede}>{description}</p>
-			<div className="flex gap-4 mb-12">
-				<ActionButton text="See the Voyage" href="/teams/standard-voyage" />
-				<SecondaryActionButton
-					text="Join the Community"
-					href="/community/about"
-				/>
-			</div>
+			<TwoButtonCta
+				primaryText="See the Voyage"
+				primaryHref="/teams/standard-voyage"
+				secondaryText="Join the Community"
+				secondaryHref="/community/about"
+			/>
 		</div>
 	);
 }

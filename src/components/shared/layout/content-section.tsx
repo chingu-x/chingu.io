@@ -17,6 +17,7 @@ interface RolesContentSectionProps {
 	variant?: "default" | "dark";
 	headerBadgeText?: string;
 	headingText?: string;
+	textAlignment?: "default" | "center";
 	lede?: string;
 	className?: string;
 	children: ReactNode;
@@ -27,6 +28,7 @@ export function RolesContentSection({
 	variant = "default",
 	headerBadgeText,
 	headingText,
+	textAlignment = "default",
 	lede,
 	className,
 	children,
@@ -36,14 +38,28 @@ export function RolesContentSection({
 		dark: `${baseStyles} bg-primary-foreground/78 border-y-1 border-line`,
 	};
 
+	const textAlignmentExtraStyles = {
+		default: "",
+		center: "text-center"
+	}
+
 	return (
 		<section
 			id={id}
 			className={cn(variantClasses[variant], className)}
 		>
 			{headerBadgeText && <RolesHeaderBadge text={headerBadgeText} />}
-			{headingText && <h2 className={rolesTypography.h2}>{headingText}</h2>}
-			{lede && <p className={rolesTypography.lede}>{lede}</p>}
+			{headingText &&
+				<h2
+					className={cn(rolesTypography.h2, textAlignmentExtraStyles[textAlignment])}
+				>
+					{headingText}
+				</h2>
+			}
+			{lede && <p
+				className={cn(rolesTypography.lede, textAlignmentExtraStyles[textAlignment])}>
+				{lede}
+			</p>}
 			{children}
 		</section>
 	);

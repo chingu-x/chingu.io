@@ -5,6 +5,7 @@ import { cn } from "#/lib/utils.ts";
 const buttonStyles = `
     px-6 py-7
     border-1 rounded-full
+    border-line
     font-bold
     text-base
     bg-white
