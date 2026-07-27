@@ -5,6 +5,7 @@ import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
 import { RolesContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TagCloud } from "#/components/shared/tag-cloud.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
+import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
 import { developerSkills } from "#/content/roles/developer-skills.ts";
 import { developerTestimonial } from "#/content/roles/developer-testimonial.ts";
 import { developerTypes } from "#/content/roles/developer-types.ts";
@@ -47,7 +48,21 @@ function RouteComponent() {
 				<TagCloud tags={developerWordcloud} />
 			</RolesContentSection>
 			<RolesContentSection id="developer-testimonial">
-  				<TestimonialCard testimonial={developerTestimonial} />
+				<TestimonialCard testimonial={developerTestimonial} />
+			</RolesContentSection>
+			<RolesContentSection
+				id="bottom-cta"
+				headingText="Find your path into the Voyage."
+				lede="See how the seven weeks work, or apply now for the next cohort."
+				textAlignment="center"
+			>
+				<TwoButtonCta
+					primaryText="See the Voyage"
+					primaryHref="/teams/standard-voyage"
+					secondaryText="Join the Community"
+					secondaryHref="/community/about"
+					className="mt-4"
+				/>
 			</RolesContentSection>
 		</div>
 	);
