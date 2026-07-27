@@ -12,7 +12,7 @@ const baseStyles = `
     px-content-margin
 `
 
-interface RolesContentSectionProps {
+interface ContentSectionProps {
 	id: string;
 	variant?: "default" | "dark";
 	headerBadgeText?: string;
@@ -23,7 +23,7 @@ interface RolesContentSectionProps {
 	children: ReactNode;
 }
 
-export function RolesContentSection({
+export function ContentSection({
 	id,
 	variant = "default",
 	headerBadgeText,
@@ -32,7 +32,7 @@ export function RolesContentSection({
 	lede,
 	className,
 	children,
-}: RolesContentSectionProps) {
+}: ContentSectionProps) {
 	const variantClasses = {
 		default: baseStyles,
 		dark: `${baseStyles} bg-primary-foreground/78 border-y-1 border-line`,

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { Cards } from "#/components/shared/cards.tsx";
 import { developerTypes } from "#/content/roles/developer-types.ts";
-import { RolesContentSection } from "./content-section";
+import { ContentSection } from "./content-section";
 
 const meta = {
 	title: "Components/Shared/Layout/ContentSection",
-	component: RolesContentSection,
+	component: ContentSection,
 	parameters: {
 		layout: "fullscreen",
 	},
 	tags: ["autodocs"],
-} satisfies Meta<typeof RolesContentSection>;
+} satisfies Meta<typeof ContentSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
