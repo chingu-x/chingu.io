@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatedChat } from "#/components/home/animated-chat.tsx";
 import { Callout } from "#/components/home/callout.tsx";
-import { ContentSection } from "#/components/home/content-section.tsx";
+import { HomeContentSection } from "#/components/home/content-section.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
@@ -105,7 +105,7 @@ function Home() {
 					</div>
 				</div>
 			</section>
-			<ContentSection
+			<HomeContentSection
 				id="team-roles"
 				badgeText="Grow Together"
 				badgeVariant="default"
@@ -113,8 +113,8 @@ function Home() {
 				ledeText="Voyagers are grouped by tier, so whether you’re applying what you’ve learned or you have years of experience, there’s a team that will support and grow with you."
 			>
 				<HomeRoleCards />
-			</ContentSection>
-			<ContentSection
+			</HomeContentSection>
+			<HomeContentSection
 				id="testimonials"
 				variant="dark"
 				badgeText="Voices from the cohort"
@@ -123,8 +123,8 @@ function Home() {
 				ledeText="Reviews from voyagers across roles, tiers, and continents."
 			>
 				<TestimonialsSection />
-			</ContentSection>
-			<ContentSection
+			</HomeContentSection>
+			<HomeContentSection
 				id="journey-nodes"
 				badgeText="The seven weeks"
 				badgeVariant="default"
@@ -132,16 +132,16 @@ function Home() {
 				ledeText="Six connected milestones that turn a cohort brief into portfolio-ready proof of how you build with a team."
 			>
 				<JourneyNodesSection />
-			</ContentSection>
-			<ContentSection
+			</HomeContentSection>
+			<HomeContentSection
 				id="projects"
 				badgeText="What Teams Ship"
 				headingText="Real products by real Voyage teams."
 				ledeText=""
 			>
 				<ProjectsSection />
-			</ContentSection>
-			<ContentSection
+			</HomeContentSection>
+			<HomeContentSection
 				variant="gradient"
 				id="tools"
 				badgeText="Tools of the Trade"
@@ -149,10 +149,10 @@ function Home() {
 				ledeText="From frameworks and databases to Agile delivery methods, Voyagers work in the same tooling vocabulary they’ll meet on real remote teams."
 			>
 				<ToolsCloudSection />
-			</ContentSection>
+			</HomeContentSection>
 			<Separator />
 			<Callout />
-			<ContentSection
+			<HomeContentSection
 				id="apply"
 				badgeText="Voyage 60 — Applications open"
 				headingText="Ready to build something awesome?"
@@ -163,7 +163,7 @@ function Home() {
 				<p className="text-lg font-bold -mt-4 mb-12">
 					Free · Volunteer-run · Worldwide since 2016
 				</p>
-			</ContentSection>
+			</HomeContentSection>
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-import { ContentSection } from "#/components/home/content-section.tsx";
+import { HomeContentSection } from "#/components/home/content-section.tsx";
 import { HeadingBadge } from "#/components/home/heading-badge.tsx";
 import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
 import { cn } from "#/lib/utils.ts";
@@ -15,7 +15,7 @@ const calloutCardStyles = `
 
 export const Callout = () => {
 	return (
-		<ContentSection id="callout">
+		<HomeContentSection id="callout">
 			<Card className={calloutCardStyles}>
 				<div className="px-6 py-4">
 					<HeadingBadge
@@ -40,6 +40,6 @@ export const Callout = () => {
 					</div>
 				</div>
 			</Card>
-		</ContentSection>
+		</HomeContentSection>
 	);
 };

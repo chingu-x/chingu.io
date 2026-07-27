@@ -25,7 +25,7 @@ export const gradientSectionStyles = `
     bg-[linear-gradient(180deg,rgba(247,248,250,0.72),rgba(255,255,255,0.9)),repeating-linear-gradient(0deg,rgba(22,23,26,0.04)_0_1px,transparent_1px_34px)]
 `;
 
-export const ContentSection = ({
+export const HomeContentSection = ({
 	id,
 	variant = "default",
 	badgeText,
