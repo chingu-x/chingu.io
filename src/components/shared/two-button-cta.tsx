@@ -5,8 +5,8 @@ import { SecondaryActionButton } from "./buttons/secondary-action-button";
 interface TwoButtonCtaProps {
 	primaryText: string;
 	primaryHref: string;
-	secondaryText: string;
-	secondaryHref: string;
+	secondaryText?: string;
+	secondaryHref?: string;
 	className?: string;
 }
 
@@ -31,8 +31,9 @@ export function TwoButtonCta({
 			<div className="relative z-10">
 				<ActionButton text={primaryText} href={primaryHref} />
 			</div>
-
-			<SecondaryActionButton text={secondaryText} href={secondaryHref} />
+			{secondaryText && secondaryHref &&
+				<SecondaryActionButton text={secondaryText} href={secondaryHref} />
+			}
 		</div>
 	);
 }

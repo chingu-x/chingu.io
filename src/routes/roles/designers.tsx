@@ -23,6 +23,10 @@ function RouteComponent() {
 				badgeText="For Designers"
 				heading="Build a case study that proves cross-functional collaboration."
 				description="Most design portfolios show solo work. Yours will show a shipped product, built with developers, a Scrum Master, and a Product Owner you actually had to negotiate with."
+				primaryButtonText="See the Voyage"
+				primaryButtonHref="/teams/standard-voyage"
+				secondaryButtonText="Join the Community"
+				secondaryButtonHref="/community/about"
 			/>
 			<ContentSection
 				id="designers-types"

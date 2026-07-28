@@ -22,6 +22,10 @@ function RouteComponent() {
 				badgeText="For Agile Leaders"
 				heading="Facilitate real sprints with a real team."
 				description="Certifications are checklists. A Voyage is a portfolio. You’ll run the ceremonies, remove the blockers, and build the psychological safety that makes a remote team actually ship."
+				primaryButtonText="See the Voyage"
+				primaryButtonHref="/teams/standard-voyage"
+				secondaryButtonText="Join the Community"
+				secondaryButtonHref="/community/about"
 			/>
 			<ContentSection
 				id="agile-leaders-types"

@@ -16,12 +16,20 @@ interface HeroSectionProps {
 	badgeText: string;
 	heading: string;
 	description: string;
+	primaryButtonText: string;
+	primaryButtonHref: string;
+	secondaryButtonText?: string;
+	secondaryButtonHref?: string;
 }
 
 export function RolesHeroSection({
 	badgeText,
 	heading,
 	description,
+	primaryButtonText,
+	primaryButtonHref,
+	secondaryButtonText,
+	secondaryButtonHref,
 }: HeroSectionProps) {
 	return (
 		<div className={HeroSectionStyles}>
@@ -32,12 +40,15 @@ export function RolesHeroSection({
 			/>
 			<h1 className={rolesTypography.h1}>{heading}</h1>
 			<p className={rolesTypography.lede}>{description}</p>
-			<TwoButtonCta
-				primaryText="See the Voyage"
-				primaryHref="/teams/standard-voyage"
-				secondaryText="Join the Community"
-				secondaryHref="/community/about"
-			/>
+			{primaryButtonText &&
+				<TwoButtonCta
+					primaryText={primaryButtonText}
+					primaryHref={primaryButtonHref}
+					secondaryText={secondaryButtonText}
+					secondaryHref={secondaryButtonHref}
+				/>
+			}
+
 		</div>
 	);
 }
