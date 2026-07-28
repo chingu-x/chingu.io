@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RolesDevelopersRouteImport } from './routes/roles/developers'
 import { Route as RolesDesignersRouteImport } from './routes/roles/designers'
+import { Route as RolesAgileLeadersRouteImport } from './routes/roles/agile-leaders'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,33 +29,48 @@ const RolesDesignersRoute = RolesDesignersRouteImport.update({
   path: '/roles/designers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RolesAgileLeadersRoute = RolesAgileLeadersRouteImport.update({
+  id: '/roles/agile-leaders',
+  path: '/roles/agile-leaders',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/roles/designers' | '/roles/developers'
+  fullPaths:
+    '/' | '/roles/agile-leaders' | '/roles/designers' | '/roles/developers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/roles/designers' | '/roles/developers'
-  id: '__root__' | '/' | '/roles/designers' | '/roles/developers'
+  to: '/' | '/roles/agile-leaders' | '/roles/designers' | '/roles/developers'
+  id:
+    | '__root__'
+    | '/'
+    | '/roles/agile-leaders'
+    | '/roles/designers'
+    | '/roles/developers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RolesAgileLeadersRoute: typeof RolesAgileLeadersRoute
   RolesDesignersRoute: typeof RolesDesignersRoute
   RolesDevelopersRoute: typeof RolesDevelopersRoute
 }
@@ -82,11 +98,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RolesDesignersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/roles/agile-leaders': {
+      id: '/roles/agile-leaders'
+      path: '/roles/agile-leaders'
+      fullPath: '/roles/agile-leaders'
+      preLoaderRoute: typeof RolesAgileLeadersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RolesAgileLeadersRoute: RolesAgileLeadersRoute,
   RolesDesignersRoute: RolesDesignersRoute,
   RolesDevelopersRoute: RolesDevelopersRoute,
 }
