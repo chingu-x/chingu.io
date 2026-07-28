@@ -8,9 +8,8 @@ import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
 import { agileLeaderSkills } from "#/content/roles/agile-leaders-skills.ts";
 import { agileLeaderTestimonials } from "#/content/roles/agile-leaders-testimonials";
 import { agileLeaderTypes } from "#/content/roles/agile-leaders-types.ts";
-import { cn } from "#/lib/utils.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
-import { rolesTypography } from "#/styles/roles.ts";
+import {Callout} from "#/components/shared/callout.tsx";
 
 export const Route = createFileRoute("/roles/agile-leaders")({
 	component: RouteComponent,
@@ -53,6 +52,11 @@ function RouteComponent() {
 					))}
 				</div>
 			</ContentSection>
+			<Callout
+				headerBadgeText="Psychological safety, explicitly"
+				title="This isn’t a soft skill — it’s the mechanism."
+				sectionLedge="Remote teams that ship are teams where disagreement is allowed, mistakes are reviewed without blame, and “I don’t know” is a sentence people can finish. Agile leaders build that environment. On a Voyage, you’ll build it in seven weeks and see what happens when you get it right."
+			/>
 			<BottomCta />
 		</div>
 	);
