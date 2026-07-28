@@ -11,6 +11,7 @@ const calloutCardStyles = `
 	text-background
 	lg:grid lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-8
 	lg:px-10
+	rounded-3xl
 `;
 
 interface CalloutProps {
