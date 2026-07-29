@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { Cards } from "#/components/shared/cards.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
-import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
+import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TagCloud } from "#/components/shared/tag-cloud.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/roles/developers")({
 function RouteComponent() {
 	return (
 		<div className={pageContainerStyles}>
-			<RolesHeroSection
+			<HeroSection
 				badgeText="For Developers"
 				heading="Ship code with a team. Master Git. Build for production."
 				description="Whether you’re backend, frontend, or full stack, you’ll work the same way real teams do: pull requests, standups, retros, and a deployed product at the end."

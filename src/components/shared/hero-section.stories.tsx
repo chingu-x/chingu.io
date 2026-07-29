@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
-import { RolesHeroSection } from "./hero-section";
+import { HeroSection } from "./hero-section";
 
 const meta = {
 	title: "Components/Shared/HeroSection",
-	component: RolesHeroSection,
+	component: HeroSection,
 	parameters: {
 		layout: "fullscreen",
 	},
 	tags: ["autodocs"],
-} satisfies Meta<typeof RolesHeroSection>;
+} satisfies Meta<typeof HeroSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

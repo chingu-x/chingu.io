@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { Cards } from "#/components/shared/cards.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
-import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
+import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
 import { designerSkills } from "#/content/roles/designer-skills.ts";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/roles/designers")({
 function RouteComponent() {
 	return (
 		<div className={pageContainerStyles}>
-			<RolesHeroSection
+			<HeroSection
 				badgeText="For Designers"
 				heading="Build a case study that proves cross-functional collaboration."
 				description="Most design portfolios show solo work. Yours will show a shipped product, built with developers, a Scrum Master, and a Product Owner you actually had to negotiate with."

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { Cards } from "#/components/shared/cards.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
-import { RolesHeroSection } from "#/components/shared/hero-section.tsx";
+import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
 import { agileLeaderSkills } from "#/content/roles/agile-leaders-skills.ts";
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/roles/agile-leaders")({
 function RouteComponent() {
 	return (
 		<div className={pageContainerStyles}>
-			<RolesHeroSection
+			<HeroSection
 				badgeText="For Agile Leaders"
 				heading="Facilitate real sprints with a real team."
 				description="Certifications are checklists. A Voyage is a portfolio. You’ll run the ceremonies, remove the blockers, and build the psychological safety that makes a remote team actually ship."
