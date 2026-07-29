@@ -22,7 +22,7 @@ interface HeroSectionProps {
 	secondaryButtonHref?: string;
 }
 
-export function RolesHeroSection({
+export function HeroSection({
 	badgeText,
 	heading,
 	description,
