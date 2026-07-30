@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { Cards } from "#/components/shared/cards.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
@@ -11,6 +10,7 @@ import { developerTestimonial } from "#/content/roles/developer-testimonial.ts";
 import { developerTypes } from "#/content/roles/developer-types.ts";
 import { developerWordcloud } from "#/content/roles/developer-wordcloud.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
+import {RolesBottomCta} from "#/components/roles/roles-bottom-cta.tsx";
 
 export const Route = createFileRoute("/roles/developers")({
 	component: RouteComponent,
@@ -54,7 +54,9 @@ function RouteComponent() {
 			<ContentSection id="developer-testimonial">
 				<TestimonialCard testimonial={developerTestimonial} />
 			</ContentSection>
-			<BottomCta />
+			<ContentSection id="bottom-cta">
+				<RolesBottomCta />
+			</ContentSection>
 		</div>
 	);
 }

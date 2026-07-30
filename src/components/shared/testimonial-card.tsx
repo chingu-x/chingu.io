@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function TestimonialCard({testimonial}: { testimonial: TestimonialCardType }) {
 	return (
-		<Card className="p-6 shadow-md bg-linear-to-b from-white to-foreground-100">
+		<Card className="p-6 shadow-md bg-linear-to-b from-white to-foreground-100 max-w-205">
 			<blockquote className="text-xl">"{testimonial.quote}"</blockquote>
 			<Separator />
 			<div className="flex items-center gap-4">

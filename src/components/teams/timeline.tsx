@@ -1,16 +1,26 @@
-import type { TimelineItem } from "#/content/teams/timeline.ts";
-import {Card, CardContent, CardHeader, CardTitle} from "#/components/ui/card.tsx";
-import {Badge} from "#/components/ui/badge.tsx";
+import { Badge } from "#/components/ui/badge.tsx";
+import {
+	Card,
+	CardContent,
+	CardHeader,
+	CardTitle,
+} from "#/components/ui/card.tsx";
+import type { TimelineItem as TimelineItemType } from "#/content/teams/timeline.ts";
 
 interface TimelineProps {
-	items: TimelineItem[];
+	items: TimelineItemType[];
 }
 
-
+const timelineStyles = `
+	grid
+	grid-cols-1
+	gap-4
+	md:grid-cols-3
+`;
 
 export function Timeline({ items }: TimelineProps) {
 	return (
-		<ol className="timeline">
+		<ol className={timelineStyles}>
 			{items.map((item) => (
 				<TimelineItem key={item.week} item={item} />
 			))}
@@ -21,25 +31,25 @@ export function Timeline({ items }: TimelineProps) {
 // ==== Timeline Item
 
 interface TimelineItemProps {
-	item: TimelineItem;
+	item: TimelineItemType;
 }
 
 const timelineItemCardStyles = `
-	my-5
+	h-full
 	shadow-sm
 	ring-0
 	border
 	border-line
 	hover:border-primary
-`
+`;
 const timelineItemMarkerStyles = `
+	mb-3
 	uppercase
 	font-bold
 	rounded-sm	
 	px-2
 	py-3
-	mb-4
-`
+`;
 
 export function TimelineItem({ item }: TimelineItemProps) {
 	return (
@@ -48,12 +58,16 @@ export function TimelineItem({ item }: TimelineItemProps) {
 				<CardHeader>
 					<Badge
 						className={timelineItemMarkerStyles}
-						style={{ backgroundColor: `var(--color-step-${item.step})`}}
+						style={{ backgroundColor: `var(--color-step-${item.step})` }}
 					>{`wk ${item.week}`}</Badge>
-					<CardTitle className="font-extrabold text-lg">{item.title}</CardTitle>
+					<CardTitle className="font-extrabold text-lg -mb-2">
+						{item.title}
+					</CardTitle>
 				</CardHeader>
 				<CardContent>
-					<p className="text-neutral-focus text-sm font-medium">{item.description}</p>
+					<p className="text-neutral-focus text-sm font-medium">
+						{item.description}
+					</p>
 				</CardContent>
 			</Card>
 		</li>
