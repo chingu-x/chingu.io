@@ -14,7 +14,6 @@ const twoButtonCtaStyles = `
 	flex flex-col 
 	gap-4 
 	items-center 
-	mb-12
 	mx-auto 
 	md:flex-row
 `;

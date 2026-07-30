@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BottomCta } from "#/components/shared/bottom-cta.tsx";
+import { RolesBottomCta } from "#/components/roles/roles-bottom-cta.tsx";
 import { Cards } from "#/components/shared/cards.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
@@ -59,7 +59,9 @@ function RouteComponent() {
 			<ContentSection id="designer-testimonial">
 				<TestimonialCard testimonial={designerTestimonial} />
 			</ContentSection>
-			<BottomCta />
+			<ContentSection id="bottom-cta">
+				<RolesBottomCta />
+			</ContentSection>
 		</div>
 	);
 }
