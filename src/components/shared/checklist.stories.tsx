@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { developerSkills } from "#/content/roles/developer-skills.ts";
-import { voyageMentorship } from "#/content/teams/voyage-xp-mentorship.ts";
 import { Checklist } from "./checklist";
 
 const meta = {

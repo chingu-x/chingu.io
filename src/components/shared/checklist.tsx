@@ -1,4 +1,8 @@
 import { rolesTypography } from "#/styles/roles.ts";
+import type {
+	ChecklistItem,
+	ChecklistItemsCompact,
+} from "#/types/content/checklist.ts";
 
 export const listItemStyles = `
 	relative pl-5	
@@ -13,13 +17,8 @@ export const listItemStyles = `
 	before:shadow-[0_0_8px_var(--primary-glow)]
 `;
 
-interface ChecklistItem {
-	title?: string;
-	description: string;
-}
-
 interface ChecklistProps {
-	items: ChecklistItem[];
+	items: ChecklistItem[] | ChecklistItemsCompact[];
 	column?: "flex" | "single";
 }
 
@@ -33,8 +32,8 @@ export function Checklist({ items, column = "flex" }: ChecklistProps) {
 	return (
 		<ul className={ulStyles[column]}>
 			{items.map((item) => (
-				<li key={item.title} className={listItemStyles}>
-					<strong className="mr-2">{item.title}</strong>
+				<li key={item.key} className={listItemStyles}>
+					<strong className="mr-2">{item.key}</strong>
 					<span className={rolesTypography.p}>{item.description}</span>
 				</li>
 			))}
