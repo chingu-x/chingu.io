@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { cn } from "#/lib/utils.ts";
-import {rolesTypography} from "#/styles/roles.ts";
+import { rolesTypography } from "#/styles/roles.ts";
 
 const baseStyles = `
     flex flex-col
@@ -10,7 +10,7 @@ const baseStyles = `
     pt-16
     pb-10
     px-content-margin
-`
+`;
 
 interface ContentSectionProps {
 	id: string;
@@ -20,7 +20,7 @@ interface ContentSectionProps {
 	textAlignment?: "default" | "center";
 	lede?: string;
 	className?: string;
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export function ContentSection({
@@ -38,22 +38,10 @@ export function ContentSection({
 	};
 
 	return (
-		<section
-			id={id}
-			className={cn(variantClasses[variant], className)}
-		>
+		<section id={id} className={cn(variantClasses[variant], className)}>
 			{headerBadgeText && <RolesHeaderBadge text={headerBadgeText} />}
-			{headingText &&
-				<h2
-					className={rolesTypography.h2}
-				>
-					{headingText}
-				</h2>
-			}
-			{lede && <p
-				className={rolesTypography.lede}>
-				{lede}
-			</p>}
+			{headingText && <h2 className={rolesTypography.h2}>{headingText}</h2>}
+			{lede && <p className={rolesTypography.lede}>{lede}</p>}
 			{children}
 		</section>
 	);

@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
+import { listItemStyles } from "#/components/shared/checklist.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
 import { Card } from "@/components/ui/card";
 
 const cardStyles = `
-	px-6 flex gap-2
+	p-6 flex gap-2
 	h-full
 	border
 	border-line
@@ -16,14 +17,16 @@ const cardStyles = `
 	hover:border-primary/45
 	hover:border
 	hover:shadow-lg
-`
+`;
 
-interface CardProps {
+const baseGridStyles = "grid grid-cols-1 md:grid-cols-2 gap-6 py-10";
+
+interface BaseCardProps {
 	title: string;
 	children: ReactNode;
 }
 
-function RolesCard({ title, children }: CardProps) {
+function BaseCard({ title, children }: BaseCardProps) {
 	return (
 		<article>
 			<Card className={cardStyles}>
@@ -34,21 +37,52 @@ function RolesCard({ title, children }: CardProps) {
 	);
 }
 
-interface CardsProps {
+interface DescriptionCardsProps {
 	items: Array<{
 		title: string;
 		description: string;
 	}>;
 }
 
-export function Cards({ items }: CardsProps) {
+const descriptionCardGridStyles = `${baseGridStyles} lg:grid-cols-3`;
+
+export function DescriptionCards({ items }: DescriptionCardsProps) {
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+		<div className={descriptionCardGridStyles}>
 			{items.map((item) => (
-				<RolesCard key={item.title} title={item.title}>
+				<BaseCard key={item.title} title={item.title}>
 					<p>{item.description}</p>
-				</RolesCard>
+				</BaseCard>
 			))}
 		</div>
 	);
+}
+
+interface ListCardsProps {
+	items: Array<{
+		title: string;
+		items: string[];
+	}>;
+}
+
+export function ListCards({ items }: ListCardsProps) {
+	return (
+		<div className={baseGridStyles}>
+			{items.map((item) => (
+				<BaseCard key={item.title} title={item.title}>
+					<ul className="flex flex-col gap-2">
+						{item.items.map((listItem) => (
+							<li key={listItem} className={listItemStyles}>
+								<span>{listItem}</span>
+							</li>
+						))}
+					</ul>
+				</BaseCard>
+			))}
+		</div>
+	);
+}
+
+export function Cards({ items }: DescriptionCardsProps) {
+	return <DescriptionCards items={items} />;
 }
