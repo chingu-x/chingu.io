@@ -10,6 +10,7 @@ const HeroSectionStyles = `
 	gap-9
 	mt-18
 	px-content-margin
+	pb-18
 `;
 
 interface HeroSectionProps {
@@ -33,22 +34,17 @@ export function HeroSection({
 }: HeroSectionProps) {
 	return (
 		<div className={HeroSectionStyles}>
-			<RolesHeaderBadge
-				text={badgeText}
-				cornerSize="full"
-				variant="hero"
-			/>
+			<RolesHeaderBadge text={badgeText} cornerSize="full" variant="hero" />
 			<h1 className={rolesTypography.h1}>{heading}</h1>
 			<p className={rolesTypography.lede}>{description}</p>
-			{primaryButtonText &&
+			{primaryButtonText && (
 				<TwoButtonCta
 					primaryText={primaryButtonText}
 					primaryHref={primaryButtonHref}
 					secondaryText={secondaryButtonText}
 					secondaryHref={secondaryButtonHref}
 				/>
-			}
-
+			)}
 		</div>
 	);
 }

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { developerTypes } from "#/content/roles/developer-types.ts";
-import { Cards } from "./cards";
+import { voyageComparison } from "#/content/teams/voyage-xp-comparison.ts";
+import { Cards, ListCards } from "./cards";
 
 const meta = {
 	title: "Components/Shared/Cards",
@@ -30,4 +31,8 @@ export const TwoCards: Story = {
 	args: {
 		items: developerTypes.slice(0, 2),
 	},
+};
+
+export const VoyageComparison: StoryObj = {
+	render: () => <ListCards items={voyageComparison} />,
 };
