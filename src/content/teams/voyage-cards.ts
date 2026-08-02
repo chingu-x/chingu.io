@@ -1,9 +1,6 @@
-export interface VoyageCard {
-	title: string;
-	description: string;
-}
+import type { DescriptionCard } from "#/types/content/card.ts";
 
-export const voyageCards: VoyageCard[] = [
+export const voyageCards: DescriptionCard[] = [
 	{
 		title: "3–5 Developers",
 		description:

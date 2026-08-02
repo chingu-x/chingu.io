@@ -18,3 +18,6 @@
 - [ ] Tools hover and "uneven display" on larger screens
 
 ## Roles Page
+
+## Teams Page
+- [ ] Voyage XP page - add focus styling to the comparison card

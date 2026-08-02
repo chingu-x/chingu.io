@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { DescriptionCard, ComparisonCard } from "#/types/content/card.ts";
 import { listItemStyles } from "#/components/shared/checklist.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
 import { Card } from "@/components/ui/card";
@@ -38,10 +39,7 @@ function BaseCard({ title, children }: BaseCardProps) {
 }
 
 interface DescriptionCardsProps {
-	items: Array<{
-		title: string;
-		description: string;
-	}>;
+	items: DescriptionCard[];
 }
 
 const descriptionCardGridStyles = `${baseGridStyles} lg:grid-cols-3`;
@@ -59,10 +57,7 @@ export function DescriptionCards({ items }: DescriptionCardsProps) {
 }
 
 interface ListCardsProps {
-	items: Array<{
-		title: string;
-		items: string[];
-	}>;
+	items: ComparisonCard[];
 }
 
 export function ListCards({ items }: ListCardsProps) {
