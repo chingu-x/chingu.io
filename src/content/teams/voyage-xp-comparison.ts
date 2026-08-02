@@ -1,10 +1,6 @@
-export interface ComparisonItem {
-	title: string;
-	items: string[];
-	featured?: boolean;
-}
+import type { ComparisonCard } from "#/types/content/card.ts";
 
-export const voyageComparison: ComparisonItem[] = [
+export const voyageComparison: ComparisonCard[] = [
 	{
 		title: "Standard Voyage",
 		items: [

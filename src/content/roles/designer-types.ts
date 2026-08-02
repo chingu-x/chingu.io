@@ -1,9 +1,6 @@
-export interface DesignerType {
-	title: string;
-	description: string;
-}
+import type { DescriptionCard } from "#/types/content/card.ts";
 
-export const designerTypes: DesignerType[] = [
+export const designerTypes: DescriptionCard[] = [
 	{
 		title: "UX Designers",
 		description:

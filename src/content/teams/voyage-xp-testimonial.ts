@@ -1,9 +1,4 @@
-export interface TestimonialCard {
-	quote: string;
-	name: string;
-	role: string;
-	avatarFallback: string;
-}
+import type { TestimonialCard } from "#/types/content/testimonial.ts";
 
 export const voyageXPTestimonial: TestimonialCard = {
 	quote:

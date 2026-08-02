@@ -1,9 +1,6 @@
-export interface AgileLeaderType {
-	title: string;
-	description: string;
-}
+import type { DescriptionCard } from "#/types/content/card.ts";
 
-export const agileLeaderTypes: AgileLeaderType[] = [
+export const agileLeaderTypes: DescriptionCard[] = [
 	{
 		title: "Scrum Masters",
 		description:
