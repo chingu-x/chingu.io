@@ -1,14 +1,14 @@
 import type { ReactNode } from "react";
-import type { DescriptionCard, ComparisonCard } from "#/types/content/card.ts";
 import { listItemStyles } from "#/components/shared/checklist.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
+import type { ComparisonCard, DescriptionCard } from "#/types/content/card.ts";
 import { Card } from "@/components/ui/card";
 
-const cardStyles = `
+const cardStyles = (featured?: boolean) => `
 	p-6 flex gap-2
 	h-full
 	border
-	border-line
+	${featured ? "border-primary/45" : "border-line"}
 	relative
 	overflow-hidden
 	shadow-md
@@ -24,13 +24,14 @@ const baseGridStyles = "grid grid-cols-1 md:grid-cols-2 gap-6 py-10";
 
 interface BaseCardProps {
 	title: string;
+	featured?: boolean;
 	children: ReactNode;
 }
 
-function BaseCard({ title, children }: BaseCardProps) {
+function BaseCard({ title, featured, children }: BaseCardProps) {
 	return (
 		<article>
-			<Card className={cardStyles}>
+			<Card className={cardStyles(featured)}>
 				<h3 className={rolesTypography.h3}>{title}</h3>
 				<div className={rolesTypography.p}>{children}</div>
 			</Card>
@@ -64,7 +65,7 @@ export function ListCards({ items }: ListCardsProps) {
 	return (
 		<div className={baseGridStyles}>
 			{items.map((item) => (
-				<BaseCard key={item.title} title={item.title}>
+				<BaseCard key={item.title} title={item.title} featured={item.featured}>
 					<ul className="flex flex-col gap-2">
 						{item.items.map((listItem) => (
 							<li key={listItem} className={listItemStyles}>
