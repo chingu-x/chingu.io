@@ -1,6 +1,6 @@
-import type { ChecklistItemsCompact } from "#/types/content/checklist.ts";
+import type { ChecklistItemCompact } from "#/types/content/checklist.ts";
 
-export const voyagePrerequisites: ChecklistItemsCompact[] = [
+export const voyagePrerequisites: ChecklistItemCompact[] = [
 	{
 		key: "complete-standard-voyage",
 		description: "Successfully complete a Standard Voyage",

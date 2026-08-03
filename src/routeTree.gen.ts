@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TeamsVoyageXpRouteImport } from './routes/teams/voyage-xp'
 import { Route as TeamsStandardVoyageRouteImport } from './routes/teams/standard-voyage'
+import { Route as TeamsPairProgrammingRouteImport } from './routes/teams/pair-programming'
 import { Route as RolesDevelopersRouteImport } from './routes/roles/developers'
 import { Route as RolesDesignersRouteImport } from './routes/roles/designers'
 import { Route as RolesAgileLeadersRouteImport } from './routes/roles/agile-leaders'
@@ -29,6 +30,11 @@ const TeamsVoyageXpRoute = TeamsVoyageXpRouteImport.update({
 const TeamsStandardVoyageRoute = TeamsStandardVoyageRouteImport.update({
   id: '/teams/standard-voyage',
   path: '/teams/standard-voyage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamsPairProgrammingRoute = TeamsPairProgrammingRouteImport.update({
+  id: '/teams/pair-programming',
+  path: '/teams/pair-programming',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RolesDevelopersRoute = RolesDevelopersRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
+  '/teams/pair-programming': typeof TeamsPairProgrammingRoute
   '/teams/standard-voyage': typeof TeamsStandardVoyageRoute
   '/teams/voyage-xp': typeof TeamsVoyageXpRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
+  '/teams/pair-programming': typeof TeamsPairProgrammingRoute
   '/teams/standard-voyage': typeof TeamsStandardVoyageRoute
   '/teams/voyage-xp': typeof TeamsVoyageXpRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
+  '/teams/pair-programming': typeof TeamsPairProgrammingRoute
   '/teams/standard-voyage': typeof TeamsStandardVoyageRoute
   '/teams/voyage-xp': typeof TeamsVoyageXpRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
+    | '/teams/pair-programming'
     | '/teams/standard-voyage'
     | '/teams/voyage-xp'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
+    | '/teams/pair-programming'
     | '/teams/standard-voyage'
     | '/teams/voyage-xp'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
+    | '/teams/pair-programming'
     | '/teams/standard-voyage'
     | '/teams/voyage-xp'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   RolesAgileLeadersRoute: typeof RolesAgileLeadersRoute
   RolesDesignersRoute: typeof RolesDesignersRoute
   RolesDevelopersRoute: typeof RolesDevelopersRoute
+  TeamsPairProgrammingRoute: typeof TeamsPairProgrammingRoute
   TeamsStandardVoyageRoute: typeof TeamsStandardVoyageRoute
   TeamsVoyageXpRoute: typeof TeamsVoyageXpRoute
 }
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/teams/standard-voyage'
       fullPath: '/teams/standard-voyage'
       preLoaderRoute: typeof TeamsStandardVoyageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teams/pair-programming': {
+      id: '/teams/pair-programming'
+      path: '/teams/pair-programming'
+      fullPath: '/teams/pair-programming'
+      preLoaderRoute: typeof TeamsPairProgrammingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/roles/developers': {
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   RolesAgileLeadersRoute: RolesAgileLeadersRoute,
   RolesDesignersRoute: RolesDesignersRoute,
   RolesDevelopersRoute: RolesDevelopersRoute,
+  TeamsPairProgrammingRoute: TeamsPairProgrammingRoute,
   TeamsStandardVoyageRoute: TeamsStandardVoyageRoute,
   TeamsVoyageXpRoute: TeamsVoyageXpRoute,
 }
