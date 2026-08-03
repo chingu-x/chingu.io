@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/chingu-x/chingu.io/compare/v0.3.0...v0.4.0) (2026-08-03)
+
+
+### Features
+
+* add teams/pair-programming page ([34a60cc](https://github.com/chingu-x/chingu.io/commit/34a60ccfb378dbc5a6ff877ff45c82907368713a))
+
 ## [0.3.0](https://github.com/chingu-x/chingu.io/compare/v0.2.0...v0.3.0) (2026-08-02)
 
 
