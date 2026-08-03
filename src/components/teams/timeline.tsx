@@ -22,7 +22,7 @@ export function Timeline({ items }: TimelineProps) {
 	return (
 		<ol className={timelineStyles}>
 			{items.map((item) => (
-				<TimelineItem key={item.week} item={item} />
+				<TimelineItem key={item.badge} item={item} />
 			))}
 		</ol>
 	);
@@ -59,7 +59,9 @@ export function TimelineItem({ item }: TimelineItemProps) {
 					<Badge
 						className={timelineItemMarkerStyles}
 						style={{ backgroundColor: `var(--color-step-${item.step})` }}
-					>{`wk ${item.week}`}</Badge>
+					>
+						{item.badge}
+					</Badge>
 					<CardTitle className="font-extrabold text-lg -mb-2">
 						{item.title}
 					</CardTitle>
