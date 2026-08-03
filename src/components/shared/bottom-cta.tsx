@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
 
@@ -23,7 +24,7 @@ interface BottomCtaProps {
 	primaryHref: string;
 	secondaryText?: string;
 	secondaryHref?: string;
-	footerText?: string;
+	footerText?: ReactNode;
 }
 
 export function BottomCta({

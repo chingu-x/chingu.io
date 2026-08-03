@@ -5,6 +5,7 @@ import {
 	AvatarImage,
 } from "#/components/ui/avatar.tsx";
 import { Card } from "#/components/ui/card.tsx";
+import { Separator } from "#/components/ui/separator.tsx";
 import type { MenuContent as MenuContentType } from "#/types/nav.ts";
 
 export function MenuContent({ menuContent }: { menuContent: MenuContentType }) {
@@ -15,17 +16,17 @@ export function MenuContent({ menuContent }: { menuContent: MenuContentType }) {
 				{menuContent.subMenu.map((subMenu) => (
 					<div
 						key={subMenu.title}
-						className="p-4 rounded-lg cursor-pointer hover:bg-primary-content/30"
+						className="p-4 rounded-lg cursor-pointer hover:bg-primary/10"
 					>
 						<h2 className="font-bold text-base mb-1">{subMenu.title}</h2>
 						<p>{subMenu.text}</p>
 					</div>
 				))}
 			</div>
-			<Card className="p-4 bg-primary-content/30 ring-primary/30">
+			<Card className="p-4 bg-primary/5 ring-primary/30">
 				<NavH1 text={menuContent.card.title} />
-				<p>{`"${menuContent.card.text}"`}</p>
-				<hr className="border-t-2 border-primary-content" />
+				<p className="text-base text-neutral-focus">{`"${menuContent.card.text}"`}</p>
+				<Separator className="my-4" />
 				<div className="flex items-center gap-2">
 					<Avatar size="lg">
 						<AvatarImage alt={menuContent.card.initials} />

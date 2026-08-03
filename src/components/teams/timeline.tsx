@@ -5,22 +5,28 @@ import {
 	CardHeader,
 	CardTitle,
 } from "#/components/ui/card.tsx";
-import type { TimelineItem as TimelineItemType } from "#/content/teams/timeline.ts";
+import type { TimelineItem as TimelineItemType } from "#/types/content/timeline.ts";
 
 interface TimelineProps {
 	items: TimelineItemType[];
+	columnLayout?: "flex" | "single";
 }
 
-const timelineStyles = `
+const baseTimelineStyles = `
+	my-8
 	grid
 	grid-cols-1
 	gap-4
-	md:grid-cols-3
 `;
 
-export function Timeline({ items }: TimelineProps) {
+const timelineStyles = {
+	flex: `${baseTimelineStyles} md:grid-cols-3`,
+	single: baseTimelineStyles,
+};
+
+export function Timeline({ items, columnLayout = "flex" }: TimelineProps) {
 	return (
-		<ol className={timelineStyles}>
+		<ol className={timelineStyles[columnLayout]}>
 			{items.map((item) => (
 				<TimelineItem key={item.badge} item={item} />
 			))}

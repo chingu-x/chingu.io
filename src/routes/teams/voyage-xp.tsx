@@ -53,7 +53,7 @@ function RouteComponent() {
 				headerBadgeText="Prerequisites"
 				headingText="What you need before you apply."
 			>
-				<Checklist items={voyagePrerequisites} column="single" />
+				<Checklist items={voyagePrerequisites} columnLayout="single" />
 			</ContentSection>
 			<ContentSection id="testimonial">
 				<TestimonialCard testimonial={voyageXPTestimonial} />

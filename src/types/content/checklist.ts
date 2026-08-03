@@ -4,4 +4,4 @@ export type ChecklistItem = {
 	description: string;
 };
 
-export type ChecklistItemsCompact = Omit<ChecklistItem, "title">;
+export type ChecklistItemCompact = Omit<ChecklistItem, "title">;

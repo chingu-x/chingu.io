@@ -1,7 +1,7 @@
 import { rolesTypography } from "#/styles/roles.ts";
 import type {
 	ChecklistItem,
-	ChecklistItemsCompact,
+	ChecklistItemCompact,
 } from "#/types/content/checklist.ts";
 
 export const listItemStyles = `
@@ -18,11 +18,11 @@ export const listItemStyles = `
 `;
 
 interface ChecklistProps {
-	items: ChecklistItem[] | ChecklistItemsCompact[];
-	column?: "flex" | "single";
+	items: ChecklistItem[] | ChecklistItemCompact[];
+	columnLayout?: "flex" | "single";
 }
 
-export function Checklist({ items, column = "flex" }: ChecklistProps) {
+export function Checklist({ items, columnLayout = "flex" }: ChecklistProps) {
 	const baseULStyles = `py-8 grid gap-4`;
 	const ulStyles = {
 		flex: `${baseULStyles} md:grid-cols-2`,
@@ -30,10 +30,10 @@ export function Checklist({ items, column = "flex" }: ChecklistProps) {
 	};
 
 	return (
-		<ul className={ulStyles[column]}>
+		<ul className={ulStyles[columnLayout]}>
 			{items.map((item) => (
 				<li key={item.key} className={listItemStyles}>
-					<strong className="mr-2">{item.key}</strong>
+					{"title" in item && <strong className="mr-2">{item.title}</strong>}
 					<span className={rolesTypography.p}>{item.description}</span>
 				</li>
 			))}
