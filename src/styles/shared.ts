@@ -1,6 +1,6 @@
-// roles pages shared styles
+// shared typography styles
 
-export const rolesTypography = {
+export const sharedTypography = {
     h1: `
         text-[clamp(2.5rem,6.5vw,5.25rem)] 
         font-bold text-balance leading-none m-w-[960px] 
