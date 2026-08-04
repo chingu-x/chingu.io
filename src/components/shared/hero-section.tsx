@@ -1,5 +1,6 @@
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
+import { Card } from "#/components/ui/card.tsx";
 import { rolesTypography } from "#/styles/roles.ts";
 
 const HeroSectionStyles = `
@@ -13,14 +14,21 @@ const HeroSectionStyles = `
 	pb-18
 `;
 
+type Testimonial = {
+	text: string;
+	author: string;
+	role: string;
+};
+
 interface HeroSectionProps {
 	badgeText: string;
 	heading: string;
 	description: string;
-	primaryButtonText: string;
-	primaryButtonHref: string;
+	primaryButtonText?: string;
+	primaryButtonHref?: string;
 	secondaryButtonText?: string;
 	secondaryButtonHref?: string;
+	testimonial?: Testimonial;
 }
 
 export function HeroSection({
@@ -31,19 +39,26 @@ export function HeroSection({
 	primaryButtonHref,
 	secondaryButtonText,
 	secondaryButtonHref,
+	testimonial,
 }: HeroSectionProps) {
 	return (
 		<div className={HeroSectionStyles}>
 			<RolesHeaderBadge text={badgeText} cornerSize="full" variant="hero" />
 			<h1 className={rolesTypography.h1}>{heading}</h1>
 			<p className={rolesTypography.lede}>{description}</p>
-			{primaryButtonText && (
+			{primaryButtonText && primaryButtonHref && (
 				<TwoButtonCta
 					primaryText={primaryButtonText}
 					primaryHref={primaryButtonHref}
 					secondaryText={secondaryButtonText}
 					secondaryHref={secondaryButtonHref}
 				/>
+			)}
+			{testimonial && (
+				<Card className="max-w-180 px-8 py-6">
+					<p className={rolesTypography.lede}>{testimonial.text}</p>
+					<div className="text-neutral">{`— ${testimonial.author}, ${testimonial.role}`}</div>
+				</Card>
 			)}
 		</div>
 	);

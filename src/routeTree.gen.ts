@@ -16,6 +16,7 @@ import { Route as TeamsPairProgrammingRouteImport } from './routes/teams/pair-pr
 import { Route as RolesDevelopersRouteImport } from './routes/roles/developers'
 import { Route as RolesDesignersRouteImport } from './routes/roles/designers'
 import { Route as RolesAgileLeadersRouteImport } from './routes/roles/agile-leaders'
+import { Route as CommunityAboutRouteImport } from './routes/community/about'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,9 +53,15 @@ const RolesAgileLeadersRoute = RolesAgileLeadersRouteImport.update({
   path: '/roles/agile-leaders',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityAboutRoute = CommunityAboutRouteImport.update({
+  id: '/community/about',
+  path: '/community/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/community/about': typeof CommunityAboutRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/community/about': typeof CommunityAboutRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/community/about': typeof CommunityAboutRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/community/about'
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/community/about'
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/community/about'
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CommunityAboutRoute: typeof CommunityAboutRoute
   RolesAgileLeadersRoute: typeof RolesAgileLeadersRoute
   RolesDesignersRoute: typeof RolesDesignersRoute
   RolesDevelopersRoute: typeof RolesDevelopersRoute
@@ -172,11 +185,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RolesAgileLeadersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community/about': {
+      id: '/community/about'
+      path: '/community/about'
+      fullPath: '/community/about'
+      preLoaderRoute: typeof CommunityAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CommunityAboutRoute: CommunityAboutRoute,
   RolesAgileLeadersRoute: RolesAgileLeadersRoute,
   RolesDesignersRoute: RolesDesignersRoute,
   RolesDevelopersRoute: RolesDevelopersRoute,

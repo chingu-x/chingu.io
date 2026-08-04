@@ -36,3 +36,17 @@ export const WithoutSecondaryButton: Story = {
 		primaryButtonHref: "/apply",
 	},
 };
+
+export const WithTestimonialOnly: Story = {
+	args: {
+		badgeText: "Success Stories",
+		heading: "What Chingu Graduates Say",
+		description:
+			"Hear from developers who transformed their careers through real-world project experience.",
+		testimonial: {
+			text: "Chingu gave me hands-on experience working in a real team environment. I learned more about collaboration and Git workflows than I ever could from solo projects.",
+			author: "Sarah Chen",
+			role: "Full Stack Developer at TechCorp",
+		},
+	},
+};
