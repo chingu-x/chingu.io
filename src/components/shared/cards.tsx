@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { listItemStyles } from "#/components/shared/checklist.tsx";
-import { rolesTypography } from "#/styles/roles.ts";
+import { sharedTypography } from "#/styles/shared.ts";
 import type { ComparisonCard, DescriptionCard } from "#/types/content/card.ts";
 import { Card } from "@/components/ui/card";
 
@@ -32,8 +32,8 @@ function BaseCard({ title, featured, children }: BaseCardProps) {
 	return (
 		<article>
 			<Card className={cardStyles(featured)}>
-				<h3 className={rolesTypography.h3}>{title}</h3>
-				<div className={rolesTypography.p}>{children}</div>
+				<h3 className={sharedTypography.h3}>{title}</h3>
+				<div className={sharedTypography.p}>{children}</div>
 			</Card>
 		</article>
 	);

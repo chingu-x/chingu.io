@@ -1,4 +1,4 @@
-import { rolesTypography } from "#/styles/roles.ts";
+import { sharedTypography } from "#/styles/shared.ts";
 import type {
 	ChecklistItem,
 	ChecklistItemCompact,
@@ -34,7 +34,7 @@ export function Checklist({ items, columnLayout = "flex" }: ChecklistProps) {
 			{items.map((item) => (
 				<li key={item.key} className={listItemStyles}>
 					{"title" in item && <strong className="mr-2">{item.title}</strong>}
-					<span className={rolesTypography.p}>{item.description}</span>
+					<span className={sharedTypography.p}>{item.description}</span>
 				</li>
 			))}
 		</ul>

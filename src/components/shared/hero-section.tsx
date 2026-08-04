@@ -1,7 +1,7 @@
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
 import { Card } from "#/components/ui/card.tsx";
-import { rolesTypography } from "#/styles/roles.ts";
+import { sharedTypography } from "#/styles/shared.ts";
 
 const HeroSectionStyles = `
 	flex flex-col 
@@ -44,8 +44,8 @@ export function HeroSection({
 	return (
 		<div className={HeroSectionStyles}>
 			<RolesHeaderBadge text={badgeText} cornerSize="full" variant="hero" />
-			<h1 className={rolesTypography.h1}>{heading}</h1>
-			<p className={rolesTypography.lede}>{description}</p>
+			<h1 className={sharedTypography.h1}>{heading}</h1>
+			<p className={sharedTypography.lede}>{description}</p>
 			{primaryButtonText && primaryButtonHref && (
 				<TwoButtonCta
 					primaryText={primaryButtonText}
@@ -56,7 +56,7 @@ export function HeroSection({
 			)}
 			{testimonial && (
 				<Card className="max-w-180 px-8 py-6">
-					<p className={rolesTypography.lede}>{testimonial.text}</p>
+					<p className={sharedTypography.lede}>{testimonial.text}</p>
 					<div className="text-neutral">{`— ${testimonial.author}, ${testimonial.role}`}</div>
 				</Card>
 			)}

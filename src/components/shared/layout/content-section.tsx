@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { cn } from "#/lib/utils.ts";
-import { rolesTypography } from "#/styles/roles.ts";
+import { sharedTypography } from "#/styles/shared.ts";
 
 const baseStyles = `
     flex flex-col
@@ -40,8 +40,8 @@ export function ContentSection({
 	return (
 		<section id={id} className={cn(variantClasses[variant], className)}>
 			{headerBadgeText && <RolesHeaderBadge text={headerBadgeText} />}
-			{headingText && <h2 className={rolesTypography.h2}>{headingText}</h2>}
-			{lede && <p className={rolesTypography.lede}>{lede}</p>}
+			{headingText && <h2 className={sharedTypography.h2}>{headingText}</h2>}
+			{lede && <p className={sharedTypography.lede}>{lede}</p>}
 			{children}
 		</section>
 	);

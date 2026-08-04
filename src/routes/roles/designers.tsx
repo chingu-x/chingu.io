@@ -10,7 +10,7 @@ import { designerTestimonial } from "#/content/roles/designer-testimonial";
 import { designerTypes } from "#/content/roles/designer-types.ts";
 import { cn } from "#/lib/utils.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
-import { rolesTypography } from "#/styles/roles.ts";
+import { sharedTypography } from "#/styles/shared.ts";
 
 export const Route = createFileRoute("/roles/designers")({
 	component: RouteComponent,
@@ -48,7 +48,7 @@ function RouteComponent() {
 				headerBadgeText="Why this matters"
 				headingText="A portfolio with one person’s name on it tells one story."
 			>
-				<div className={cn(rolesTypography.p, "py-8")}>
+				<div className={cn(sharedTypography.p, "py-8")}>
 					Hiring managers in design know what solo work looks like. What they’re
 					actually screening for — and rarely see — is evidence you can ship in
 					a cross-functional team. A Chingu case study shows: the constraints

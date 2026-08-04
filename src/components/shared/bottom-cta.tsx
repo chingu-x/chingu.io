@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
-import { rolesTypography } from "#/styles/roles.ts";
+import { sharedTypography } from "#/styles/shared.ts";
 
 const baseStyles = `
     flex flex-col
@@ -39,7 +39,7 @@ export function BottomCta({
 	return (
 		<section className={baseStyles}>
 			<h2 className={titleStyles}>{title}</h2>
-			<p className={rolesTypography.lede}>{lede}</p>
+			<p className={sharedTypography.lede}>{lede}</p>
 			<TwoButtonCta
 				primaryText={primaryText}
 				primaryHref={primaryHref}
