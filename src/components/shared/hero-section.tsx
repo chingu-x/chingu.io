@@ -1,12 +1,13 @@
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
 import { Card } from "#/components/ui/card.tsx";
+import { cn } from "#/lib/utils.ts";
 import { sharedTypography } from "#/styles/shared.ts";
 
 const HeroSectionStyles = `
 	flex flex-col 
 	items-center 
-	bg-[radial-gradient(circle_at_50%_100%,color-mix(in_srgb,var(--primary)_12%,transparent)_0%,transparent_60%)]
+	bg-[radial-gradient(circle_at_50%_50%,color-mix(in_srgb,var(--primary)_22%,transparent)_0%,transparent_60%)]
 	text-center
 	gap-9
 	mt-18
@@ -56,7 +57,9 @@ export function HeroSection({
 			)}
 			{testimonial && (
 				<Card className="max-w-180 px-8 py-6">
-					<p className={sharedTypography.lede}>{testimonial.text}</p>
+					<div
+						className={cn(sharedTypography.lede, "text-base font-normal")}
+					>{`"${testimonial.text}"`}</div>
 					<div className="text-neutral">{`— ${testimonial.author}, ${testimonial.role}`}</div>
 				</Card>
 			)}

@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatedChat } from "#/components/home/animated-chat.tsx";
-import { Callout } from "#/components/shared/callout.tsx";
 import { HomeContentSection } from "#/components/home/content-section.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";
@@ -9,6 +8,8 @@ import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { ToolsCloudSection } from "#/components/home/tools.tsx";
 import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
 import { GhostButton } from "#/components/shared/buttons/ghost-button.tsx";
+import { Callout } from "#/components/shared/callout.tsx";
+import { stats } from "#/content/stats.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
 import { homeTypography as t } from "#/styles/home";
 import { Separator } from "@/components/ui/separator";
@@ -26,7 +27,7 @@ const heroSectionStyles = `
   lg:items-center
 `;
 
-export const homeStats = {
+export const homeStatsStyles = {
 	grid: `
         my-4
         bg-line
@@ -51,6 +52,8 @@ export const homeStats = {
         text-neutral
     `,
 };
+
+const homeStats = [stats.countries, stats.recommend, stats.free, stats.founded];
 
 function Home() {
 	return (
@@ -78,31 +81,19 @@ function Home() {
 				<p className="text-neutral text-xs uppercase font-bold text-center">
 					Trusted By Voyagers Around the World
 				</p>
-				<div className={homeStats.grid}>
-					<div className={homeStats.cell}>
-						<div className={homeStats.num}>
-							<span>170</span>+
-						</div>
-						<div className={homeStats.text}>countries</div>
-					</div>
-					<div className={homeStats.cell}>
-						<div className={homeStats.num}>
-							<span>94</span>%
-						</div>
-						<div className={homeStats.text}>recommend Chingu</div>
-					</div>
-					<div className={homeStats.cell}>
-						<div className={homeStats.num}>
-							$<span>0</span>
-						</div>
-						<div className={homeStats.text}>always free to join</div>
-					</div>
-					<div className={homeStats.cell}>
-						<div className={homeStats.num}>
-							<span>2016</span>
-						</div>
-						<div className={homeStats.text}>building since</div>
-					</div>
+				<div className={homeStatsStyles.grid}>
+					{homeStats.map((stat) => {
+						return (
+							<div key={stat.value} className={homeStatsStyles.cell}>
+								<div className={homeStatsStyles.num}>
+									{stat?.prefix}
+									<span>{stat.value}</span>
+									{stat.suffix}
+								</div>
+								<div className={homeStatsStyles.text}>{stat.labels.home}</div>
+							</div>
+						);
+					})}
 				</div>
 			</section>
 			<HomeContentSection
