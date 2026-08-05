@@ -28,6 +28,12 @@ export const SingleCard: Story = {
 	},
 };
 
+export const TwoCards: Story = {
+	args: {
+		items: developerTypes.slice(0, 2),
+	},
+};
+
 export const ComparisonCards: StoryObj = {
 	render: () => <ListCards items={voyageComparison} />,
 };

@@ -16,6 +16,7 @@ import { Route as TeamsPairProgrammingRouteImport } from './routes/teams/pair-pr
 import { Route as RolesDevelopersRouteImport } from './routes/roles/developers'
 import { Route as RolesDesignersRouteImport } from './routes/roles/designers'
 import { Route as RolesAgileLeadersRouteImport } from './routes/roles/agile-leaders'
+import { Route as CommunityWhyItsFreeRouteImport } from './routes/community/why-its-free'
 import { Route as CommunityAboutRouteImport } from './routes/community/about'
 
 const IndexRoute = IndexRouteImport.update({
@@ -53,6 +54,11 @@ const RolesAgileLeadersRoute = RolesAgileLeadersRouteImport.update({
   path: '/roles/agile-leaders',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityWhyItsFreeRoute = CommunityWhyItsFreeRouteImport.update({
+  id: '/community/why-its-free',
+  path: '/community/why-its-free',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CommunityAboutRoute = CommunityAboutRouteImport.update({
   id: '/community/about',
   path: '/community/about',
@@ -62,6 +68,7 @@ const CommunityAboutRoute = CommunityAboutRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/community/about': typeof CommunityAboutRoute
+  '/community/why-its-free': typeof CommunityWhyItsFreeRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/community/about': typeof CommunityAboutRoute
+  '/community/why-its-free': typeof CommunityWhyItsFreeRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/community/about': typeof CommunityAboutRoute
+  '/community/why-its-free': typeof CommunityWhyItsFreeRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
   '/roles/designers': typeof RolesDesignersRoute
   '/roles/developers': typeof RolesDevelopersRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/community/about'
+    | '/community/why-its-free'
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/community/about'
+    | '/community/why-its-free'
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/community/about'
+    | '/community/why-its-free'
     | '/roles/agile-leaders'
     | '/roles/designers'
     | '/roles/developers'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CommunityAboutRoute: typeof CommunityAboutRoute
+  CommunityWhyItsFreeRoute: typeof CommunityWhyItsFreeRoute
   RolesAgileLeadersRoute: typeof RolesAgileLeadersRoute
   RolesDesignersRoute: typeof RolesDesignersRoute
   RolesDevelopersRoute: typeof RolesDevelopersRoute
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RolesAgileLeadersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community/why-its-free': {
+      id: '/community/why-its-free'
+      path: '/community/why-its-free'
+      fullPath: '/community/why-its-free'
+      preLoaderRoute: typeof CommunityWhyItsFreeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/community/about': {
       id: '/community/about'
       path: '/community/about'
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CommunityAboutRoute: CommunityAboutRoute,
+  CommunityWhyItsFreeRoute: CommunityWhyItsFreeRoute,
   RolesAgileLeadersRoute: RolesAgileLeadersRoute,
   RolesDesignersRoute: RolesDesignersRoute,
   RolesDevelopersRoute: RolesDevelopersRoute,
