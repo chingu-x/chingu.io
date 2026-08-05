@@ -21,6 +21,12 @@ export const sharedTypography = {
         md:text-center
         md:max-w-[800px]
     `,
+	h2LeftAlign: `
+        text-4xl
+        font-bold
+        text-balance
+        md:max-w-[800px]
+    `,
 	h3: `
         text-xl
         font-bold
