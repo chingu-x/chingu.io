@@ -1,14 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Cards } from "#/components/shared/cards.tsx";
+import { Cards, StatCards } from "#/components/shared/cards.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { communityValues } from "#/content/community/about-values.ts";
+import { statKeysAbout, stats } from "#/content/stats.ts";
 import { cn } from "#/lib/utils.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
 import { sharedTypography } from "#/styles/shared.ts";
+import type { DescriptionCard } from "#/types/content/card.ts";
 
 export const Route = createFileRoute("/community/about")({
 	component: RouteComponent,
+});
+
+export const statsCards: DescriptionCard[] = statKeysAbout.map((key) => {
+	const stat = stats[key];
+
+	return {
+		title: `${stat.prefix ?? ""}${stat.value}${stat.suffix ?? ""}`,
+		description: stat.labels.community,
+	};
 });
 
 function RouteComponent() {
@@ -45,6 +56,20 @@ function RouteComponent() {
 				variant="dark"
 			>
 				<Cards items={communityValues} />
+			</ContentSection>
+			<ContentSection
+				id="stats"
+				headerBadgeText="by the numbers"
+				headingText="The community, measured."
+			>
+				<StatCards items={statsCards} />
+			</ContentSection>
+			<ContentSection
+				id="how-we-are-different"
+				headerBadgeText="How we're different"
+				headingText="Not a bootcamp. Not a course. A practice."
+			>
+				<StatCards items={statsCards} />
 			</ContentSection>
 		</div>
 	);

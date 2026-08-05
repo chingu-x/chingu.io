@@ -52,3 +52,12 @@ export const stats: StatsCollection = {
 		},
 	},
 };
+
+// stats for the about page
+export const statKeysAbout = [
+	"founded",
+	"countries",
+	"testimonials",
+	"recommend",
+	"free",
+] as const;
