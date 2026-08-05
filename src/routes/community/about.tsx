@@ -1,7 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Cards, StatCards } from "#/components/shared/cards.tsx";
+import { IconArrowRight } from "@tabler/icons-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { BottomCta } from "#/components/shared/bottom-cta.tsx";
+import {
+	Cards,
+	DescriptionCards,
+	StatCards,
+} from "#/components/shared/cards.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
+import { differences } from "#/content/community/about-differences.ts";
 import { communityValues } from "#/content/community/about-values.ts";
 import { statKeysAbout, stats } from "#/content/stats.ts";
 import { cn } from "#/lib/utils.ts";
@@ -63,14 +70,37 @@ function RouteComponent() {
 				headingText="The community, measured."
 			>
 				<StatCards items={statsCards} />
+				<p className="font-bold text-neutral -mt-10 text-xs self-start">
+					* LinkedIn testimonials from 59 unique authors, March 2025–March 2026.
+					† Chingu member survey, 2026.
+				</p>
 			</ContentSection>
 			<ContentSection
 				id="how-we-are-different"
 				headerBadgeText="How we're different"
 				headingText="Not a bootcamp. Not a course. A practice."
 			>
-				<StatCards items={statsCards} />
+				<DescriptionCards items={differences} />
+				<div className="text-neutral-focus -mt-8">
+					Chingu is closer to an intramural league than a classroom. Show up,
+					get matched, play the season, take the relationships and the shipped
+					product with you.
+					<Link
+						to="/community/why-its-free"
+						className="text-primary font-medium ml-2 inline-flex items-center gap-2"
+					>
+						Why it’s free <IconArrowRight size={16} stroke={3} />
+					</Link>
+				</div>
 			</ContentSection>
+			<BottomCta
+				title="Want to meet the people behind this?"
+				lede="The community is run almost entirely by alumni who volunteered back."
+				primaryText="Meet the team"
+				primaryHref="/community/who-runs-chingu"
+				secondaryText="Or apply to a Voyage"
+				secondaryHref="/apply"
+			/>
 		</div>
 	);
 }

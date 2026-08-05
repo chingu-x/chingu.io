@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
+import { cn } from "#/lib/utils.ts";
 import { sharedTypography } from "#/styles/shared.ts";
 
 const baseStyles = `
@@ -15,6 +16,7 @@ const baseStyles = `
 const titleStyles = `
     text-[clamp(2.5rem,6vw,4.5rem)]
     font-extrabold
+    text-balance
 `;
 
 interface BottomCtaProps {
@@ -39,7 +41,7 @@ export function BottomCta({
 	return (
 		<section className={baseStyles}>
 			<h2 className={titleStyles}>{title}</h2>
-			<p className={sharedTypography.lede}>{lede}</p>
+			<p className={cn(sharedTypography.lede, "m-w-[500px]")}>{lede}</p>
 			<TwoButtonCta
 				primaryText={primaryText}
 				primaryHref={primaryHref}

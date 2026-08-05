@@ -39,16 +39,19 @@ function BaseCard({ featured, children }: BaseCardProps) {
 	);
 }
 
-const descriptionCardsGridStyles = `
-	${baseGridStyles} 
-	grid-cols-1
-	md:grid-cols-2
-	lg:grid-cols-3
-`;
+const descriptionCardsGridStyles = (cardsCount: number) =>
+	cn(
+		baseGridStyles,
+		`
+			grid-cols-1
+			md:grid-cols-2
+		`,
+		cardsCount >= 3 && "lg:grid-cols-3",
+	);
 
 export function DescriptionCards({ items }: { items: DescriptionCard[] }) {
 	return (
-		<div className={descriptionCardsGridStyles}>
+		<div className={descriptionCardsGridStyles(items.length)}>
 			{items.map((item) => (
 				<BaseCard key={item.title} title={item.title}>
 					<h3 className={sharedTypography.h3}>{item.title}</h3>
