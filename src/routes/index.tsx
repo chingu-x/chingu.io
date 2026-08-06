@@ -142,14 +142,16 @@ function Home() {
 				<ToolsCloudSection />
 			</HomeContentSection>
 			<Separator />
-			<Callout
-				headerBadgeText="No paywall, no investors"
-				title="Volunteer-run and community-funded."
-				sectionLedge="We sustain ourselves on the time of members and industry pros who want to keep growing and giving back."
-				actionButtonText="Read the full story"
-				href="/chingu/site-redesign/community/why-its-free"
-				showPricingFooter={true}
-			/>
+			<HomeContentSection id="callout">
+				<Callout
+					headerBadgeText="No paywall, no investors"
+					title="Volunteer-run and community-funded."
+					sectionLedge="We sustain ourselves on the time of members and industry pros who want to keep growing and giving back."
+					actionButtonText="Read the full story"
+					href="/chingu/site-redesign/community/why-its-free"
+					showPricingFooter={true}
+				/>
+			</HomeContentSection>
 			<HomeContentSection
 				id="apply"
 				badgeText="Voyage 60 — Applications open"
