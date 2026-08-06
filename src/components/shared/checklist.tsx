@@ -1,3 +1,4 @@
+import { cn } from "#/lib/utils.ts";
 import { sharedTypography } from "#/styles/shared.ts";
 import type {
 	ChecklistItem,
@@ -20,17 +21,26 @@ export const listItemStyles = `
 interface ChecklistProps {
 	items: ChecklistItem[] | ChecklistItemCompact[];
 	columnLayout?: "flex" | "single";
+	spacing?: "default" | "sm";
 }
 
-export function Checklist({ items, columnLayout = "flex" }: ChecklistProps) {
+export function Checklist({
+	items,
+	columnLayout = "flex",
+	spacing = "default",
+}: ChecklistProps) {
 	const baseULStyles = `py-8 grid gap-4`;
-	const ulStyles = {
+	const ulLayoutStyles = {
 		flex: `${baseULStyles} md:grid-cols-2`,
 		single: `${baseULStyles}`,
 	};
+	const ulSpacingStyles = {
+		default: "",
+		sm: "gap-2",
+	};
 
 	return (
-		<ul className={ulStyles[columnLayout]}>
+		<ul className={cn(ulLayoutStyles[columnLayout], ulSpacingStyles[spacing])}>
 			{items.map((item) => (
 				<li key={item.key} className={listItemStyles}>
 					{"title" in item && <strong className="mr-2">{item.title}</strong>}

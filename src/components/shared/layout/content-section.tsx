@@ -5,7 +5,6 @@ import { sharedTypography } from "#/styles/shared.ts";
 
 const baseStyles = `
     flex flex-col
-    md:items-center
     gap-4
     pt-16
     pb-10
@@ -17,7 +16,8 @@ interface ContentSectionProps {
 	variant?: "default" | "dark";
 	headerBadgeText?: string;
 	headingText?: string;
-	textAlignment?: "default" | "center";
+	// textAlignment?: "default" | "center";
+	centerItemsMd?: boolean;
 	lede?: string;
 	className?: string;
 	children?: ReactNode;
@@ -28,6 +28,7 @@ export function ContentSection({
 	variant = "default",
 	headerBadgeText,
 	headingText,
+	centerItemsMd = true,
 	lede,
 	className,
 	children,
@@ -38,7 +39,14 @@ export function ContentSection({
 	};
 
 	return (
-		<section id={id} className={cn(variantClasses[variant], className)}>
+		<section
+			id={id}
+			className={cn(
+				variantClasses[variant],
+				className,
+				centerItemsMd ? "md:items-center" : "",
+			)}
+		>
 			{headerBadgeText && <RolesHeaderBadge text={headerBadgeText} />}
 			{headingText && <h2 className={sharedTypography.h2}>{headingText}</h2>}
 			{lede && <p className={sharedTypography.lede}>{lede}</p>}
