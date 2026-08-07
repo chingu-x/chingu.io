@@ -21,7 +21,7 @@ const titleStyles = `
 
 interface BottomCtaProps {
 	title: string;
-	lede: string;
+	lede: ReactNode;
 	primaryText: string;
 	primaryHref: string;
 	secondaryText?: string;

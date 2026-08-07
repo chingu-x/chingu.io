@@ -48,7 +48,11 @@ export function ContentSection({
 			)}
 		>
 			{headerBadgeText && <RolesHeaderBadge text={headerBadgeText} />}
-			{headingText && <h2 className={sharedTypography.h2}>{headingText}</h2>}
+			{headingText && (
+				<h2 className={cn(sharedTypography.h2, !centerItemsMd && "md:mx-auto")}>
+					{headingText}
+				</h2>
+			)}
 			{lede && <p className={sharedTypography.lede}>{lede}</p>}
 			{children}
 		</section>

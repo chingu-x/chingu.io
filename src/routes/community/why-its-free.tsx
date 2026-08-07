@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { CalloutFrame } from "#/components/shared/callout.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
@@ -83,6 +84,24 @@ function RouteComponent() {
 			>
 				<QnA items={freeQnA} />
 			</ContentSection>
+			<BottomCta
+				title="That’s the whole model."
+				lede={
+					<>
+						If it makes sense to you, join the next cohort. If you have more
+						questions, the{" "}
+						<Link
+							to="/community/who-runs-chingu"
+							className="text-primary font-bold"
+						>
+							team page
+						</Link>{" "}
+						has the faces behind it.
+					</>
+				}
+				primaryText="Join the next Voyage"
+				primaryHref="/apply"
+			/>
 		</div>
 	);
 }
