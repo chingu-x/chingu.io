@@ -2,7 +2,7 @@ import type { QnAItem } from "#/types/content/qna.ts";
 
 export function QnA({ items }: { items: QnAItem[] }) {
 	return (
-		<dl className="space-y-6">
+		<dl className="my-10">
 			{items.map((item) => (
 				<div
 					key={item.question}
