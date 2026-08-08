@@ -18,6 +18,7 @@ import { Route as RolesDesignersRouteImport } from './routes/roles/designers'
 import { Route as RolesAgileLeadersRouteImport } from './routes/roles/agile-leaders'
 import { Route as CommunityWhyItsFreeRouteImport } from './routes/community/why-its-free'
 import { Route as CommunityWhoRunsChinguRouteImport } from './routes/community/who-runs-chingu'
+import { Route as CommunityCommunityProgramsRouteImport } from './routes/community/community-programs'
 import { Route as CommunityAboutRouteImport } from './routes/community/about'
 
 const IndexRoute = IndexRouteImport.update({
@@ -65,6 +66,12 @@ const CommunityWhoRunsChinguRoute = CommunityWhoRunsChinguRouteImport.update({
   path: '/community/who-runs-chingu',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityCommunityProgramsRoute =
+  CommunityCommunityProgramsRouteImport.update({
+    id: '/community/community-programs',
+    path: '/community/community-programs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CommunityAboutRoute = CommunityAboutRouteImport.update({
   id: '/community/about',
   path: '/community/about',
@@ -74,6 +81,7 @@ const CommunityAboutRoute = CommunityAboutRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/community/about': typeof CommunityAboutRoute
+  '/community/community-programs': typeof CommunityCommunityProgramsRoute
   '/community/who-runs-chingu': typeof CommunityWhoRunsChinguRoute
   '/community/why-its-free': typeof CommunityWhyItsFreeRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
@@ -86,6 +94,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/community/about': typeof CommunityAboutRoute
+  '/community/community-programs': typeof CommunityCommunityProgramsRoute
   '/community/who-runs-chingu': typeof CommunityWhoRunsChinguRoute
   '/community/why-its-free': typeof CommunityWhyItsFreeRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
@@ -99,6 +108,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/community/about': typeof CommunityAboutRoute
+  '/community/community-programs': typeof CommunityCommunityProgramsRoute
   '/community/who-runs-chingu': typeof CommunityWhoRunsChinguRoute
   '/community/why-its-free': typeof CommunityWhyItsFreeRoute
   '/roles/agile-leaders': typeof RolesAgileLeadersRoute
@@ -113,6 +123,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/community/about'
+    | '/community/community-programs'
     | '/community/who-runs-chingu'
     | '/community/why-its-free'
     | '/roles/agile-leaders'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/community/about'
+    | '/community/community-programs'
     | '/community/who-runs-chingu'
     | '/community/why-its-free'
     | '/roles/agile-leaders'
@@ -137,6 +149,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/community/about'
+    | '/community/community-programs'
     | '/community/who-runs-chingu'
     | '/community/why-its-free'
     | '/roles/agile-leaders'
@@ -150,6 +163,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CommunityAboutRoute: typeof CommunityAboutRoute
+  CommunityCommunityProgramsRoute: typeof CommunityCommunityProgramsRoute
   CommunityWhoRunsChinguRoute: typeof CommunityWhoRunsChinguRoute
   CommunityWhyItsFreeRoute: typeof CommunityWhyItsFreeRoute
   RolesAgileLeadersRoute: typeof RolesAgileLeadersRoute
@@ -225,6 +239,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityWhoRunsChinguRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community/community-programs': {
+      id: '/community/community-programs'
+      path: '/community/community-programs'
+      fullPath: '/community/community-programs'
+      preLoaderRoute: typeof CommunityCommunityProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/community/about': {
       id: '/community/about'
       path: '/community/about'
@@ -238,6 +259,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CommunityAboutRoute: CommunityAboutRoute,
+  CommunityCommunityProgramsRoute: CommunityCommunityProgramsRoute,
   CommunityWhoRunsChinguRoute: CommunityWhoRunsChinguRoute,
   CommunityWhyItsFreeRoute: CommunityWhyItsFreeRoute,
   RolesAgileLeadersRoute: RolesAgileLeadersRoute,
