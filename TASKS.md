@@ -18,3 +18,17 @@
 - [ ] Tools hover and "uneven display" on larger screens
 
 ## Roles Page
+
+
+## Home Animated Chat
+
+There are now 3 verions
+1. placeholder
+2. team-chat-visual - v1
+   - it looks ok but there are 2 scroll bars 
+   - outer scrollbar is supposed to be disabled and inner scroll should be used but both not work
+   - work on this
+3. team-chat-animation - v2
+   - regenerated with raw markup, js and css
+   - chat is not scrolling (same state as original v1)
+   keep this as a reference
