@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "#/lib/utils.ts";
 import "./team-chat-visual.css";
 
 interface TeamChatVisualProps {
@@ -119,7 +119,7 @@ const MESSAGES = [
 export function TeamChatVisual({
 	className,
 	autoPlay = true,
-	assetBase = "./components/header-visual/assets/",
+	assetBase = "/images/team-chat-avatars/",
 }: TeamChatVisualProps) {
 	const rootRef = useRef<HTMLDivElement>(null);
 	const feedRef = useRef<HTMLDivElement>(null);
