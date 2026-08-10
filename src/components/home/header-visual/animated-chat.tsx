@@ -1,4 +1,9 @@
 import {
+	Avatar,
+	AvatarFallback,
+	AvatarImage,
+} from "#/components/ui/avatar.tsx";
+import {
 	Bubble,
 	BubbleContent,
 	BubbleGroup,
@@ -10,7 +15,6 @@ import {
 	MessageAvatar,
 	MessageContent,
 } from "#/components/ui/message.tsx";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const AnimatedChatStyles = `
     flex w-full max-w-sm flex-col gap-6 py-6 px-12
