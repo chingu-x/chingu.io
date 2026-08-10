@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "#/lib/utils.ts";
 import "./team-chat-animation.css";
 
 interface TeamChatAnimationProps {
@@ -27,7 +27,9 @@ export function TeamChatAnimation({
 
 		if (!feed || !scrollbar) return;
 
-		const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		const reduce = window.matchMedia(
+			"(prefers-reduced-motion: reduce)",
+		).matches;
 		const speed = 2;
 
 		const iconPause =
@@ -157,7 +159,7 @@ export function TeamChatAnimation({
 
 		function renderMessage(
 			message: (typeof messages)[0],
-			index: number
+			index: number,
 		): HTMLElement {
 			const wrap = document.createElement("div");
 			wrap.className = `hcw-msg${index % 2 ? " alt" : ""}`;
@@ -192,14 +194,19 @@ export function TeamChatAnimation({
 		function renderTransport() {
 			if (!transportBtn) return;
 			const state = ended ? "replay" : paused ? "play" : "pause";
-			transportBtn.innerHTML = state === "replay" ? iconReplay : state === "play" ? iconPlay : iconPause;
+			transportBtn.innerHTML =
+				state === "replay"
+					? iconReplay
+					: state === "play"
+						? iconPlay
+						: iconPause;
 			transportBtn.setAttribute(
 				"aria-label",
 				state === "replay"
 					? "Play again"
 					: state === "play"
 						? "Play animation"
-						: "Pause animation"
+						: "Pause animation",
 			);
 			transportBtn.setAttribute("aria-pressed", String(paused && !ended));
 		}
@@ -219,7 +226,9 @@ export function TeamChatAnimation({
 				const el = renderMessage(message, index);
 				feed.appendChild(el);
 				el.classList.add("shown");
-				el.querySelectorAll(".hcw-reaction").forEach((chip) => chip.classList.add("pop"));
+				el.querySelectorAll(".hcw-reaction").forEach((chip) =>
+					chip.classList.add("pop"),
+				);
 				const preview = el.querySelector(".hcw-preview");
 				if (preview) preview.classList.add("show");
 			});
@@ -330,7 +339,7 @@ export function TeamChatAnimation({
 						}
 					});
 				},
-				{ threshold: 0.25 }
+				{ threshold: 0.25 },
 			);
 			observer.observe(root);
 		} else {
@@ -396,7 +405,9 @@ export function TeamChatAnimation({
 					</span>
 					<span className="hcw-card-tx">
 						<b>Cross-functional teams</b>
-						<span>Work with product, design, and dev peers from around the world.</span>
+						<span>
+							Work with product, design, and dev peers from around the world.
+						</span>
 					</span>
 				</a>
 				<a
@@ -444,13 +455,31 @@ export function TeamChatAnimation({
 							strokeWidth="1.7"
 						>
 							<rect x="3.5" y="3.5" width="17" height="17" rx="3.2" />
-							<rect x="6.6" y="6.6" width="3.4" height="10.4" rx="1" fill="currentColor" stroke="none" />
-							<rect x="14" y="6.6" width="3.4" height="6.4" rx="1" fill="currentColor" stroke="none" />
+							<rect
+								x="6.6"
+								y="6.6"
+								width="3.4"
+								height="10.4"
+								rx="1"
+								fill="currentColor"
+								stroke="none"
+							/>
+							<rect
+								x="14"
+								y="6.6"
+								width="3.4"
+								height="6.4"
+								rx="1"
+								fill="currentColor"
+								stroke="none"
+							/>
 						</svg>
 					</span>
 					<span className="hcw-card-tx">
 						<b>Agile team rituals</b>
-						<span>Practice standups, sprint planning, reviews, and retros.</span>
+						<span>
+							Practice standups, sprint planning, reviews, and retros.
+						</span>
 					</span>
 				</a>
 				<a

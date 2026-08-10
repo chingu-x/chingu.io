@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AnimatedChat } from "#/components/home/animated-chat.tsx";
 import { HomeContentSection } from "#/components/home/content-section.tsx";
+import { AnimatedChat } from "#/components/home/header-visual/animated-chat.tsx";
+import { TeamChatVisual } from "#/components/home/header-visual/team-chat-visual.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
-import { TeamChatVisual } from "#/components/home/team-chat-visual.tsx";
 import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { ToolsCloudSection } from "#/components/home/tools.tsx";
 import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
