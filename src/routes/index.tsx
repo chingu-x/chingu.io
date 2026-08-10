@@ -4,6 +4,7 @@ import { HomeContentSection } from "#/components/home/content-section.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";
 import { HomeRoleCards } from "#/components/home/role-cards.tsx";
+import { TeamChatVisual } from "#/components/home/team-chat-visual.tsx";
 import { TestimonialsSection } from "#/components/home/testimonials.tsx";
 import { ToolsCloudSection } from "#/components/home/tools.tsx";
 import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
@@ -75,7 +76,8 @@ function Home() {
 						<GhostButton text="Join the community" />
 					</div>
 				</div>
-				<AnimatedChat />
+				{/*<AnimatedChat />*/}
+				<TeamChatVisual />
 			</section>
 			<section id="stats" className="px-content-margin">
 				<p className="text-neutral text-xs uppercase font-bold text-center">
