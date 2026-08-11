@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { NavH1 } from "#/components/shared/styles/nav/h1.tsx";
 import {
 	Avatar,
@@ -14,13 +15,12 @@ export function MenuContent({ menuContent }: { menuContent: MenuContentType }) {
 			<div>
 				<NavH1 text={menuContent.title} />
 				{menuContent.subMenu.map((subMenu) => (
-					<div
-						key={subMenu.title}
-						className="p-4 rounded-lg cursor-pointer hover:bg-primary/10"
-					>
-						<h2 className="font-bold text-base mb-1">{subMenu.title}</h2>
-						<p>{subMenu.text}</p>
-					</div>
+					<Link key={subMenu.title} to={subMenu.href}>
+						<div className="p-4 rounded-lg cursor-pointer hover:bg-primary/10">
+							<h2 className="font-bold text-base mb-1">{subMenu.title}</h2>
+							<p>{subMenu.text}</p>
+						</div>
+					</Link>
 				))}
 			</div>
 			<Card className="p-4 bg-primary/5 ring-primary/30">
