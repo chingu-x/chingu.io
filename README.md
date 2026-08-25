@@ -62,6 +62,9 @@ pnpm storybook
 
 Stories are located in `src/stories/` and correspond to components throughout the application. 
 
+## Reference Site
+https://jokma.com/chingu/site-redesign/
+
 ## Environment Variables
 
 Copy `.env.example` to `.env.local` and fill in the required values. Variables include Sentry configuration for error monitoring.

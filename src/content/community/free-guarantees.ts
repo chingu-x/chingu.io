@@ -9,19 +9,17 @@ export const communityGuarantees: ChecklistItem[] = [
 	{
 		key: "no-premium-tier",
 		title: "No premium tier.",
-		description: "Every member has the same access. There is no \"Chingu Pro.\"",
+		description: 'Every member has the same access. There is no "Chingu Pro."',
 	},
 	{
 		key: "no-upsell",
 		title: "No upsell.",
-		description:
-			"We don't route you through a free trial to charge you later.",
+		description: "We don't route you through a free trial to charge you later.",
 	},
 	{
 		key: "no-sponsored-placements",
 		title: "No sponsored placements.",
-		description:
-			"No partner bootcamps buying your email. No affiliate deals.",
+		description: "No partner bootcamps buying your email. No affiliate deals.",
 	},
 	{
 		key: "no-selling-data",
@@ -31,7 +29,6 @@ export const communityGuarantees: ChecklistItem[] = [
 	{
 		key: "no-investors",
 		title: "No investors.",
-		description:
-			"Nothing to return to shareholders. Nothing to IPO.",
+		description: "Nothing to return to shareholders. Nothing to IPO.",
 	},
 ];

@@ -29,6 +29,6 @@ export const communityValues: DescriptionCard[] = [
 	{
 		title: "Psychological safety matters",
 		description:
-			"Teams that ship are teams where disagreement is allowed and \"I don't know\" is a sentence people can finish.",
+			'Teams that ship are teams where disagreement is allowed and "I don\'t know" is a sentence people can finish.',
 	},
 ];

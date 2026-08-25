@@ -7,13 +7,13 @@ const baseBadgeStyles = `
     uppercase text-primary 
     border-primary/30 
     bg-primary/10     
-`
+`;
 
 const defaultBadgeStyles = `
 	${baseBadgeStyles}
 	self-start 
     md:self-center
-`
+`;
 
 export const RolesHeaderBadge = ({
 	text,
@@ -27,7 +27,7 @@ export const RolesHeaderBadge = ({
 	const variantStyles = {
 		hero: baseBadgeStyles,
 		section: defaultBadgeStyles,
-	}
+	};
 
 	return (
 		<Badge

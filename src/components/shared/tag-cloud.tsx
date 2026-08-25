@@ -1,7 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 
-
-
 interface TagCloudProps {
 	tags: string[];
 }

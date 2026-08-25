@@ -1,3 +1,6 @@
+/** biome-ignore-all lint: temp file */
+// @ts-nocheck
+
 "use client";
 
 import { useEffect, useRef } from "react";
