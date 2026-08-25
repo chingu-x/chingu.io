@@ -52,11 +52,13 @@ export const HomeContentSection = ({
 
 	return (
 		<section id={id} className={cn(variantStyles[variant], className)}>
-			{badgeText && <HeadingBadge
-				className="md:self-center"
-				text={badgeText}
-				variant={badgeVariant} />
-			}
+			{badgeText && (
+				<HeadingBadge
+					className="md:self-center"
+					text={badgeText}
+					variant={badgeVariant}
+				/>
+			)}
 			{headingText && <h2 className={t.h2}>{headingText}</h2>}
 			{ledeText && <p className={t.pSectionLede}>{ledeText}</p>}
 			{children}

@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomeContentSection } from "#/components/home/content-section.tsx";
-import { AnimatedChat } from "#/components/home/header-visual/animated-chat.tsx";
 import { TeamChatVisual } from "#/components/home/header-visual/team-chat-visual.tsx";
 import { JourneyNodesSection } from "#/components/home/journey-nodes.tsx";
 import { ProjectsSection } from "#/components/home/projects.tsx";

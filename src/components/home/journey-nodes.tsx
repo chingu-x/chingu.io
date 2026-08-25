@@ -6,11 +6,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 const stepButtonStyles = `
-	h-14 w-14 
-	rounded-full 
-	flex items-center justify-center 
-	shadow-[0_2px_12px_rgba(0,0,0,0.15)] 
-	group-hover:shadow-none 
+	h-14 w-14 md:h-16 md:w-16
+	rounded-full
+	flex items-center justify-center
+	shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:shadow-[0_4px_16px_rgba(0,0,0,0.18)]
+	group-hover:shadow-none
 	transition-shadow duration-200
 `;
 
@@ -29,8 +29,8 @@ export const JourneyNodesSection = () => {
 export const JourneyNodeItem = ({ node }: { node: JourneyNode }) => {
 	return (
 		<li aria-label={node.ariaLabel}>
-			<Card className="p-4 flex gap-4 group">
-				<div className="flex items-center gap-4">
+			<Card className="p-4 md:p-6 flex gap-4 md:gap-6 group">
+				<div className="flex items-center gap-4 md:gap-6">
 					<button
 						type="button"
 						className={stepButtonStyles}
@@ -40,7 +40,7 @@ export const JourneyNodeItem = ({ node }: { node: JourneyNode }) => {
 						}}
 					>
 						<span
-							className="h-8 w-8 rounded-full flex items-center justify-center font-bold text-sm text-white"
+							className="h-8 w-8 md:h-10 md:w-10 rounded-full flex items-center justify-center font-bold text-sm md:text-base text-white"
 							style={{ backgroundColor: `var(--color-step-${node.step})` }}
 						>
 							{node.week}
@@ -48,7 +48,7 @@ export const JourneyNodeItem = ({ node }: { node: JourneyNode }) => {
 					</button>
 					<div className="flex flex-col gap-1">
 						<span className="text-primary text-xs uppercase font-bold">{`Week ${node.week}`}</span>
-						<span className="text-base font-bold">{node.phase}</span>
+						<span className="text-base md:text-lg font-bold">{node.phase}</span>
 					</div>
 				</div>
 

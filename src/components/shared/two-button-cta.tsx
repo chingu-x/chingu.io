@@ -30,9 +30,9 @@ export function TwoButtonCta({
 			<div className="relative z-10">
 				<ActionButton text={primaryText} href={primaryHref} />
 			</div>
-			{secondaryText && secondaryHref &&
+			{secondaryText && secondaryHref && (
 				<SecondaryActionButton text={secondaryText} href={secondaryHref} />
-			}
+			)}
 		</div>
 	);
 }
