@@ -7,12 +7,11 @@ import { sharedTypography } from "#/styles/shared.ts";
 const HeroSectionStyles = `
 	flex flex-col 
 	items-center 
-	bg-[radial-gradient(circle_at_50%_50%,color-mix(in_srgb,var(--primary)_22%,transparent)_0%,transparent_60%)]
+	bg-[radial-gradient(circle_at_50%_70%,color-mix(in_srgb,var(--primary)_22%,transparent)_0%,transparent_60%)]
 	text-center
 	gap-9
-	mt-18
+	py-18
 	px-content-margin
-	pb-18
 `;
 
 type Testimonial = {
