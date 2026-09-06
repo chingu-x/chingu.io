@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
+import { communityWhoTeams } from "#/content/community/who-teams.ts";
 import { developerTypes } from "#/content/roles/developer-types.ts";
 import { voyageComparison } from "#/content/teams/voyage-xp-comparison.ts";
 import { statsCards } from "#/routes/community/about.tsx";
@@ -40,4 +41,10 @@ export const ComparisonCards: StoryObj = {
 
 export const StatsCards: StoryObj = {
 	render: () => <StatCards items={statsCards} />,
+};
+
+export const DescriptionCardsWithSubtitle: Story = {
+	args: {
+		items: communityWhoTeams,
+	},
 };

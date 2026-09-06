@@ -55,6 +55,9 @@ export function DescriptionCards({ items }: { items: DescriptionCard[] }) {
 			{items.map((item) => (
 				<BaseCard key={item.title} title={item.title}>
 					<h3 className={sharedTypography.h3}>{item.title}</h3>
+					{item.subtitle && (
+						<h4 className={sharedTypography.h4}>{item.subtitle}</h4>
+					)}
 					<p className={sharedTypography.p}>{item.description}</p>
 				</BaseCard>
 			))}

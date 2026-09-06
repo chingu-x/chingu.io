@@ -31,6 +31,12 @@ export const sharedTypography = {
         text-xl
         font-bold
     `,
+	h4: `
+        text-neutral-focus
+        font-bold
+        uppercase
+        text-base
+    `,
 	p: `
         text-base
         text-neutral-focus

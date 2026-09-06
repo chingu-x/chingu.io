@@ -1,6 +1,7 @@
 // basic card with description like the role cards in the roles pages
 export type DescriptionCard = {
 	title: string;
+	subtitle?: string;
 	description: string;
 };
 
