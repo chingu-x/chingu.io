@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/chingu-x/chingu.io/compare/v0.5.0...v0.5.1) (2026-09-07)
+
+
+### Bug Fixes
+
+* closing nav menu on link click for both mobile and desktop ([c7dbba6](https://github.com/chingu-x/chingu.io/commit/c7dbba69c28a3fe575e35cd63f3cc63b8936f5d1))
+
 ## [0.5.0](https://github.com/chingu-x/chingu.io/compare/v0.4.0...v0.5.0) (2026-08-08)
 
 
