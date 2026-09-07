@@ -8,7 +8,12 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "#/components/ui/accordion.tsx";
-import { Sheet, SheetContent, SheetTrigger } from "#/components/ui/sheet.tsx";
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetTrigger,
+} from "#/components/ui/sheet.tsx";
 import { navItems } from "#/content/nav.ts";
 import type { NavItem } from "#/types/nav.ts";
 
@@ -82,9 +87,14 @@ export function MobileNav() {
 									<AccordionContent className={accordionContentStyles}>
 										<NavH1 text={item.menuContent.title} />
 										{item.menuContent.subMenu.map((subMenu) => (
-											<div className="accordion-link" key={subMenu.title}>
-												<Link to={subMenu.href}>{subMenu.title}</Link>
-											</div>
+											<SheetClose
+												key={subMenu.title}
+												render={
+													<div className="accordion-link">
+														<Link to={subMenu.href}>{subMenu.title}</Link>
+													</div>
+												}
+											/>
 										))}
 									</AccordionContent>
 								</AccordionItem>
