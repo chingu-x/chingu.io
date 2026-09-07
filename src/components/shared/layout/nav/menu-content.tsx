@@ -6,6 +6,7 @@ import {
 	AvatarImage,
 } from "#/components/ui/avatar.tsx";
 import { Card } from "#/components/ui/card.tsx";
+import { NavigationMenuLink } from "#/components/ui/navigation-menu.tsx";
 import { Separator } from "#/components/ui/separator.tsx";
 import type { MenuContent as MenuContentType } from "#/types/nav.ts";
 
@@ -15,12 +16,18 @@ export function MenuContent({ menuContent }: { menuContent: MenuContentType }) {
 			<div>
 				<NavH1 text={menuContent.title} />
 				{menuContent.subMenu.map((subMenu) => (
-					<Link key={subMenu.title} to={subMenu.href}>
-						<div className="p-4 rounded-lg cursor-pointer hover:bg-primary/10">
-							<h2 className="font-bold text-base mb-1">{subMenu.title}</h2>
-							<p>{subMenu.text}</p>
-						</div>
-					</Link>
+					<NavigationMenuLink
+						key={subMenu.title}
+						closeOnClick
+						render={
+							<Link key={subMenu.title} to={subMenu.href}>
+								<div className="p-4 rounded-lg cursor-pointer hover:bg-primary/10">
+									<h2 className="font-bold text-base mb-1">{subMenu.title}</h2>
+									<p>{subMenu.text}</p>
+								</div>
+							</Link>
+						}
+					/>
 				))}
 			</div>
 			<Card className="p-4 bg-primary/5 ring-primary/30">
