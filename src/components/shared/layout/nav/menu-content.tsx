@@ -19,6 +19,7 @@ export function MenuContent({ menuContent }: { menuContent: MenuContentType }) {
 					<NavigationMenuLink
 						key={subMenu.title}
 						closeOnClick
+						className="p-0 m-0 hover:bg-transparent"
 						render={
 							<Link key={subMenu.title} to={subMenu.href}>
 								<div className="p-4 rounded-lg cursor-pointer hover:bg-primary/10">
