@@ -4,26 +4,26 @@ export const footerSections: FooterSection[] = [
 	{
 		title: "Roles",
 		links: [
-			{ label: "Developers", href: "#" },
-			{ label: "Designers", href: "#" },
-			{ label: "Agile Leaders", href: "#" },
+			{ label: "Developers", href: "/roles/developers" },
+			{ label: "Designers", href: "/roles/designers" },
+			{ label: "Agile Leaders", href: "/roles/agile-leaders" },
 		],
 	},
 	{
 		title: "Teams",
 		links: [
-			{ label: "Standard Voyage", href: "#" },
-			{ label: "Voyage XP", href: "#" },
-			{ label: "Pair Programming", href: "#" },
+			{ label: "Standard Voyage", href: "/teams/standard-voyage" },
+			{ label: "Voyage XP", href: "/teams/voyage-xp" },
+			{ label: "Pair Programming", href: "/teams/pair-programming" },
 		],
 	},
 	{
 		title: "Community",
 		links: [
-			{ label: "About", href: "#" },
-			{ label: "Why it's free", href: "#" },
-			{ label: "Who runs Chingu?", href: "#" },
-			{ label: "Programs", href: "#" },
+			{ label: "About", href: "/community/about" },
+			{ label: "Why it's free", href: "/community/why-its-free" },
+			{ label: "Who runs Chingu?", href: "/community/who-runs-chingu" },
+			{ label: "Programs", href: "/community/community-programs" },
 		],
 	},
 ];

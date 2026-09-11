@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TeamsVoyageXpRouteImport } from './routes/teams/voyage-xp'
 import { Route as TeamsStandardVoyageRouteImport } from './routes/teams/standard-voyage'
@@ -21,6 +22,11 @@ import { Route as CommunityWhoRunsChinguRouteImport } from './routes/community/w
 import { Route as CommunityCommunityProgramsRouteImport } from './routes/community/community-programs'
 import { Route as CommunityAboutRouteImport } from './routes/community/about'
 
+const ApplyRoute = ApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -80,6 +86,7 @@ const CommunityAboutRoute = CommunityAboutRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/apply': typeof ApplyRoute
   '/community/about': typeof CommunityAboutRoute
   '/community/community-programs': typeof CommunityCommunityProgramsRoute
   '/community/who-runs-chingu': typeof CommunityWhoRunsChinguRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/apply': typeof ApplyRoute
   '/community/about': typeof CommunityAboutRoute
   '/community/community-programs': typeof CommunityCommunityProgramsRoute
   '/community/who-runs-chingu': typeof CommunityWhoRunsChinguRoute
@@ -107,6 +115,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/apply': typeof ApplyRoute
   '/community/about': typeof CommunityAboutRoute
   '/community/community-programs': typeof CommunityCommunityProgramsRoute
   '/community/who-runs-chingu': typeof CommunityWhoRunsChinguRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/apply'
     | '/community/about'
     | '/community/community-programs'
     | '/community/who-runs-chingu'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/apply'
     | '/community/about'
     | '/community/community-programs'
     | '/community/who-runs-chingu'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/apply'
     | '/community/about'
     | '/community/community-programs'
     | '/community/who-runs-chingu'
@@ -162,6 +174,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApplyRoute: typeof ApplyRoute
   CommunityAboutRoute: typeof CommunityAboutRoute
   CommunityCommunityProgramsRoute: typeof CommunityCommunityProgramsRoute
   CommunityWhoRunsChinguRoute: typeof CommunityWhoRunsChinguRoute
@@ -176,6 +189,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/apply': {
+      id: '/apply'
+      path: '/apply'
+      fullPath: '/apply'
+      preLoaderRoute: typeof ApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -258,6 +278,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApplyRoute: ApplyRoute,
   CommunityAboutRoute: CommunityAboutRoute,
   CommunityCommunityProgramsRoute: CommunityCommunityProgramsRoute,
   CommunityWhoRunsChinguRoute: CommunityWhoRunsChinguRoute,

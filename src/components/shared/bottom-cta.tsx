@@ -24,8 +24,10 @@ interface BottomCtaProps {
 	lede: ReactNode;
 	primaryText: string;
 	primaryHref: string;
+	primaryOpenInNewTab?: boolean;
 	secondaryText?: string;
 	secondaryHref?: string;
+	secondaryOpenInNewTab?: boolean;
 	footerText?: ReactNode;
 }
 
@@ -34,8 +36,10 @@ export function BottomCta({
 	lede,
 	primaryText,
 	primaryHref,
+	primaryOpenInNewTab = false,
 	secondaryText,
 	secondaryHref,
+	secondaryOpenInNewTab = false,
 	footerText,
 }: BottomCtaProps) {
 	return (
@@ -45,8 +49,10 @@ export function BottomCta({
 			<TwoButtonCta
 				primaryText={primaryText}
 				primaryHref={primaryHref}
+				primaryOpenInNewTab={primaryOpenInNewTab}
 				secondaryText={secondaryText}
 				secondaryHref={secondaryHref}
+				secondaryOpenInNewTab={secondaryOpenInNewTab}
 				className="mt-4"
 			/>
 			{footerText && (

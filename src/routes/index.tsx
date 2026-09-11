@@ -71,8 +71,11 @@ function Home() {
 						paywall.
 					</p>
 					<div className="flex flex-col items-center gap-4 justify-center md:flex-row lg:justify-start">
-						<ActionButton text="See how a voyage works" href="#" />
-						<GhostButton text="Join the community" />
+						<ActionButton
+							text="See how a voyage works"
+							href="/teams/standard-voyage"
+						/>
+						<GhostButton text="Join the community" href="/community/about" />
 					</div>
 				</div>
 				{/*<AnimatedChat />*/}
@@ -117,7 +120,7 @@ function Home() {
 				<TestimonialsSection />
 			</HomeContentSection>
 			<HomeContentSection
-				id="journey-nodes"
+				id="voyage-journey"
 				badgeText="The seven weeks"
 				badgeVariant="default"
 				headingText="From a project brief to a live product."
@@ -126,7 +129,7 @@ function Home() {
 				<JourneyNodesSection />
 			</HomeContentSection>
 			<HomeContentSection
-				id="projects"
+				id="real-products"
 				badgeText="What Teams Ship"
 				headingText="Real products by real Voyage teams."
 				ledeText=""
@@ -135,7 +138,7 @@ function Home() {
 			</HomeContentSection>
 			<HomeContentSection
 				variant="gradient"
-				id="tools"
+				id="tools-of-the-trade"
 				badgeText="Tools of the Trade"
 				headingText="Practice with the stack and rituals product teams actually use."
 				ledeText="From frameworks and databases to Agile delivery methods, Voyagers work in the same tooling vocabulary they’ll meet on real remote teams."
@@ -149,7 +152,7 @@ function Home() {
 					title="Volunteer-run and community-funded."
 					sectionLedge="We sustain ourselves on the time of members and industry pros who want to keep growing and giving back."
 					actionButtonText="Read the full story"
-					href="/chingu/site-redesign/community/why-its-free"
+					href="/community/why-its-free"
 					showPricingFooter={true}
 				/>
 			</HomeContentSection>
