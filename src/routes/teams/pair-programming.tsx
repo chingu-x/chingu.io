@@ -42,7 +42,8 @@ function RouteComponent() {
 				title="Join Discord to get paired."
 				lede="Free. No application. Open to anyone — whether or not you’re in a Voyage."
 				primaryText="Join Discord"
-				primaryHref=""
+				primaryHref="https://discord.gg/XfhUYqe"
+				primaryOpenInNewTab
 				footerText={
 					<>
 						Or{" "}

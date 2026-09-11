@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouter } from "@tanstack/react-router";
 import { footerSections } from "#/content/footer.ts";
 
 const footerStyles = `
@@ -23,12 +23,23 @@ const footerStylesBottom = `
 `;
 
 export function Footer() {
+	const router = useRouter();
 	return (
 		<footer className={footerStyles}>
 			<div className="max-w-(--max-content-width) mx-auto p-content-margin">
 				<div className={footerStylesInner}>
 					<div className="flex flex-col gap-4">
-						<Link to="/" resetScroll={true}>
+						<Link
+							to="/"
+							resetScroll={true}
+							onClick={(e) => {
+								if (router.state.location.pathname === "/") {
+									e.preventDefault();
+									void router.invalidate();
+									window.scrollTo(0, 0);
+								}
+							}}
+						>
 							<div className="flex items-center cursor-pointer">
 								<img
 									src="/images/chingu-logo.svg"
@@ -56,7 +67,9 @@ export function Footer() {
 											key={link.label}
 											className="my-2 text-sm font-medium cursor-pointer hover:text-background"
 										>
-											{link.label}
+											<Link to={link.href} resetScroll={true}>
+												{link.label}
+											</Link>
 										</div>
 									);
 								})}
@@ -66,7 +79,7 @@ export function Footer() {
 				</div>
 				<div className={footerStylesBottom}>
 					<span>
-						{`© chingu · free · volunteer-run · worldwide since 2016`}
+						{`© Chingu · free · volunteer-run · worldwide since 2016`}
 					</span>
 					<span>{`// build_real_products`}</span>
 				</div>

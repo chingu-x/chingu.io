@@ -33,11 +33,13 @@ const lightStyles = `
 export function ActionButton({
 	text,
 	href,
+	openInNewTab,
 	variant = "default",
 	className,
 }: {
 	text: string;
 	href: string;
+	openInNewTab?: boolean;
 	variant?: "dark" | "light" | "default";
 	className?: string;
 }) {
@@ -48,7 +50,7 @@ export function ActionButton({
 	};
 
 	return (
-		<Link to={href}>
+		<Link to={href} target={openInNewTab ? "_blank" : undefined}>
 			<Button className={cn(variantStyles[variant], className)}>
 				<div>{text}</div>
 				<div>
