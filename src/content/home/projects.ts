@@ -14,6 +14,7 @@ export type Project = {
 	title: string;
 	tagline: string;
 	description: string;
+	screenshot?: string;
 	stack: string[];
 	team: TeamMember[];
 	links: ProjectLink[];
