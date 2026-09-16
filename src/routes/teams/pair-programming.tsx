@@ -3,7 +3,7 @@ import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
-import { Timeline } from "#/components/teams/timeline.tsx";
+import { Timeline } from "#/components/shared/timeline.tsx";
 import { pairProgrammingAudience } from "#/content/teams/pair-programming-audience.ts";
 import { pairProgrammingSteps } from "#/content/teams/pair-programming-steps.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";

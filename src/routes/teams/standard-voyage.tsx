@@ -6,7 +6,7 @@ import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
-import { Timeline } from "#/components/teams/timeline.tsx";
+import { Timeline } from "#/components/shared/timeline.tsx";
 import { voyageCards } from "#/content/teams/voyage-cards.ts";
 import { voyageStackList } from "#/content/teams/voyage-stack-list.ts";
 import { voyageTestimonial } from "#/content/teams/voyage-testimonial.ts";
