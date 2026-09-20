@@ -7,6 +7,12 @@ import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { Timeline } from "#/components/shared/timeline.tsx";
+import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
+import {
+	Dialog,
+	DialogContent,
+	DialogTrigger,
+} from "#/components/ui/dialog.tsx";
 import { requirements } from "#/content/apply/requirements.ts";
 import { applyTimeline } from "#/content/apply/timeline.ts";
 import { whyJoin } from "#/content/apply/why-join.ts";
@@ -17,6 +23,38 @@ import { sharedTypography as t } from "#/styles/shared.ts";
 export const Route = createFileRoute("/apply")({
 	component: RouteComponent,
 });
+
+function ApplyDialog() {
+	return (
+		<Dialog>
+			<DialogTrigger
+				render={(props) => <ActionButton {...props} text="Apply" />}
+			/>
+			<DialogContent showCloseButton>
+				<div className="max-w-xl py-4 mx-2 text-center flex flex-col items-center">
+					<h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-foreground">
+						One thing <span className="text-primary">first</span>
+					</h2>
+					<p className="max-w-2xl mx-auto mt-3 text-base text-muted-foreground sm:mt-4 py-4 leading-relaxed">
+						At Chingu we use Discord as our main source of communication, and
+						therefore it's important that you have a Discord account before
+						sending your application. We use Discord's authentication to make
+						sure that this is the case and will pre-fill your application with
+						your account name and ID.
+					</p>
+					<TwoButtonCta
+						primaryText="Apply to Chingu"
+						primaryHref="link to discord auth"
+						primaryOpenInNewTab
+						secondaryText="Create Discord Account"
+						secondaryHref="https://discord.com/"
+						secondaryOpenInNewTab
+					/>
+				</div>
+			</DialogContent>
+		</Dialog>
+	);
+}
 
 function RouteComponent() {
 	return (
@@ -69,9 +107,10 @@ function RouteComponent() {
 				title="Collaborate and gain real experience"
 				lede="Turn what you've learned in courses, bootcamps, & schools into the experience needed to land a job. Our 7-week remote team projects help you level-up technical & soft skills sought after by employers."
 				primaryText="Apply"
-				primaryHref="https://discordoauthserver-production.up.railway.app/auth/discord"
+				primaryHref="DISCORD_AUTH_URL"
 				primaryOpenInNewTab
 			/>
+			<ApplyDialog />
 		</div>
 	);
 }

@@ -36,9 +36,10 @@ export function ActionButton({
 	openInNewTab,
 	variant = "default",
 	className,
+	...rest
 }: {
 	text: string;
-	href: string;
+	href?: string;
 	openInNewTab?: boolean;
 	variant?: "dark" | "light" | "default";
 	className?: string;
@@ -49,14 +50,20 @@ export function ActionButton({
 		default: darkStyles,
 	};
 
-	return (
+	const baseButton = (
+		<Button className={cn(variantStyles[variant], className)} {...rest}>
+			<div>{text}</div>
+			<div>
+				<IconArrowRight stroke={3} />
+			</div>
+		</Button>
+	);
+
+	return href ? (
 		<Link to={href} target={openInNewTab ? "_blank" : undefined}>
-			<Button className={cn(variantStyles[variant], className)}>
-				<div>{text}</div>
-				<div>
-					<IconArrowRight stroke={3} />
-				</div>
-			</Button>
+			{baseButton}
 		</Link>
+	) : (
+		baseButton
 	);
 }
