@@ -1,5 +1,6 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 import { BottomCta } from "#/components/shared/bottom-cta.tsx";
 import { ActionButton } from "#/components/shared/buttons/action-button.tsx";
 import { BaseCard } from "#/components/shared/cards.tsx";
@@ -20,11 +21,23 @@ import { cn } from "#/lib/utils.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
 import { sharedTypography as t } from "#/styles/shared.ts";
 
+const getDiscordAuthLink = createServerFn({ method: "GET" }).handler(
+	async () => {
+		const url = process.env.DISCORD_AUTH_URL;
+		return { url };
+	},
+);
+
 export const Route = createFileRoute("/apply")({
+	loader: async () => {
+		const { url } = await getDiscordAuthLink();
+		return { discordAuthUrl: url };
+	},
 	component: RouteComponent,
 });
 
 function ApplyDialog() {
+	const { discordAuthUrl } = Route.useLoaderData();
 	return (
 		<Dialog>
 			<DialogTrigger
@@ -44,7 +57,7 @@ function ApplyDialog() {
 					</p>
 					<TwoButtonCta
 						primaryText="Apply to Chingu"
-						primaryHref="link to discord auth"
+						primaryHref={discordAuthUrl}
 						primaryOpenInNewTab
 						secondaryText="Create Discord Account"
 						secondaryHref="https://discord.com/"
