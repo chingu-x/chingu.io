@@ -31,6 +31,8 @@ type SecondaryButtonProps = {
 	secondaryButtonHref?: string;
 };
 
+// TODO: we can refactor to use the new ActionComponent for testimonial
+// i.e. passing and display a testimonial component using the ActionComponent prop
 type HeroSectionProps = {
 	badgeText: string;
 	heading: string;
