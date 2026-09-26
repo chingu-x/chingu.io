@@ -76,6 +76,8 @@ function RouteComponent() {
 				badgeText="apply"
 				heading="Join the Next Voyage."
 				description="Seven weeks, one team, a real product. Start here."
+				variant="component"
+				ActionComponent={<ApplyDialog />}
 			/>
 			<div className="lg:grid lg:grid-cols-2 lg:gap-8">
 				<div className="max-w-175 mx-auto">

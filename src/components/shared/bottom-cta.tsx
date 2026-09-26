@@ -36,16 +36,18 @@ type BottomCtaProps = {
 	lede: ReactNode;
 	footerText?: ReactNode;
 } & (
-	| ({ variant?: "buttons" } & PrimaryButtonProps)
+	| ({ variant?: "buttons" } & PrimaryButtonProps & SecondaryButtonProps)
 	| {
 			variant: "component";
 			ActionComponent: ReactNode;
 			primaryText?: never;
 			primaryHref?: never;
 			primaryOpenInNewTab?: never;
+			secondaryText?: never;
+			secondaryHref?: never;
+			secondaryOpenInNewTab?: never;
 	  }
-) &
-	SecondaryButtonProps;
+);
 
 export function BottomCta(props: BottomCtaProps) {
 	const { title, lede, footerText } = props;

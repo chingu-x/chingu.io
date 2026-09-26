@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
 import { Card } from "#/components/ui/card.tsx";
@@ -20,39 +21,52 @@ type Testimonial = {
 	role: string;
 };
 
-interface HeroSectionProps {
+type PrimaryButtonProps = {
+	primaryButtonText?: string;
+	primaryButtonHref?: string;
+};
+
+type SecondaryButtonProps = {
+	secondaryButtonText?: string;
+	secondaryButtonHref?: string;
+};
+
+type HeroSectionProps = {
 	badgeText: string;
 	heading: string;
 	description: string;
-	primaryButtonText?: string;
-	primaryButtonHref?: string;
-	secondaryButtonText?: string;
-	secondaryButtonHref?: string;
 	testimonial?: Testimonial;
-}
+} & (
+	| ({ variant?: "buttons" } & PrimaryButtonProps & SecondaryButtonProps)
+	| {
+			variant: "component";
+			ActionComponent: ReactNode;
+			primaryButtonText?: never;
+			primaryButtonHref?: never;
+			secondaryButtonText?: never;
+			secondaryButtonHref?: never;
+	  }
+);
 
-export function HeroSection({
-	badgeText,
-	heading,
-	description,
-	primaryButtonText,
-	primaryButtonHref,
-	secondaryButtonText,
-	secondaryButtonHref,
-	testimonial,
-}: HeroSectionProps) {
+export function HeroSection(props: HeroSectionProps) {
+	const { badgeText, heading, description, testimonial } = props;
 	return (
 		<div className={HeroSectionStyles}>
 			<RolesHeaderBadge text={badgeText} cornerSize="full" variant="hero" />
 			<h1 className={sharedTypography.h1}>{heading}</h1>
 			<p className={sharedTypography.lede}>{description}</p>
-			{primaryButtonText && primaryButtonHref && (
-				<TwoButtonCta
-					primaryText={primaryButtonText}
-					primaryHref={primaryButtonHref}
-					secondaryText={secondaryButtonText}
-					secondaryHref={secondaryButtonHref}
-				/>
+			{props.variant !== "component" &&
+				props.primaryButtonText &&
+				props.primaryButtonHref && (
+					<TwoButtonCta
+						primaryText={props.primaryButtonText}
+						primaryHref={props.primaryButtonHref}
+						secondaryText={props.secondaryButtonText}
+						secondaryHref={props.secondaryButtonHref}
+					/>
+				)}
+			{props.variant === "component" && (
+				<div className="mt-4">{props.ActionComponent}</div>
 			)}
 			{testimonial && (
 				<Card className="max-w-180 px-8 py-6">
