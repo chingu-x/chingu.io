@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import { RolesHeaderBadge } from "#/components/shared/header-badge.tsx";
 import { TwoButtonCta } from "#/components/shared/two-button-cta.tsx";
-import { Card } from "#/components/ui/card.tsx";
-import { cn } from "#/lib/utils.ts";
 import { sharedTypography } from "#/styles/shared.ts";
 
 const HeroSectionStyles = `
@@ -15,12 +13,6 @@ const HeroSectionStyles = `
 	px-content-margin
 `;
 
-type Testimonial = {
-	text: string;
-	author: string;
-	role: string;
-};
-
 type PrimaryButtonProps = {
 	primaryButtonText?: string;
 	primaryButtonHref?: string;
@@ -31,13 +23,10 @@ type SecondaryButtonProps = {
 	secondaryButtonHref?: string;
 };
 
-// TODO: we can refactor to use the new ActionComponent for testimonial
-// i.e. passing and display a testimonial component using the ActionComponent prop
 type HeroSectionProps = {
 	badgeText: string;
 	heading: string;
 	description: string;
-	testimonial?: Testimonial;
 } & (
 	| ({ variant?: "buttons" } & PrimaryButtonProps & SecondaryButtonProps)
 	| {
@@ -51,7 +40,7 @@ type HeroSectionProps = {
 );
 
 export function HeroSection(props: HeroSectionProps) {
-	const { badgeText, heading, description, testimonial } = props;
+	const { badgeText, heading, description } = props;
 	return (
 		<div className={HeroSectionStyles}>
 			<RolesHeaderBadge text={badgeText} cornerSize="full" variant="hero" />
@@ -69,14 +58,6 @@ export function HeroSection(props: HeroSectionProps) {
 				)}
 			{props.variant === "component" && (
 				<div className="mt-4">{props.ActionComponent}</div>
-			)}
-			{testimonial && (
-				<Card className="max-w-180 px-8 py-6">
-					<div
-						className={cn(sharedTypography.lede, "text-base font-normal")}
-					>{`"${testimonial.text}"`}</div>
-					<div className="text-neutral">{`— ${testimonial.author}, ${testimonial.role}`}</div>
-				</Card>
 			)}
 		</div>
 	);
