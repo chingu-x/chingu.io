@@ -119,11 +119,9 @@ function RouteComponent() {
 			<BottomCta
 				title="Collaborate and gain real experience"
 				lede="Turn what you've learned in courses, bootcamps, & schools into the experience needed to land a job. Our 7-week remote team projects help you level-up technical & soft skills sought after by employers."
-				primaryText="Apply"
-				primaryHref="DISCORD_AUTH_URL"
-				primaryOpenInNewTab
+				variant="component"
+				ActionComponent={<ApplyDialog />}
 			/>
-			<ApplyDialog />
 		</div>
 	);
 }
