@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { ActionButton } from "./buttons/action-button";
 import { SecondaryActionButton } from "./buttons/secondary-action-button";
 import { HeroSection } from "./hero-section";
+import { TestimonialCard } from "./testimonial-card";
 
 const meta = {
 	title: "Components/Shared/HeroSection",
@@ -11,7 +12,7 @@ const meta = {
 		docs: {
 			description: {
 				component:
-					'Page-level hero with a badge, heading, description, an optional testimonial card, and an action area. By default the action area renders the standard primary/secondary button pair (`TwoButtonCta`). Pass `variant="component"` along with an `ActionComponent` element to replace those buttons with any React node — a dialog trigger, a signup form, a custom button group. `variant` defaults to `"buttons"`, so existing usages keep working unchanged; when passing a custom component the `primaryButtonText`/`primaryButtonHref` props must be omitted. Omitting every button prop renders no action area at all.',
+					'Page-level hero with a badge, heading, description, and an action area. By default the action area renders the standard primary/secondary button pair (`TwoButtonCta`), and it only renders when both `primaryButtonText` and `primaryButtonHref` are supplied — leaving them off gives an informational hero with no action area. Pass `variant="component"` along with an `ActionComponent` element to replace the buttons with any React node: a dialog trigger, a signup form, a custom button group. `variant` defaults to `"buttons"`, so existing usages keep working unchanged; when passing a custom component the `primaryButtonText`/`primaryButtonHref` props must be omitted.',
 			},
 		},
 	},
@@ -50,7 +51,7 @@ export const WithoutButtons: Story = {
 		docs: {
 			description: {
 				story:
-					"Leave the button props off entirely for an informational hero with no action area — this is what the About and Why it's free pages use.",
+					"Leave the button props off entirely for an informational hero with no action area — this is what the About and Why it's free pages use. The same happens if only one half of the primary pair (`primaryButtonText` without `primaryButtonHref`, or the reverse) is supplied.",
 			},
 		},
 	},
@@ -59,20 +60,6 @@ export const WithoutButtons: Story = {
 		heading: "A place where strangers become a team.",
 		description:
 			"Chingu is a volunteer-run community that helps self-taught and career-changing builders close the gap between tutorials and teamwork — by actually putting them on a team.",
-	},
-};
-
-export const WithTestimonialOnly: Story = {
-	args: {
-		badgeText: "Success Stories",
-		heading: "What Chingu Graduates Say",
-		description:
-			"Hear from developers who transformed their careers through real-world project experience.",
-		testimonial: {
-			text: "Chingu gave me hands-on experience working in a real team environment. I learned more about collaboration and Git workflows than I ever could from solo projects.",
-			author: "Sarah Chen",
-			role: "Full Stack Developer at TechCorp",
-		},
 	},
 };
 
@@ -94,12 +81,12 @@ export const WithActionComponent: Story = {
 	},
 };
 
-export const WithActionComponentAndTestimonial: Story = {
+export const WithCustomButtonGroup: Story = {
 	parameters: {
 		docs: {
 			description: {
 				story:
-					"The custom action slot and the testimonial card are independent, so they can be combined.",
+					"The action slot accepts any node, so the default button pair can be rebuilt from individual button components with your own layout and styling.",
 			},
 		},
 	},
@@ -118,10 +105,34 @@ export const WithActionComponentAndTestimonial: Story = {
 				/>
 			</div>
 		),
-		testimonial: {
-			text: "I went from watching tutorials alone to shipping a real product with a team I still work with today.",
-			author: "Sarah Chen",
-			role: "Full Stack Developer at TechCorp",
+	},
+};
+
+export const WithSimpleTestimonial: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Testimonials are no longer a dedicated prop, so a simple `TestimonialCard` goes in through the custom node slot. Wrap it in a node if you also need the buttons — anything in this slot replaces the default button pair.",
+			},
 		},
+	},
+	args: {
+		badgeText: "Success Stories",
+		heading: "What Chingu Graduates Say",
+		description:
+			"Hear from developers who transformed their careers through real-world project experience.",
+		variant: "component",
+		ActionComponent: (
+			<TestimonialCard
+				testimonial={{
+					quote:
+						"Chingu gave me hands-on experience working in a real team environment. I learned more about collaboration and Git workflows than I ever could from solo projects.",
+					name: "Sarah Chen",
+					role: "Full Stack Developer · Voyage alum",
+					avatarFallback: "SC",
+				}}
+			/>
+		),
 	},
 };
