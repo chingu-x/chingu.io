@@ -16,7 +16,7 @@ export const roleCards: RoleCard[] = [
 		title: "For Developers",
 		description:
 			"Backend, full stack, or app. Ship code with a team. Master Git. Build for production.",
-		href: "/developers",
+		href: "/roles/developers",
 		linkText: "Developer path",
 		icon: {
 			name: Code,
@@ -27,7 +27,7 @@ export const roleCards: RoleCard[] = [
 		title: "For Designers",
 		description:
 			"UX or UI. Build a cross-functional case study that proves real collaboration.",
-		href: "/designers",
+		href: "/roles/designers",
 		linkText: "Designer path",
 		icon: {
 			name: Palette,
@@ -38,7 +38,7 @@ export const roleCards: RoleCard[] = [
 		title: "For Agile Leaders",
 		description:
 			"Product Owner or Scrum Master. Facilitate real sprints with a real team.",
-		href: "/agile",
+		href: "/roles/agile-leaders",
 		linkText: "Agile path",
 		icon: {
 			name: ChartLine,
