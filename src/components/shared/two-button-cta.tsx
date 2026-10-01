@@ -5,8 +5,10 @@ import { SecondaryActionButton } from "./buttons/secondary-action-button";
 interface TwoButtonCtaProps {
 	primaryText: string;
 	primaryHref: string;
+	primaryOpenInNewTab?: boolean;
 	secondaryText?: string;
 	secondaryHref?: string;
+	secondaryOpenInNewTab?: boolean;
 	className?: string;
 }
 
@@ -21,17 +23,27 @@ const twoButtonCtaStyles = `
 export function TwoButtonCta({
 	primaryText,
 	primaryHref,
+	primaryOpenInNewTab = false,
 	secondaryText,
 	secondaryHref,
+	secondaryOpenInNewTab = false,
 	className,
 }: TwoButtonCtaProps) {
 	return (
 		<div className={cn(twoButtonCtaStyles, className)}>
 			<div className="relative z-10">
-				<ActionButton text={primaryText} href={primaryHref} />
+				<ActionButton
+					text={primaryText}
+					href={primaryHref}
+					openInNewTab={primaryOpenInNewTab}
+				/>
 			</div>
 			{secondaryText && secondaryHref && (
-				<SecondaryActionButton text={secondaryText} href={secondaryHref} />
+				<SecondaryActionButton
+					text={secondaryText}
+					href={secondaryHref}
+					openInNewTab={secondaryOpenInNewTab}
+				/>
 			)}
 		</div>
 	);

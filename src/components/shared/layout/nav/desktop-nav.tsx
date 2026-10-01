@@ -56,7 +56,7 @@ export function DesktopNav() {
 				<ActionButton
 					className="py-5 text-sm"
 					text="Join the next voyage"
-					href="#"
+					href="/apply"
 				/>
 			</div>
 		</div>

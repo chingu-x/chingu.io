@@ -1,4 +1,8 @@
 # TODO 
+
+- [ ] Favicon
+- [ ] Title
+
 ## Navigation Menu
 
 ### Desktop 
@@ -8,11 +12,11 @@
 
 ### Mobile 
 - [x] Navigation Menu for smaller screens
-- [ ] Close the navigation menu after navigating to a new page
+- [x] Close the navigation menu after navigating to a new page
 
 
 ## Index Page
-- [ ] Chat animation for the hero section
+- [x] Chat animation for the hero section
 - [ ] Add a background image to the hero section
 - [ ] Journey node on larger screens
 - [ ] Tools hover and "uneven display" on larger screens

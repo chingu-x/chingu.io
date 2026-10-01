@@ -8,6 +8,7 @@ import {
 } from "#/components/shared/cards.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
+import TestimonialSimple from "#/components/shared/testimonial-simple.tsx";
 import { differences } from "#/content/community/about-differences.ts";
 import { communityValues } from "#/content/community/about-values.ts";
 import { statKeysAbout, stats } from "#/content/stats.ts";
@@ -36,11 +37,14 @@ function RouteComponent() {
 				badgeText="About Chingu"
 				heading="A place where strangers become a team, and ideas become working software."
 				description="Chingu is a volunteer-run community that helps self-taught and career-changing builders close the gap between tutorials and teamwork — by actually putting them on a team."
-				testimonial={{
-					text: "Thank you, Chingu, for creating a space where strangers become a team and ideas become working software.",
-					author: "Isaac Datch",
-					role: "Software Developer",
-				}}
+				variant="component"
+				ActionComponent={
+					<TestimonialSimple
+						text="Thank you, Chingu, for creating a space where strangers become a team and ideas become working software."
+						author="Isaac Datch"
+						voyageRole="Software Developer"
+					/>
+				}
 			/>
 			<ContentSection
 				id="problem-we-address"

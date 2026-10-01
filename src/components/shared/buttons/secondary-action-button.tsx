@@ -21,14 +21,16 @@ const buttonStyles = `
 export function SecondaryActionButton({
 	text,
 	href,
+	openInNewTab,
 	className,
 }: {
 	text: string;
 	href: string;
+	openInNewTab?: boolean;
 	className?: string;
 }) {
 	return (
-		<Link to={href}>
+		<Link to={href} target={openInNewTab ? "_blank" : undefined}>
 			<Button className={cn(buttonStyles, className)}>{text}</Button>
 		</Link>
 	);

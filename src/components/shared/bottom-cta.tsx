@@ -19,36 +19,55 @@ const titleStyles = `
     text-balance
 `;
 
-interface BottomCtaProps {
-	title: string;
-	lede: ReactNode;
+type PrimaryButtonProps = {
 	primaryText: string;
 	primaryHref: string;
+	primaryOpenInNewTab?: boolean;
+};
+
+type SecondaryButtonProps = {
 	secondaryText?: string;
 	secondaryHref?: string;
-	footerText?: ReactNode;
-}
+	secondaryOpenInNewTab?: boolean;
+};
 
-export function BottomCta({
-	title,
-	lede,
-	primaryText,
-	primaryHref,
-	secondaryText,
-	secondaryHref,
-	footerText,
-}: BottomCtaProps) {
+type BottomCtaProps = {
+	title: string;
+	lede: ReactNode;
+	footerText?: ReactNode;
+} & (
+	| ({ variant?: "buttons" } & PrimaryButtonProps & SecondaryButtonProps)
+	| {
+			variant: "component";
+			ActionComponent: ReactNode;
+			primaryText?: never;
+			primaryHref?: never;
+			primaryOpenInNewTab?: never;
+			secondaryText?: never;
+			secondaryHref?: never;
+			secondaryOpenInNewTab?: never;
+	  }
+);
+
+export function BottomCta(props: BottomCtaProps) {
+	const { title, lede, footerText } = props;
 	return (
 		<section className={baseStyles}>
 			<h2 className={titleStyles}>{title}</h2>
 			<p className={cn(sharedTypography.lede, "m-w-[500px]")}>{lede}</p>
-			<TwoButtonCta
-				primaryText={primaryText}
-				primaryHref={primaryHref}
-				secondaryText={secondaryText}
-				secondaryHref={secondaryHref}
-				className="mt-4"
-			/>
+			{props.variant !== "component" ? (
+				<TwoButtonCta
+					primaryText={props.primaryText}
+					primaryHref={props.primaryHref}
+					primaryOpenInNewTab={props.primaryOpenInNewTab}
+					secondaryText={props.secondaryText}
+					secondaryHref={props.secondaryHref}
+					secondaryOpenInNewTab={props.secondaryOpenInNewTab}
+					className="mt-4"
+				/>
+			) : (
+				<div className="mt-4">{props.ActionComponent}</div>
+			)}
 			{footerText && (
 				<p className="text-2xs font-bold uppercase text-neutral mt-2">
 					{footerText}

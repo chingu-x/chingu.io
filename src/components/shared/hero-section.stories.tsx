@@ -1,11 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
+import { ActionButton } from "./buttons/action-button";
+import { SecondaryActionButton } from "./buttons/secondary-action-button";
 import { HeroSection } from "./hero-section";
+import { TestimonialCard } from "./testimonial-card";
 
 const meta = {
 	title: "Components/Shared/HeroSection",
 	component: HeroSection,
 	parameters: {
 		layout: "fullscreen",
+		docs: {
+			description: {
+				component:
+					'Page-level hero with a badge, heading, description, and an action area. By default the action area renders the standard primary/secondary button pair (`TwoButtonCta`), and it only renders when both `primaryButtonText` and `primaryButtonHref` are supplied — leaving them off gives an informational hero with no action area. Pass `variant="component"` along with an `ActionComponent` element to replace the buttons with any React node: a dialog trigger, a signup form, a custom button group. `variant` defaults to `"buttons"`, so existing usages keep working unchanged; when passing a custom component the `primaryButtonText`/`primaryButtonHref` props must be omitted.',
+			},
+		},
 	},
 	tags: ["autodocs"],
 } satisfies Meta<typeof HeroSection>;
@@ -37,16 +46,93 @@ export const WithoutSecondaryButton: Story = {
 	},
 };
 
-export const WithTestimonialOnly: Story = {
+export const WithoutButtons: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Leave the button props off entirely for an informational hero with no action area — this is what the About and Why it's free pages use. The same happens if only one half of the primary pair (`primaryButtonText` without `primaryButtonHref`, or the reverse) is supplied.",
+			},
+		},
+	},
+	args: {
+		badgeText: "About Chingu",
+		heading: "A place where strangers become a team.",
+		description:
+			"Chingu is a volunteer-run community that helps self-taught and career-changing builders close the gap between tutorials and teamwork — by actually putting them on a team.",
+	},
+};
+
+export const WithActionComponent: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story:
+					'Pass `variant="component"` and an `ActionComponent` node to take over the action area entirely — the apply page swaps its buttons for a dialog trigger. The `primaryButtonText`/`primaryButtonHref` props are forbidden in this variant (`?: never`).',
+			},
+		},
+	},
+	args: {
+		badgeText: "apply",
+		heading: "Join the Next Voyage.",
+		description: "Seven weeks, one team, a real product. Start here.",
+		variant: "component",
+		ActionComponent: <ActionButton text="Apply" href="/apply" />,
+	},
+};
+
+export const WithCustomButtonGroup: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"The action slot accepts any node, so the default button pair can be rebuilt from individual button components with your own layout and styling.",
+			},
+		},
+	},
+	args: {
+		badgeText: "Alumni",
+		heading: "Seven weeks changed how I work.",
+		description:
+			"Still not sure? Read what graduates built, then start your own Voyage.",
+		variant: "component",
+		ActionComponent: (
+			<div className="flex flex-col gap-4 items-center md:flex-row justify-center">
+				<ActionButton text="See the Voyage" href="/teams/standard-voyage" />
+				<SecondaryActionButton
+					text="Join the Community"
+					href="/community/about"
+				/>
+			</div>
+		),
+	},
+};
+
+export const WithSimpleTestimonial: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Testimonials are no longer a dedicated prop, so a simple `TestimonialCard` goes in through the custom node slot. Wrap it in a node if you also need the buttons — anything in this slot replaces the default button pair.",
+			},
+		},
+	},
 	args: {
 		badgeText: "Success Stories",
 		heading: "What Chingu Graduates Say",
 		description:
 			"Hear from developers who transformed their careers through real-world project experience.",
-		testimonial: {
-			text: "Chingu gave me hands-on experience working in a real team environment. I learned more about collaboration and Git workflows than I ever could from solo projects.",
-			author: "Sarah Chen",
-			role: "Full Stack Developer at TechCorp",
-		},
+		variant: "component",
+		ActionComponent: (
+			<TestimonialCard
+				testimonial={{
+					quote:
+						"Chingu gave me hands-on experience working in a real team environment. I learned more about collaboration and Git workflows than I ever could from solo projects.",
+					name: "Sarah Chen",
+					role: "Full Stack Developer · Voyage alum",
+					avatarFallback: "SC",
+				}}
+			/>
+		),
 	},
 };
