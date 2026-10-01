@@ -52,6 +52,33 @@ src/
 └── types/          # TypeScript type definitions
 ```
 
+## Site Map
+
+Every page in `src/routes/` is listed below with the content files it reads from. Copy lives in `src/content/`; a route's own JSX holds layout and any inline copy.
+
+| Route | Page | Content files |
+|---|---|---|
+| `/` | Home | `content/stats.ts`, `content/home/role-cards.ts`, `content/home/tools.ts`, `content/home/testimonials.ts`, `content/home/projects.ts`, `content/home/journey-nodes.ts` |
+| `/apply` | Apply to a Voyage | `content/apply/requirements.ts`, `content/apply/timeline.ts`, `content/apply/why-join.ts` |
+| `/community/about` | About Chingu | `content/community/about-values.ts`, `content/community/about-differences.ts`, `content/stats.ts` |
+| `/community/why-its-free` | Why it's free | `content/community/free-guarantees.ts`, `content/community/free-qna.ts`, `content/community/free-spendings.ts` |
+| `/community/who-runs-chingu` | Who runs Chingu | `content/community/who-teams.ts` |
+| `/community/community-programs` | Community programs | `content/community/programs-book-club.ts`, `content/community/programs-channels.ts`, `content/community/programs-workshops.ts` |
+| `/roles/developers` | For Developers | `content/roles/developer-types.ts`, `content/roles/developer-skills.ts`, `content/roles/developer-testimonial.ts`, `content/roles/developer-wordcloud.ts` |
+| `/roles/designers` | For Designers | `content/roles/designer-types.ts`, `content/roles/designer-skills.ts`, `content/roles/designer-testimonial.ts` |
+| `/roles/agile-leaders` | For Agile Leaders | `content/roles/agile-leaders-types.ts`, `content/roles/agile-leaders-skills.ts`, `content/roles/agile-leaders-testimonials.ts` |
+| `/teams/standard-voyage` | Standard Voyage | `content/teams/voyage-cards.ts`, `content/teams/voyage-timeline.ts`, `content/teams/voyage-stack-list.ts`, `content/teams/voyage-testimonial.ts` |
+| `/teams/voyage-xp` | Voyage XP | `content/teams/voyage-xp-prerequisites.ts`, `content/teams/voyage-xp-mentorship.ts`, `content/teams/voyage-xp-comparison.ts`, `content/teams/voyage-xp-testimonial.ts` |
+| `/teams/pair-programming` | Pair Programming | `content/teams/pair-programming-audience.ts`, `content/teams/pair-programming-steps.ts` |
+
+Site-wide content, not tied to one route:
+
+| Content file | Used by |
+|---|---|
+| `content/nav.ts` | `components/shared/layout/nav/desktop-nav.tsx`, `nav/mobile-nav.tsx` |
+| `content/footer.ts` | `components/shared/layout/footer.tsx` |
+| `content/stats.ts` | Home and `/community/about` |
+
 ## Storybook
 
 Storybook is used for component development and documentation. Start the Storybook dev server with:
