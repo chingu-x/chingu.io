@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 const projectCardStyles = `
+	h-full
 	pt-0
 	hover:shadow-xl
 	hover:-translate-y-1 transition-transform duration-200
@@ -18,7 +19,7 @@ const projectCardStyles = `
 
 const projectScreenshotStyles = `
 	h-[240px]
-	bg-primary
+	bg-primary/10
 `;
 
 const badgeStyles = `
@@ -53,7 +54,13 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 		<article>
 			<Card className={projectCardStyles}>
 				<CardHeader className={projectScreenshotStyles}>
-					Screenshot Placeholder
+					{project.screenshot && (
+						<img
+							src={`images/projects/${project.screenshot}`}
+							alt={project.title}
+							className="h-60 w-full object-contain"
+						/>
+					)}
 				</CardHeader>
 				<CardContent>
 					<div className="p-meta">
@@ -65,15 +72,17 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 					<h3 className={`${t.h3} my-4`}>{project.title}</h3>
 					<p className="text-base text-neutral-focus">{project.tagline}</p>
 					<p className="desc">{project.description}</p>
-					<ul className="flex mt-4">
+					<ul className="flex mt-6">
 						{project.stack.map((tech) => (
 							<Badge className={badgeStyles} key={tech}>
 								{tech}
 							</Badge>
 						))}
 					</ul>
+				</CardContent>
+				<CardContent className="mt-auto">
 					<Separator className="my-4 bg-neutral-focus/10" />
-					<div>
+					<div className="mb-auto">
 						<span className="font-bold text-xs text-neutral-content">Team</span>
 						<AvatarGroup className="mt-3 mb-6">
 							{project.team.map((member) => (
@@ -85,7 +94,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 									<AvatarFallback
 										className={`text-foreground ${getRandonAvatarBg(member.name)}`}
 									>
-										{member.name}
+										{member.name
+											.split(" ")
+											.map((name) => name.charAt(0))
+											.join("")}
 									</AvatarFallback>
 								</Avatar>
 							))}
