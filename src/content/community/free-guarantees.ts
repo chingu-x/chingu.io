@@ -7,11 +7,6 @@ export const communityGuarantees: ChecklistItem[] = [
 		description: "Not at application. Not ever.",
 	},
 	{
-		key: "no-premium-tier",
-		title: "No premium tier.",
-		description: 'Every member has the same access. There is no "Chingu Pro."',
-	},
-	{
 		key: "no-upsell",
 		title: "No upsell.",
 		description: "We don't route you through a free trial to charge you later.",

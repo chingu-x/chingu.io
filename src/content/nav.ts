@@ -41,7 +41,7 @@ export const navItems: NavItem[] = [
 				{
 					title: "Standard Voyage",
 					text: "7-week foundational team sprint.",
-					href: "/teams/pair-programming",
+					href: "/teams/standard-voyage",
 				},
 				{
 					title: "Voyage XP",

@@ -31,7 +31,7 @@ interface BaseCardProps {
 	children: ReactNode;
 }
 
-function BaseCard({ featured, children }: BaseCardProps) {
+export function BaseCard({ featured, children }: BaseCardProps) {
 	return (
 		<article>
 			<Card className={cardStyles(featured)}>{children}</Card>

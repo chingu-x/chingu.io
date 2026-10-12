@@ -3,7 +3,8 @@ import type { ChecklistItemCompact } from "#/types/content/checklist.ts";
 export const freeSpendings: ChecklistItemCompact[] = [
 	{
 		key: "server-hosting",
-		description: "A few hundred dollars a month in server and hosting costs",
+		description:
+			"A few hundred dollars a month in domain, hosting, data management, email, and other essential services",
 	},
 	{
 		key: "free-tiers",

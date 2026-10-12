@@ -3,7 +3,7 @@ import type { ChecklistItemCompact } from "#/types/content/checklist.ts";
 export const voyagePrerequisites: ChecklistItemCompact[] = [
 	{
 		key: "complete-standard-voyage",
-		description: "Successfully complete a Standard Voyage",
+		description: "Successfully complete a Tier 2 or 3 Standard Voyage",
 	},
 	{
 		key: "commit-15-hours-per-week",

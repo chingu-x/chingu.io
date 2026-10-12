@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import {
 	type RoleCard as RoleCardType,
@@ -57,11 +58,11 @@ export const RoleCard = ({ cardContent }: { cardContent: RoleCardType }) => {
 					{cardContent.description}
 				</CardDescription>
 			</CardHeader>
-			<CardContent className="mt-8">
-				<div className={cardLinkStyles}>
+			<CardContent className="mt-auto">
+				<Link to={cardContent.href} className={cardLinkStyles}>
 					<span>{cardContent.linkText}</span>
 					<ArrowRight size={16} strokeWidth={3} />
-				</div>
+				</Link>
 			</CardContent>
 		</Card>
 	);

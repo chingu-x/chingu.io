@@ -332,9 +332,6 @@ export function TeamChatVisual({
 			feedRef.current.appendChild(typing);
 			await new Promise((resolve) => setTimeout(resolve, 32));
 			typing.classList.add("shown");
-			console.log(
-				`[TeamChat] Typing shown for message ${index}: ${message.name}`,
-			);
 
 			// Scroll to show typing indicator
 			await new Promise((resolve) => setTimeout(resolve, 16));

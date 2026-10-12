@@ -14,52 +14,63 @@ export type Project = {
 	title: string;
 	tagline: string;
 	description: string;
+	screenshot?: string;
 	stack: string[];
 	team: TeamMember[];
 	links: ProjectLink[];
 };
 
+// If a team member has no image, the avatar will show the name, so put initials in there like "BS"
 export const projects: Project[] = [
 	{
 		voyage: "56",
 		category: "Healthcare",
 		title: "SurgiTrack",
+		screenshot: "v56-surgitrack.png",
 		tagline:
 			"A real-time surgery status board that keeps families connected during procedures.",
 		description:
 			"Role-based access for admins, surgical staff, and visitors. Live status updates surface on public waiting-room monitors. AI chatbot fields family questions in plain language.",
 		stack: ["React", "Tailwind", "Node + Express", "PostgreSQL", "Gemini"],
 		team: [
-			{ name: "Dimitris", image: "dimitris-lymperis.jpeg" },
-			{ name: "Marissa", image: "marissa-lamothe.jpeg" },
-			{ name: "Mostafa", image: "mostafa-elmoalem.jpeg" },
-			{ name: "BH" },
+			{ name: "Spandan" }, // blueworld_01
+			{ name: "Marissa", image: "marissa-lamothe.jpeg" }, // msrissaxo
+			{ name: "Pablo" }, // dela88_
+			{ name: "Angelica" }, // angie_02295
 		],
 		links: [
-			{ label: "View live", url: "https://surgitrack.netlify.app/" },
-			{ label: "GitHub", url: "https://lnkd.in/dZneHsD2" },
+			// { label: "View live", url: "https://surgitrack.netlify.app/" },
+			{
+				label: "GitHub",
+				url: "https://github.com/chingu-voyages/V56-tier3-team-36",
+			},
 		],
 	},
 	{
-		voyage: "XP",
+		voyage: "54",
 		category: "AI tooling",
 		title: "Prompto",
+		screenshot: "v54-prompto.png",
 		tagline:
-			"An AI prompt assistant that helps users craft clearer, more effective prompts.",
+			"A full-stack application built to generate high-quality prompts that enable more accurate communication with large language models (LLMs).",
 		description:
-			"OAuth via Google and GitHub. Multilingual support, voice dictation, and prompt history. Built end-to-end by developers, a designer, a PO, and a Scrum Master.",
-		stack: ["React", "Express + Prisma", "Docker", "OAuth", "Gemini"],
+			"Helps users interact with LLMs more efficiently by providing a Pentagram-format input form, which guides prompt construction and improves the quality of model responses.",
+		stack: ["React", "Express", "Prisma", "Docker", "OAuth", "Gemini"],
 		team: [
-			{ name: "Aigul", image: "aigul-yermagambetova.png" },
-			{ name: "Veronika", image: "veronika-kolesnikova.jpeg" },
-			{ name: "Trupti", image: "trupti-shikhare.jpeg" },
-			{ name: "Xochitl", image: "xochitl-farias.jpeg" },
-			{ name: "Steffi", image: "steffi-s.jpeg" },
-			{ name: "BS" },
+			{ name: "Aigul Y" }, // aigul2601
+			{ name: "Veronika K" }, // firstnamenika
+			{ name: "Trupti S", image: "trupti-shikhare.webp" }, // trupti_68923
+			{ name: "Xochitl F" }, // xoch5736
+			{ name: "Steffi S", image: "steffi-s.jpeg" }, // stef8007
+			{ name: "Brendan S" }, // bkschatzki
+			{ name: "Luis C", image: "luis-castillo.webp" }, // luiscastillokc
 		],
 		links: [
 			{ label: "View live", url: "https://prompto37.com/" },
-			{ label: "GitHub", url: "https://lnkd.in/ew--NYYq" },
+			{
+				label: "GitHub",
+				url: "https://github.com/chingu-voyages/V54-tier3-team-37",
+			},
 		],
 	},
 ];

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BottomCta } from "#/components/shared/bottom-cta.tsx";
+import { SecondaryActionButton } from "#/components/shared/buttons/secondary-action-button.tsx";
 import { ListCards } from "#/components/shared/cards.tsx";
 import { Checklist } from "#/components/shared/checklist.tsx";
 import { HeroSection } from "#/components/shared/hero-section.tsx";
@@ -20,12 +21,15 @@ function RouteComponent() {
 		<div className={pageContainerStyles}>
 			<HeroSection
 				badgeText="Voyage XP"
-				heading="Ten weeks. Mentorship. A deeper build."
+				heading="10 weeks. Mentorship. A deeper build."
 				description="For alumni who've done a Voyage and want to go further: more depth, more scope, and a mentor from the industry paired to your team."
-				primaryButtonText="Apply to Voyage XP"
-				primaryButtonHref="/apply"
-				secondaryButtonText="Start with a Standard Voyage"
-				secondaryButtonHref="/teams/standard-voyage"
+				variant="component"
+				ActionComponent={
+					<SecondaryActionButton
+						text="Start with a Standard Voyage"
+						href="/teams/standard-voyage"
+					/>
+				}
 			/>
 			<ContentSection
 				id="who-this-is-for"
