@@ -21,7 +21,9 @@
 - [ ] Journey node on larger screens
 - [ ] Tools hover and "uneven display" on larger screens
 
-## Roles Page
+## Refactor
+- [ ] Update roles/designer-testimonial.ts, developer-testimonial.ts to accept mulitple testimonials like agile-leader-testimonials
+      Make sure they can accept and display properly whether it has one or multiple.
 
 
 ## Home Animated Chat
