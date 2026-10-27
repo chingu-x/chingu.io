@@ -68,12 +68,10 @@ function RouteComponent() {
 				</p>
 				<CalloutFrame>
 					<p className={calloutPStyles}>
-						“Stuff like this (not just Chingu, but any kind of volunteer or
-						low-bar-of-entry work that gets you building with other humans) is
-						VITAL for building soft skills.”
+						“Placeholder testimonial — replace with a real community quote.”
 					</p>
 					<p className={calloutPStyles}>
-						— Emily C., Web Developer and Voyage alum
+						— Placeholder N., Web Developer and Voyage alum
 					</p>
 				</CalloutFrame>
 			</ContentSection>

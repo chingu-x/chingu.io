@@ -40,8 +40,8 @@ function RouteComponent() {
 				variant="component"
 				ActionComponent={
 					<TestimonialSimple
-						text="Thank you, Chingu, for creating a space where strangers become a team and ideas become working software."
-						author="Isaac Datch"
+						text="Placeholder testimonial — replace with a real community quote."
+						author="Placeholder Name"
 						voyageRole="Software Developer"
 					/>
 				}

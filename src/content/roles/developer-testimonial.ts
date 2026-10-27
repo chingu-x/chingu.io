@@ -1,9 +1,8 @@
 import type { TestimonialCard } from "#/types/content/testimonial.ts";
 
 export const developerTestimonial: TestimonialCard = {
-	quote:
-		"Six weeks of collaborative coding changed how I think about building software.",
-	name: "Timileyin Afolayan",
+	quote: "Placeholder quote — replace with a real developer testimonial.",
+	name: "Placeholder Name",
 	role: "Developer · Voyage alum",
-	avatarFallback: "TA",
+	avatarFallback: "PN",
 };

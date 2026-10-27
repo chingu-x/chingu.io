@@ -79,6 +79,24 @@ Site-wide content, not tied to one route:
 | `content/footer.ts` | `components/shared/layout/footer.tsx` |
 | `content/stats.ts` | Home and `/community/about` |
 
+### Testimonials
+
+Testimonial copy lives in these content files (all under `src/content/`):
+
+| Content file | Used by |
+|---|---|
+| `content/home/testimonials.ts` | Home |
+| `content/nav.ts` | Navigation menu "Community Voice" cards |
+| `content/roles/developer-testimonial.ts` | `/roles/developers` |
+| `content/roles/designer-testimonial.ts` | `/roles/designers` |
+| `content/roles/agile-leaders-testimonials.ts` | `/roles/agile-leaders` |
+| `content/teams/voyage-testimonial.ts` | `teams/standard-voyage` |
+#### Not under /content
+community/about
+community/why-its-free
+
+
+
 ## Storybook
 
 Storybook is used for component development and documentation. Start the Storybook dev server with:

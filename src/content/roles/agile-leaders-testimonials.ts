@@ -9,9 +9,8 @@ export const agileLeaderTestimonials: TestimonialCard[] = [
 		avatarFallback: "AA",
 	},
 	{
-		quote:
-			"As the Product Owner and Agile Practitioner, my favorite part of this journey was fostering a team culture built on psychological safety, where everyone felt free to ask, challenge, and create. Because that's where real innovation happens.",
-		name: "Ruth Igwe-Oruta",
+		quote: "Placeholder testimonial — replace with a real community quote.",
+		name: "Placeholder Name",
 		role: "Product Owner · Voyage alum",
 		avatarFallback: "RI",
 	},
