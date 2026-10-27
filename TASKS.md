@@ -24,6 +24,10 @@
 ## Refactor
 - [ ] Update roles/designer-testimonial.ts, developer-testimonial.ts to accept mulitple testimonials like agile-leader-testimonials
       Make sure they can accept and display properly whether it has one or multiple.
+- [ ] Move all testimonial content to /content 
+
+## Home
+- [ ] Sections with gray background is not covering 100% width in larger widths
 
 
 ## Home Animated Chat

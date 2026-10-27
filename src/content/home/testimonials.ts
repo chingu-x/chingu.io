@@ -16,26 +16,24 @@ export const testimonials: Testimonial[] = [
 		role: "Web Developer · Voyage alum",
 	},
 	{
-		title: "Find your teammates",
-		quote: "Strangers became teammates, and teammates built something real.",
-		author: "Shivanand Gupta",
-		image: "shivanand-gupta.jpg",
+		title: "Placeholder testimonial",
+		quote: "Placeholder quote — replace with a real community testimonial.",
+		author: "Placeholder Name",
+		image: "placeholder.jpg",
 		role: "Web Developer · Voyage alum",
 	},
 	{
-		title: "Build like a pro",
-		quote:
-			"A powerful simulation of a real-world, cross-functional environment, focused on building a market-ready SaaS product.",
-		author: "Koby Sysouvanh",
-		image: "koby-sysouvanh.jpg",
+		title: "Placeholder testimonial",
+		quote: "Placeholder quote — replace with a real community testimonial.",
+		author: "Placeholder Name",
+		image: "placeholder.jpg",
 		role: "Web Developer · Voyage alum",
 	},
 	{
-		title: "Get real-world cred",
-		quote:
-			"You can learn how to code in a vacuum, but you cannot learn how to build professionally without getting some hands-on experience.",
-		author: "Emily C.",
-		image: "emily-c.jpg",
+		title: "Placeholder testimonial",
+		quote: "Placeholder quote — replace with a real community testimonial.",
+		author: "Placeholder Name",
+		image: "placeholder.jpg",
 		role: "Web Developer · Voyage alum",
 	},
 	{
@@ -47,11 +45,10 @@ export const testimonials: Testimonial[] = [
 		role: "Web Developer · Voyage alum",
 	},
 	{
-		title: "Grow together",
-		quote:
-			"The best teams aren't the ones with all the answers — they're the ones willing to explore, experiment, and grow together.",
-		author: "Ross Clettenberg",
-		image: "ross-clettenberg.jpg",
+		title: "Placeholder testimonial",
+		quote: "Placeholder quote — replace with a real community testimonial.",
+		author: "Placeholder Name",
+		image: "placeholder.jpg",
 		role: "Web Developer · Voyage alum",
 	},
 ];
