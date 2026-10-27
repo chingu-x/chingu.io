@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.6.0](https://github.com/chingu-x/chingu.io/compare/v0.5.1...v0.6.0) (2026-10-27)
+
+
+### Features
+
+* add apply dialog ([8e8dec0](https://github.com/chingu-x/chingu.io/commit/8e8dec0c8aea8bdf13b4af84987cdb4d78604c12))
+* add apply page content ([eda710a](https://github.com/chingu-x/chingu.io/commit/eda710adfd5992091ad38005f524323164478879))
+* update bottom-cta to accept a component instead of just buttons ([943fc49](https://github.com/chingu-x/chingu.io/commit/943fc498e1cba813517c263c770ea2d630e282ab))
+* update favicon ([8c19df5](https://github.com/chingu-x/chingu.io/commit/8c19df55d64dfa93e8dbdea58f018901c39fe9b0))
+* update hero section to accept option component instead of buttons ([013225b](https://github.com/chingu-x/chingu.io/commit/013225bd166c2a0d95229c17de0079bd74dbbb33))
+
+
+### Bug Fixes
+
+* add home role card link ([c874b31](https://github.com/chingu-x/chingu.io/commit/c874b316c1c0b7ab650f267e0cc21b0927d4b81b))
+* links ([5559ae8](https://github.com/chingu-x/chingu.io/commit/5559ae8cb96721c24fc6044ffade4e7577971706))
+* logo link ([6f519b7](https://github.com/chingu-x/chingu.io/commit/6f519b72b2489e04d05e6c62b3e0ce520b4f6a7b))
+* nav bar standard voyage link ([3c8c0cb](https://github.com/chingu-x/chingu.io/commit/3c8c0cbb708e6fb1d276c57f44ad7f533570d5d1))
+* remove extra background in nav ([28ca54f](https://github.com/chingu-x/chingu.io/commit/28ca54fc68849960dbe8c2e1f405173abf5b52c8))
+
 ## [0.5.1](https://github.com/chingu-x/chingu.io/compare/v0.5.0...v0.5.1) (2026-09-07)
 
 
