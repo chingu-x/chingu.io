@@ -2,6 +2,7 @@
 
 - [ ] Favicon
 - [ ] Title
+- [ ] Homepage responsiveness
 
 ## Navigation Menu
 
