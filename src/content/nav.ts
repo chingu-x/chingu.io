@@ -92,9 +92,9 @@ export const navItems: NavItem[] = [
 			],
 			card: {
 				title: "Community Voice",
-				text: "Placeholder testimonial — replace with a real community quote.",
-				initials: "PN",
-				name: "Placeholder Name",
+				text: "Chingu means friend and that's what you'll find here. Whether you're in a voyage or just out and about in the community you will find support, advice, and kindness here. Another word that would fit well is 'camaraderie'",
+				initials: "S",
+				name: "Syntax",
 				role: "Software developer",
 			},
 		},
