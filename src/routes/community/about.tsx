@@ -10,6 +10,7 @@ import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import TestimonialSimple from "#/components/shared/testimonial-simple.tsx";
 import { differences } from "#/content/community/about-differences.ts";
+import { aboutHeroTestimonial } from "#/content/community/about-hero-testimonial.ts";
 import { communityValues } from "#/content/community/about-values.ts";
 import { statKeysAbout, stats } from "#/content/stats.ts";
 import { cn } from "#/lib/utils.ts";
@@ -40,9 +41,9 @@ function RouteComponent() {
 				variant="component"
 				ActionComponent={
 					<TestimonialSimple
-						text="Placeholder testimonial — replace with a real community quote."
-						author="Placeholder Name"
-						voyageRole="Software Developer"
+						quote={aboutHeroTestimonial.quote}
+						author={aboutHeroTestimonial.author}
+						voyageRole={aboutHeroTestimonial.voyageRole}
 					/>
 				}
 			/>
