@@ -26,6 +26,8 @@
 - [ ] Update roles/designer-testimonial.ts, developer-testimonial.ts to accept mulitple testimonials like agile-leader-testimonials
       Make sure they can accept and display properly whether it has one or multiple.
 - [ ] Move all testimonial content to /content 
+- [ ] Combine all testimonial types, there are at least 2, in `testimonial-simple`, and `/home/testimonials.ts` 
+  (rename role to voyageRole as role attribute is reserved for aria)
 
 ## Home
 - [ ] Sections with gray background is not covering 100% width in larger widths
