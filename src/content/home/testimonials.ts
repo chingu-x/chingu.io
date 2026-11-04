@@ -24,32 +24,11 @@ export const testimonials: Testimonial[] = [
 		role: "Web Developer · Voyage alum",
 	},
 	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
-		role: "Web Developer · Voyage alum",
-	},
-	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
-		role: "Web Developer · Voyage alum",
-	},
-	{
 		title: "Take pride in the how",
 		quote:
 			"Proud of what we built. Even more proud of how we built it — together.",
 		author: "Sophie Nora Keil",
 		image: "sophie-nora-keil.jpg",
-		role: "Web Developer · Voyage alum",
-	},
-	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
 		role: "Web Developer · Voyage alum",
 	},
 ];
