@@ -7,7 +7,7 @@ import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TagCloud } from "#/components/shared/tag-cloud.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
 import { developerSkills } from "#/content/roles/developer-skills.ts";
-import { developerTestimonial } from "#/content/roles/developer-testimonial.ts";
+import { developerTestimonials } from "#/content/roles/developer-testimonials.ts";
 import { developerTypes } from "#/content/roles/developer-types.ts";
 import { developerWordcloud } from "#/content/roles/developer-wordcloud.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
@@ -52,7 +52,9 @@ function RouteComponent() {
 				<TagCloud tags={developerWordcloud} />
 			</ContentSection>
 			<ContentSection id="developer-testimonial">
-				<TestimonialCard testimonial={developerTestimonial} />
+				{developerTestimonials.map((testimonial) => (
+					<TestimonialCard testimonial={testimonial} key={testimonial.name} />
+				))}
 			</ContentSection>
 			<ContentSection id="bottom-cta">
 				<RolesBottomCta />
