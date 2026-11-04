@@ -640,6 +640,15 @@
 }
 
 @media (max-width: 540px) {
+	.hcw {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.hcw-window {
+		min-width: 0;
+	}
+
 	.hcw-card {
 		left: 50% !important;
 		right: auto !important;
@@ -648,6 +657,12 @@
 
 	.hcw.ended .hcw-card {
 		transform: translateX(-50%);
+	}
+}
+
+@media (min-width: 541px) and (max-width: 1023px) {
+	.hcw {
+		margin-inline: auto;
 	}
 }
 

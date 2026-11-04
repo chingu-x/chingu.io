@@ -29,9 +29,6 @@
 - [ ] Combine all testimonial types, there are at least 2, in `testimonial-simple`, and `/home/testimonials.ts` 
   (rename role to voyageRole as role attribute is reserved for aria)
 
-## Home
-- [ ] Sections with gray background is not covering 100% width in larger widths
-
 
 ## Home Animated Chat
 
