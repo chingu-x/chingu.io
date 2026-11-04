@@ -56,11 +56,14 @@ function RouteComponent() {
 					on, and the product that went live anyway
 				</div>
 			</ContentSection>
-			<ContentSection id="designer-testimonial">
-				{designerTestimonials.map((testimonial) => (
-					<TestimonialCard testimonial={testimonial} key={testimonial.name} />
-				))}
-			</ContentSection>
+			{designerTestimonials.length > 0 && (
+				<ContentSection id="designer-testimonial">
+					{designerTestimonials.map((testimonial) => (
+						<TestimonialCard testimonial={testimonial} key={testimonial.name} />
+					))}
+				</ContentSection>
+			)}
+
 			<ContentSection id="bottom-cta">
 				<RolesBottomCta />
 			</ContentSection>
