@@ -25,9 +25,9 @@ export const navItems: NavItem[] = [
 			],
 			card: {
 				title: "Community Voice",
-				text: "Across several Voyages, I participated as a developer, Product Owner, and eventually a Voyage Guide.",
-				initials: "MN",
-				name: "Mikey Nichols",
+				text: "I learnt so much from doing - the collaboration, the experience of solving and learning from the problems and all together putting agile principles to practice for free!",
+				initials: "AA",
+				name: "Adelola Abioye",
 				role: "voyage alum",
 			},
 		},

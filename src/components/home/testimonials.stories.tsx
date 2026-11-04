@@ -20,4 +20,12 @@ export const SingleTestimonial: Story = {
 
 export const AllTestimonials: Story = {
 	args: {},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"The component will be multiple rows of 3 if there's more than 3 testimonials.",
+			},
+		},
+	},
 };
