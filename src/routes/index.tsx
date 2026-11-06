@@ -70,7 +70,7 @@ function Home() {
 						Industry-standard tools and processes. Real teams, real products, no
 						paywall.
 					</p>
-					<div className="flex flex-col items-center gap-4 justify-center md:flex-row lg:justify-start">
+					<div className="flex flex-col items-center gap-4 justify-center md:flex-row lg:flex-col lg:items-start xl:flex-row">
 						<ActionButton
 							text="See how a voyage works"
 							href="/teams/standard-voyage"

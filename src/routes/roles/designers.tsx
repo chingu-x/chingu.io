@@ -6,7 +6,7 @@ import { HeroSection } from "#/components/shared/hero-section.tsx";
 import { ContentSection } from "#/components/shared/layout/content-section.tsx";
 import { TestimonialCard } from "#/components/shared/testimonial-card.tsx";
 import { designerSkills } from "#/content/roles/designer-skills.ts";
-import { designerTestimonial } from "#/content/roles/designer-testimonial";
+import { designerTestimonials } from "#/content/roles/designer-testimonials";
 import { designerTypes } from "#/content/roles/designer-types.ts";
 import { cn } from "#/lib/utils.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
@@ -56,9 +56,14 @@ function RouteComponent() {
 					on, and the product that went live anyway
 				</div>
 			</ContentSection>
-			<ContentSection id="designer-testimonial">
-				<TestimonialCard testimonial={designerTestimonial} />
-			</ContentSection>
+			{designerTestimonials.length > 0 && (
+				<ContentSection id="designer-testimonial">
+					{designerTestimonials.map((testimonial) => (
+						<TestimonialCard testimonial={testimonial} key={testimonial.name} />
+					))}
+				</ContentSection>
+			)}
+
 			<ContentSection id="bottom-cta">
 				<RolesBottomCta />
 			</ContentSection>

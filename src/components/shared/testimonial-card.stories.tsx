@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
-import { developerTestimonial } from "#/content/roles/developer-testimonial";
+import { developerTestimonials } from "#/content/roles/developer-testimonials.ts";
 import { TestimonialCard } from "./testimonial-card";
 
 const meta = {
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		testimonial: developerTestimonial,
+		testimonial: developerTestimonials[0],
 	},
 };
 

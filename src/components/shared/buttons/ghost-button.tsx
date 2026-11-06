@@ -16,8 +16,10 @@ const ghostButtonStyles = `
 export function GhostButton({ text, href }: { text: string; href?: string }) {
 	if (href) {
 		return (
-			<Link to={href} className={ghostButtonStyles}>
-				{text}
+			<Link to={href}>
+				<Button variant="ghost" className={ghostButtonStyles}>
+					{text}
+				</Button>
 			</Link>
 		);
 	}

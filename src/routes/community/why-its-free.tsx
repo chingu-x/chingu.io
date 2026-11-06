@@ -8,6 +8,7 @@ import { QnA } from "#/components/shared/qna.tsx";
 import { communityGuarantees } from "#/content/community/free-guarantees.ts";
 import { freeQnA } from "#/content/community/free-qna.ts";
 import { freeSpendings } from "#/content/community/free-spendings.ts";
+import { whyItsFreeTestimonial } from "#/content/community/why-its-free-testimonial.ts";
 import { cn } from "#/lib/utils.ts";
 import { pageContainerStyles } from "#/styles/containers.ts";
 import { sharedTypography } from "#/styles/shared.ts";
@@ -67,11 +68,9 @@ function RouteComponent() {
 					programming — is donated time from volunteers.
 				</p>
 				<CalloutFrame>
+					<p className={calloutPStyles}>{`"${whyItsFreeTestimonial.quote}`}</p>
 					<p className={calloutPStyles}>
-						“Placeholder testimonial — replace with a real community quote.”
-					</p>
-					<p className={calloutPStyles}>
-						— Placeholder N., Web Developer and Voyage alum
+						{`— ${whyItsFreeTestimonial.author}, ${whyItsFreeTestimonial.voyageRole}`}
 					</p>
 				</CalloutFrame>
 			</ContentSection>

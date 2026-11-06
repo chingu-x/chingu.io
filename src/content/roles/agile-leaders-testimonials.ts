@@ -9,9 +9,10 @@ export const agileLeaderTestimonials: TestimonialCard[] = [
 		avatarFallback: "AA",
 	},
 	{
-		quote: "Placeholder testimonial — replace with a real community quote.",
-		name: "Placeholder Name",
-		role: "Product Owner · Voyage alum",
-		avatarFallback: "RI",
+		quote:
+			"Chingu has been one of the best things on my agile journey. I learnt so much from doing - the collaboration, the experience of solving and learning from the problems and all together putting agile principles to practice for free! Awesome to say the least! Thank you Chingu.",
+		name: "Adelola Abioye",
+		role: "Scrum Master · Voyage alum",
+		avatarFallback: "AA",
 	},
 ];

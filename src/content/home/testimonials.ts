@@ -16,24 +16,11 @@ export const testimonials: Testimonial[] = [
 		role: "Web Developer · Voyage alum",
 	},
 	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
-		role: "Web Developer · Voyage alum",
-	},
-	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
-		role: "Web Developer · Voyage alum",
-	},
-	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
+		title: "Growing Through Collaboration and Agile",
+		quote:
+			"Chingu has been instrumental to my learning software engineering. I am so grateful to the many teams I was able to work on. The collaboration and agile environments taught me so much about teamwork in addition to the technical skills I gained. It was a great experience all around.",
+		author: "Marissa Lamothe",
+		image: "marissa-lamothe-testimonial.jpeg",
 		role: "Web Developer · Voyage alum",
 	},
 	{
@@ -42,13 +29,6 @@ export const testimonials: Testimonial[] = [
 			"Proud of what we built. Even more proud of how we built it — together.",
 		author: "Sophie Nora Keil",
 		image: "sophie-nora-keil.jpg",
-		role: "Web Developer · Voyage alum",
-	},
-	{
-		title: "Placeholder testimonial",
-		quote: "Placeholder quote — replace with a real community testimonial.",
-		author: "Placeholder Name",
-		image: "placeholder.jpg",
 		role: "Web Developer · Voyage alum",
 	},
 ];
