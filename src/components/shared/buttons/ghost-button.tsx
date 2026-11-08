@@ -14,18 +14,30 @@ const ghostButtonStyles = `
 `;
 
 export function GhostButton({ text, href }: { text: string; href?: string }) {
-	if (href) {
-		return (
-			<Link to={href}>
-				<Button variant="ghost" className={ghostButtonStyles}>
-					{text}
-				</Button>
-			</Link>
-		);
-	}
+	// if (href) {
+	// 	return (
+	// 		<Link to={href}>
+	// 			<Button variant="ghost" className={ghostButtonStyles}>
+	// 				{text}
+	// 			</Button>
+	// 		</Link>
+	// 	);
+	// }
+	// return (
+	// 	<Button variant="ghost" className={ghostButtonStyles}>
+	// 		{text}
+	// 	</Button>
+	//
+
 	return (
 		<Button variant="ghost" className={ghostButtonStyles}>
-			{text}
+			{href ? (
+				<Link to={href} target="_blank">
+					{text}
+				</Link>
+			) : (
+				<div>{text}</div>
+			)}
 		</Button>
 	);
 }

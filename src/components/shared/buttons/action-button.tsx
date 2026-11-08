@@ -50,20 +50,23 @@ export function ActionButton({
 		default: darkStyles,
 	};
 
-	const baseButton = (
+	return (
 		<Button className={cn(variantStyles[variant], className)} {...rest}>
-			<div>{text}</div>
+			{href ? (
+				<Link
+					className="py-4"
+					to={href}
+					target={openInNewTab ? "_blank" : undefined}
+				>
+					{text}
+				</Link>
+			) : (
+				<div>{text}</div>
+			)}
+
 			<div>
 				<IconArrowRight stroke={3} />
 			</div>
 		</Button>
-	);
-
-	return href ? (
-		<Link to={href} target={openInNewTab ? "_blank" : undefined}>
-			{baseButton}
-		</Link>
-	) : (
-		baseButton
 	);
 }

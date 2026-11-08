@@ -38,6 +38,7 @@ export const Route = createFileRoute("/apply")({
 
 function ApplyDialog() {
 	const { discordAuthUrl } = Route.useLoaderData();
+
 	return (
 		<Dialog>
 			<DialogTrigger
@@ -90,7 +91,11 @@ function RouteComponent() {
 							Everything you need to know before you get started — from
 							requirements and project guidelines to how Voyages work.
 						</p>
-						<ActionButton text="Visit the Voyage Handbook" href="#" />
+						<ActionButton
+							text="Visit the Voyage Handbook"
+							href="https://github.com/chingu-voyages/Handbook/tree/main"
+							openInNewTab
+						/>
 						<Timeline items={applyTimeline} columnLayout="single" />
 					</ContentSection>
 					<ContentSection
