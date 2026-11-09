@@ -14,7 +14,7 @@ export const communityGuarantees: ChecklistItem[] = [
 	{
 		key: "no-sponsored-placements",
 		title: "No sponsored placements.",
-		description: "No partner bootcamps buying your email. No affiliate deals.",
+		description: "No partner bootcamps buying your email.",
 	},
 	{
 		key: "no-selling-data",
