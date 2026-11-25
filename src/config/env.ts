@@ -5,7 +5,11 @@ const envSchema = z.object({
 	DISCORD_AUTH_URL: z.url(),
 });
 
-const clientEnvSchema = z.object({});
+const clientEnvSchema = z.object({
+	VITE_SENTRY_DSN: z.string().optional(),
+	VITE_SENTRY_ORG: z.string().optional(),
+	VITE_SENTRY_PROJECT: z.string().optional(),
+});
 
 export const serverEnv = envSchema.parse(process.env);
 export const clientEnv = clientEnvSchema.parse(process.env);

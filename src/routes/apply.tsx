@@ -14,6 +14,7 @@ import {
 	DialogContent,
 	DialogTrigger,
 } from "#/components/ui/dialog.tsx";
+import { serverEnv } from "#/config/env.ts";
 import { requirements } from "#/content/apply/requirements.ts";
 import { applyTimeline } from "#/content/apply/timeline.ts";
 import { whyJoin } from "#/content/apply/why-join.ts";
@@ -23,7 +24,7 @@ import { sharedTypography as t } from "#/styles/shared.ts";
 
 const getDiscordAuthLink = createServerFn({ method: "GET" }).handler(
 	async () => {
-		const url = process.env.DISCORD_AUTH_URL;
+		const url = serverEnv.DISCORD_AUTH_URL;
 		return { url };
 	},
 );
